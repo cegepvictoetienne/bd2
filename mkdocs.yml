@@ -1,0 +1,73 @@
+site_name: Cours Bases de donn&eacute;es 2
+site_url: https://bd2.kerzo.ca/
+repo_url: https://github.com/jaixan/db2
+
+nav:
+  - 'Accueil': index.md
+  - 'Modélisation':
+      - 'Définition': definition_modelisation.md
+      - 'Modèle Entité-Association': modele_entites_relations.md
+      - 'Types de relations': types_relations.md
+  - 'Horaire': horaire.md
+  - 'À propos': apropos.md
+theme:
+  name: material
+  icon:
+    logo: fontawesome/solid/database
+    admonition:
+      note: fontawesome/solid/note-sticky
+      abstract: fontawesome/solid/book
+      info: fontawesome/solid/circle-info
+      tip: fontawesome/solid/bullhorn
+      success: fontawesome/solid/check
+      question: fontawesome/solid/circle-question
+      warning: fontawesome/solid/triangle-exclamation
+      failure: fontawesome/solid/bomb
+      danger: fontawesome/solid/skull
+      bug: fontawesome/solid/robot
+      example: fontawesome/solid/flask
+      quote: fontawesome/solid/quote-left
+  features:
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.tracking
+    - content.code.copy
+    - toc.integrate
+  language: fr
+  palette:
+    - scheme: slate
+      primary: indigo
+      accent: deep orange
+plugins:
+  - search: {}
+
+extra_css:
+  - css/extra.css
+
+extra_javascript:
+  - javascript/alltarget.js
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - admonition
+  - attr_list
+  - markdown_include.include:
+      base_path: docs/tables
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.critic
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.escapeall:
+      hardbreak: true # use \ to create new line
+      nbsp: true # use \<space> to create &nbsp;
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
