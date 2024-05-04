@@ -10,6 +10,8 @@ nav:
       - 'Schéma conceptuel': schema_conceptuel.md
       - 'Types de relations': types_relations.md
       - 'Normalisation': normalisation.md
+  - 'MySQL':
+      - 'Création de base de données': mysql_creation_bd.md
   - 'Horaire': horaire.md
   - 'À propos': apropos.md
 theme:
