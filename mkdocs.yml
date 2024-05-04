@@ -7,7 +7,9 @@ nav:
   - 'Modélisation':
       - 'Définition': definition_modelisation.md
       - 'Modèle Entité-Association': modele_entites_relations.md
+      - 'Schéma conceptuel': schema_conceptuel.md
       - 'Types de relations': types_relations.md
+      - 'Normalisation': normalisation.md
   - 'Horaire': horaire.md
   - 'À propos': apropos.md
 theme:
