@@ -10,8 +10,20 @@ nav:
       - 'Schéma conceptuel': schema_conceptuel.md
       - 'Types de relations': types_relations.md
       - 'Normalisation': normalisation.md
+
   - 'MySQL':
       - 'Création de base de données': mysql_creation_bd.md
+      - 'Création de tables': mysql_creation_table.md
+      - 'Convention de nommage': convention.md
+      - 'Types de jointures': types_jointures.md
+      - 'Vues': vues.md
+      - 'Insertions': insertion.md
+      - 'Déclencheurs': declencheurs.md
+      - 'Fonctions': fonctions.md
+      - 'Procédures stockées': procedures.md
+      - 'Transactions': transactions.md
+      - 'Gestion des erreurs': gestion_erreurs.md
+      - 'Curseurs': curseurs.md
   - 'Horaire': horaire.md
   - 'À propos': apropos.md
 theme:
@@ -39,7 +51,7 @@ theme:
     - toc.integrate
   language: fr
   palette:
-    - scheme: slate
+    - scheme: light
       primary: indigo
       accent: deep orange
 plugins:
