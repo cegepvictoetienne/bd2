@@ -5,25 +5,58 @@ repo_url: https://github.com/jaixan/db2
 nav:
   - 'Accueil': index.md
   - 'Modélisation':
-      - 'Définition': definition_modelisation.md
-      - 'Modèle Entité-Association': modele_entites_relations.md
-      - 'Schéma conceptuel': schema_conceptuel.md
-      - 'Types de relations': types_relations.md
-      - 'Normalisation': normalisation.md
+      - 'Définition': modelisation/definition_modelisation.md
+      - 'Modèle Entité-Association': modelisation/modele_entites_relations.md
+      - 'Schéma conceptuel': modelisation/schema_conceptuel.md
+      - 'Types de relations': modelisation/types_relations.md
+      - 'Normalisation': modelisation/normalisation.md
 
   - 'MySQL':
-      - 'Création de base de données': mysql_creation_bd.md
-      - 'Création de tables': mysql_creation_table.md
-      - 'Convention de nommage': convention.md
-      - 'Types de jointures': types_jointures.md
-      - 'Vues': vues.md
-      - 'Insertions': insertion.md
-      - 'Déclencheurs': declencheurs.md
-      - 'Fonctions': fonctions.md
-      - 'Procédures stockées': procedures.md
-      - 'Transactions': transactions.md
-      - 'Gestion des erreurs': gestion_erreurs.md
-      - 'Curseurs': curseurs.md
+      - 'Création de base de données': mysql/creation_bd.md
+      - 'Création de tables': mysql/creation_table.md
+      - 'Convention de nommage': mysql/convention.md
+      - 'Types de jointures': mysql/types_jointures.md
+      - 'Vues': mysql/vues.md
+      - 'Insertions': mysql/insertion.md
+      - 'Déclencheurs': mysql/declencheurs.md
+      - 'Fonctions': mysql/fonctions.md
+      - 'Procédures stockées': mysql/procedures.md
+      - 'Transactions': mysql/transactions.md
+      - 'Gestion des erreurs': mysql/gestion_erreurs.md
+      - 'Curseurs': mysql/curseurs.md
+      - 'Sécurité':
+          - 'Utilisateurs': mysql/utilisateurs.md
+          - 'Autorisations': mysql/autorisations.md
+          - 'Rôles': mysql/roles.md
+  - 'Python':
+      - 'Installation': python/installation.md
+      - 'Connexion à MySQL': python/mysql_connector.md
+      - 'pyQT5': python/libpyqt.md
+      - 'qtDesigner': python/qtdesigner.md
+  - 'Exercices':
+      - Exercice 01 - Revision MySQL: exercices/ex01_enonce.md
+      - Exercice 02 - Système de prise de présence en cours: exercices/ex02_enonce.md
+      - Exercice 03 - Système de stationnement du cégep: exercices/ex03_enonce.md
+      - Exercice 04 - Modélisation d'un livre de recettes: exercices/ex04_enonce.md
+      - Exercice 05 - Exercice sur les INSERTs: exercices/ex05_enonce.md
+      - Exercice 06 - Exercice sur les VIEWs: exercices/ex06_enonce.md
+      - Exercice 07 - Exercice sur les TRIGGERs: exercices/ex07_enonce.md
+      - Exercice 08 - Exercice sur les fonctions: exercices/ex08_enonce.md
+      - Exercice 09 - Crédit social: exercices/ex09_enonce.md
+      - Exercice 10 - Exercice sur les curseurs: exercices/ex10_enonce.md
+      - Exercice 11 - Gestion des utilisateurs: exercices/ex11_enonce.md
+      - Exercice 12 - pyCRUD: exercices/ex12_enonce.md
+      - Exercice 13 - pyQT5: exercices/ex13_enonce.md
+      - Exercice 14 - qtDesigner: exercices/ex14_enonce.md
+      - TP Sommatif: exercices/ldvelh_enonce.md
+  - Révision:
+      - Formatif formel: exercices/ff_enonce.md
+      - Examen 01 - Révision A: exercices/examen01_revision_a.md
+      - Analyse - Révision: exercices/analyse_revision_a.md
+      - Épreuve finale - révision: examens/revision.md
+  - 'Outils de travail':
+      - DBeaver: outils/dbeaver.md
+      - draw.io: outils/drawio.md
   - 'Horaire': horaire.md
   - 'À propos': apropos.md
 theme:

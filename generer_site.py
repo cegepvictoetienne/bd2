@@ -85,7 +85,7 @@ def generer_grille(fichier, nom_feuille):
             if valeur is None:
                 valeur = ""
             else:
-                valeur = str(valeur)
+                valeur = str(valeur).replace("\n", "")
             ligne += valeur
             if col < feuille.max_column:
                 if not has_colspan:
