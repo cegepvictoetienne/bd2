@@ -6,24 +6,21 @@ DBeaver est un outil de gestion de base de données que nous utiliserons pour le
 
 - Téléchargez l'installateur ici : [https://dbeaver.io](https://dbeaver.io/){target=_blank}
 
-## Créer une connexion vers devilbox avec DBeaver
+## Créer une connexion vers mysql avec DBeaver
 
-Vous devez tout d'abord vous assurer que les containeurs Devilbox sont bien lancés. Ensuite dans DBeaver cliquez sur le bouton *Nouvelle connexion* en haut à gauche
+Vous devez tout d'abord vous assurer que AMPPS est bien lancé. 
 
-![dbeaver_01](../images/dbeaver_01.png){.center .shadow}
+![dbeaver_creer_connexion](../images/creer_connexion_dbeaver.gif)
 
-Sélectionnez ensuite MariaDB dans la liste des type de connexion
+1. Ouvrez DBeaver
+2. Cliquez sur *Database* -> *New Database Connection*
+3. Sélectionnez *MySQL* dans la liste
+4. Cliquez sur *Next*
+5. Dans le champ *Host* entrez `localhost`
+6. Dans le champ *Port* entrez `3306`
+7. Dans le champ *Database* entrez `mysql`
+8. Dans le champ *User name* entrez `root`
+9. Dans le champ *Password* entrez `mysql`
+10. Cliquer sur *Test Connection* pour vérifier que la connexion fonctionne
+11. Cliquez sur *Finish*
 
-![dbeaver_02](../images/dbeaver_02.png){.center .shadow}
-
-Si vous n'avez pas changé les configurations de Devilbox, vous pouvez laisser les informations par défaut, sinon entrez le bon mot de passe.
-
-![dbeaver_03](../images/dbeaver_03.png){.center .shadow}
-
-Cliquez ensuite sur *Connection details* et entrez un nom significatif à votre connexion.
-
-![dbeaver_04](../images/dbeaver_04.png){.center .shadow}
-
-Cliquez sur *Test de la connexion...*, on vous demandera de télécharger le driver pour MariaDB, acceptez et une fois terminé vous devriez avoir un message de succès. Cliquez sur *Finish* et votre connexion va s'ajouter dans le panneau à gauche.
-
-![dbeaver_05](../images/dbeaver_05.png){.center .shadow}
