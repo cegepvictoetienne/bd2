@@ -16,12 +16,37 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://bd2.kerzo.ca/examens/revision/</loc>
+         <loc>https://bd2.kerzo.ca/evaluations/analyse_revision_a/</loc>
          <lastmod>2024-05-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://bd2.kerzo.ca/exercices/analyse_revision_a/</loc>
+         <loc>https://bd2.kerzo.ca/evaluations/evaluation_formative_formelle/</loc>
+         <lastmod>2024-05-08</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://bd2.kerzo.ca/evaluations/examen01_revision_a/</loc>
+         <lastmod>2024-05-08</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://bd2.kerzo.ca/evaluations/ldvelh_enonce/</loc>
+         <lastmod>2024-05-08</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://bd2.kerzo.ca/evaluations/projet_long/</loc>
+         <lastmod>2024-05-08</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://bd2.kerzo.ca/evaluations/resume/</loc>
+         <lastmod>2024-05-08</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://bd2.kerzo.ca/evaluations/revision/</loc>
          <lastmod>2024-05-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -92,21 +117,6 @@
     </url>
     <url>
          <loc>https://bd2.kerzo.ca/exercices/ex14_enonce/</loc>
-         <lastmod>2024-05-08</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://bd2.kerzo.ca/exercices/examen01_revision_a/</loc>
-         <lastmod>2024-05-08</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://bd2.kerzo.ca/exercices/ff_enonce/</loc>
-         <lastmod>2024-05-08</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://bd2.kerzo.ca/exercices/ldvelh_enonce/</loc>
          <lastmod>2024-05-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
