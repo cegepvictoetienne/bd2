@@ -109,7 +109,7 @@ def generer_horaire():
 
     with open("./docs/horaire.md", "w") as f:
         # Écrire le titre de la page
-        f.write("# Horaire du cours de développement web 3\n")
+        f.write("# Horaire du cours de bases de données 2\n")
         f.writelines(grille)
 
 

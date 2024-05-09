@@ -1,47 +1,68 @@
-# Création de table MySQL
+# Création de tables
 
-# Créer
+Pour créer une table dans une base de données, utilisez la commande `CREATE TABLE`. Cette commande permet de définir plusieurs options, mais nous allons nous concentrer ici sur les principales. Vous pouvez trouver la liste complète des options dans la documentation fournie en lien à la fin de ce document.
 
-La commande pour créer une table est ```CREATE TABLE```. On peut définir un paquet d'options à cette commande, on va s'en tenir ici aux principales. Vous avez la liste de toutes les options dans la documentation que j'ai mis en lien en bas de page.
-
-On commence par utilisez la commande ```CREATE TABLE``` avec le nom de la table à créer. On peut ajouter ``ÌF NOT EXISTS`` avant le nom de la table pour le créer uniquement si elle ne l'est pas déjà. Ensuite entre parenthèse on va lister les colonnes avec leur nom, leur type de données et d'autres attributs qu'on voudrait leur donner. On peut aussi définir dans ses parenthèses les clé primaires, étrangères et les contraintes. Après la parenthèse on pourra ajouter des options relatives à la table, comme le moteur de bd (engine) et la collation.
-
-Exemple de syntaxe
-
+## Syntaxe de base
 ```sql
-CREATE TABLE IF NOT EXISTS `nom_table` (
-    `colonne1` INT AUTO_INCREMENT,
-    `colonne2` INT,
-    `colonne3` VARCHAR(255) NOT NULL,
-    PRIMARY KEY (`colonne1`),
-    CONSTRAINT `colonne2_fk` FOREIGN KEY (`colonne2`) REFERENCES `table_destination` (`colonne_id`) ON UPDATE RESTRICT ON DELETE CASCADE
-) ENGINE=INNODB;
+CREATE TABLE IF NOT EXISTS nom_de_la_table (
+    nom_colonne1 type_de_donnée1 attributs1,
+    nom_colonne2 type_de_donnée2 attributs2,
+    ...
+    PRIMARY KEY (nom_colonne1),
+    FOREIGN KEY (nom_colonne2) REFERENCES autre_table(nom_colonne),
+    CONSTRAINT contrainte_nom UNIQUE (nom_colonne3)
+)
+ENGINE = type_de_moteur,
+COLLATE = type_de_collation;
 ```
+
+### Explications :
+- **IF NOT EXISTS** : Ajoutez cette option avant le nom de la table pour éviter de créer une table qui existe déjà.
+- Entre parenthèses, listez chaque colonne avec son nom, son type de données et d'autres attributs optionnels que vous souhaitez appliquer (comme les tailles de champ, les valeurs par défaut, etc.).
+- Définissez également les clés primaires, les clés étrangères et d'autres contraintes nécessaires pour la gestion des relations et l'intégrité des données.
+- Après les parenthèses, spécifiez des options supplémentaires comme le moteur de base de données (`ENGINE`) et la collation de la table (`COLLATE`), selon les besoins de votre système de gestion de base de données.
 
 !!! warning "Attention"
-	Si vous ajouter des clés étrangères dans la création de la table, vous devez vous assurez que les colonnes et les tables sont déjà créées. Vous pouvez toujours les créer après avoir fait la création de table en faisant une modification de table.
+	Lorsque vous incluez des clés étrangères dans la définition d'une table, assurez-vous que les colonnes et les tables référencées existent déjà dans la base de données. Si ce n'est pas le cas, vous pouvez toujours les créer ultérieurement. Après avoir établi la table initiale, il est possible de modifier celle-ci pour ajouter des clés étrangères. Pour ce faire, utilisez la commande `ALTER TABLE` pour intégrer les contraintes nécessaires.
 
-# Modifier
 
-Pour modifier une table on utilise la commande ```ALTER TABLE```. On peut utiliser aussi les mêmes options qu'avec le create table.
+# Modification de tables
 
-Syntaxe du alter table :
+Pour apporter des modifications à une table existante, utilisez la commande `ALTER TABLE`. Cette commande permet d'appliquer des changements similaires à ceux que vous pouvez réaliser lors de la création d'une table avec `CREATE TABLE`.
 
+## Syntaxe de base
 ```sql
-ALTER TABLE `nom_table`
-ADD CONSTRAINT `colonne2_fk` 
-	FOREIGN KEY (`colonne2`) 
-	REFERENCES table_destination (`colonne_id`) 
-	ON UPDATE RESTRICT ON DELETE CASCADE;
+ALTER TABLE nom_de_la_table
+    ADD COLUMN nouvelle_colonne type_de_donnée;
+ALTER TABLE nom_de_la_table
+    DROP COLUMN nom_de_la_colonne;
+ALTER TABLE nom_de_la_table
+    MODIFY COLUMN nom_de_la_colonne nouveau_type_de_donnée;
+ALTER TABLE nom_de_la_table
+    ADD CONSTRAINT nom_de_la_contrainte UNIQUE (nom_de_la_colonne);
+ALTER TABLE nom_de_la_table
+    DROP CONSTRAINT nom_de_la_contrainte;
 ```
 
-# Supprimer
+### Options communes :
+- **ADD COLUMN** : Ajoute une nouvelle colonne à la table.
+- **DROP COLUMN** : Supprime une colonne existante de la table.
+- **MODIFY COLUMN** : Modifie le type de données ou d'autres propriétés d'une colonne existante.
+- **ADD CONSTRAINT** : Ajoute une contrainte, comme une clé primaire, une clé étrangère ou une contrainte unique.
+- **DROP CONSTRAINT** : Supprime une contrainte existante.
 
-Nous allons utiliser la commande ```DROP TABLE``` suivi du nom de la table à supprimer. Si elle n'existe pas, MySQL va générer une erreur. Pour l'eviter, on peut ajouter ```IF EXISTS``` avant le nom de la table.
+Cette commande offre une grande flexibilité pour gérer la structure des tables après leur création initiale, vous permettant de répondre aux besoins évolutifs de votre base de données.
 
+# Suppression de tables
+
+Pour supprimer une table de votre base de données, utilisez la commande `DROP TABLE` suivie du nom de la table que vous souhaitez supprimer. Si la table spécifiée n'existe pas, cette commande générera une erreur. Pour éviter cela, vous pouvez utiliser l'option `IF EXISTS` qui permet de supprimer la table seulement si elle existe déjà, évitant ainsi les erreurs potentielles.
+
+## Syntaxe de suppression de table
 ```sql
-DROP TABLE IF EXISTS `nom_de_la_bd`;
+DROP TABLE IF EXISTS nom_de_la_table;
 ```
+
+Cette option garantit que la commande ne provoquera pas d'erreur si la table n'existe pas, rendant votre script SQL plus robuste et moins susceptible de s'arrêter inopinément.
 
 # Source
 

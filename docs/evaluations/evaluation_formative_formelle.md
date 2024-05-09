@@ -1,4 +1,4 @@
-# Formatif formel
+# Évaluation formative formelle
 
 ## Consignes
 

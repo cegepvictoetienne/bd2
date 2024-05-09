@@ -1,15 +1,17 @@
 # Qu'est-ce qu'est la modélisation de données?
 
-La modélisation est une série d'outils et de processus visant la création d'une base de données pouvant stocker efficacement les données d'un système. On va diviser notre travail en trois niveaux :
+La modélisation de données est un ensemble de techniques et de méthodes qui facilitent la construction d'une base de données capable de stocker les informations d'un système de manière efficace. Le processus de modélisation se décompose en trois niveaux principaux :
 
-## Le niveau conceptuel
+**Niveau Conceptuel**
 
-À cette étape, on va analyser le système à modéliser en récoltant des données et en définissant les besoins en utilisant le modèle entité-association. Ce travail de réflexion va nous amener à construire le schéma conceptuel, sorte de première ébauche de notre future base de données.
+Durant cette phase initiale, une analyse approfondie du système à modéliser est réalisée. Cette analyse implique la collecte de données et la définition des exigences à l'aide du modèle entité-association. Cette étape critique permet de développer un schéma conceptuel, qui représente une ébauche préliminaire de la future base de données.
 
-## Le niveau relationnel
+**Niveau Relationnel**
 
-La prochaine étape consiste à transformer notre schéma en un diagramme de classes UML. C'est à cette étape qu'on va définir le type de données à utiliser pour chaque champ, les clés primaires ainsi que secondaires et les types de relations entre les tables. Plusieurs règles, qu'on appelle la normalisation, viendront nous aider à créer un diagramme efficace.
+Cette phase consiste à convertir le schéma conceptuel en un diagramme de classes UML (Unified Modeling Language). Il s'agit ici de spécifier les types de données pour chaque attribut, d'identifier les clés primaires et secondaires, et de définir les relations entre les différentes tables. Le processus de normalisation est appliqué pour assurer l'efficacité et la pertinence du diagramme.
 
-## Le niveau SQL
+**Niveau SQL**
 
-Finalement, on va créer les scripts SQL de création de tables, définir les contraintes, créer les déclencheurs (triggers).
+Enfin, le dernier niveau concerne la rédaction des scripts SQL qui serviront à la création des tables. Cette étape inclut également la définition des contraintes et la mise en place de déclencheurs (triggers), qui sont essentiels pour maintenir l'intégrité et la logique des données au sein de la base.
+
+Chaque étape de ce processus est cruciale pour garantir que la base de données finale soit à la fois robuste et optimisée pour les besoins spécifiques du système.

@@ -1,47 +1,75 @@
-# Création de base de données
+# Création de bases de données
 
-# Créer
+Pour créer une base de données, utilisez la commande `CREATE DATABASE` suivie du nom souhaité pour la base. Il est également possible d'ajuster le jeu de caractères et la collation lors de la création, ou de laisser ces paramètres à leurs valeurs par défaut.
 
-La commande créer une base de données est __CREATE DATABASE__ suivi du nom à donner. On peut aussi ajouter le type de jeu de charactère à la base de données et la collation ou laisser les valeurs par défaut.
+## Syntaxe de base
+```sql
+CREATE DATABASE nom_de_la_base;
+```
 
-# Jeu de caractère
+## Avec spécification de jeu de caractères et de collation
+```sql
+CREATE DATABASE nom_de_la_base 
+  CHARACTER SET nom_du_jeu_de_caractères 
+  COLLATE nom_de_la_collation;
+```
 
-Détermine les caractères que MySQL utilise pour stocker les valeurs dans les tables. Par défaut on utilise __utf8mb4__ qui représente les caractères utilisés par la majorité des langues occidentales. Pour changer la valeur par défaut on va utiliser __CHARACTER SET__ suivi du nom du jeu de caractère.
+# Jeu de caractères
 
-On peut lister tous les jeu de caractères avec la requête __SHOW CHARACTER SET__;
+Le jeu de caractères détermine comment MySQL stocke les valeurs textuelles dans les tables. Par défaut, `utf8mb4` est utilisé, couvrant la majorité des caractères des langues occidentales.
+
+## Changer le jeu de caractères par défaut
+```sql
+CREATE DATABASE nom_de_la_base 
+  CHARACTER SET nom_du_jeu_de_caractères;
+```
+
+## Lister les jeux de caractères disponibles
+```sql
+SHOW CHARACTER SET;
+```
 
 # Collation
 
-La collation est une série de règle qui va indiquer comment les caractères sont comparés entre eux, comme par exemple la sensibilité à la case ou la façon de trier le texte. La valeur par défaut __utf8mb4_general_ci__. Cette collation a été développé pour accélerer le traitement au prix de la précision. Je vous conseille d'utiliser la collation __utf8_unicode_520_ci__. Pour changer la valeur par défaut on va utiliser __COLLATE__ suivi du nom de la collation.
+La collation définit les règles de comparaison entre caractères, incluant la sensibilité à la casse et l'ordre de tri. La collation par défaut est `utf8mb4_general_ci`, optimisée pour la vitesse mais moins précise. Pour des comparaisons plus précises, `utf8_unicode_520_ci` est recommandée.
 
-On peut lister tous les jeu de caractères avec la requête __SHOW COLLATION__;
-
-Syntaxe du create database :
-
+## Changer la collation par défaut
 ```sql
-    CREATE DATABASE 'nom_de_la_bd'
-    CHARACTER SET = 'utf8mb4'
-    COLLATE = 'utf8_unicode_520_ci';
+CREATE DATABASE nom_de_la_base 
+  COLLATE nom_de_la_collation;
 ```
 
-# Modifier
+## Lister les collations disponibles
+```sql
+SHOW COLLATION;
+```
 
-Pour modifier une base de données on utilise la commande __ALTER DATABASE__. On peut utiliser aussi les mêmes options qu'avec le create database.
-
-Syntaxe du alter database :
+Syntaxe avec les valeurs recommandées pour le jeu de caractères et la collation :
 
 ```sql
-    ALTER DATABASE 'nom_de_la_bd'
-    CHARACTER SET = 'utf8mb4'
-    COLLATE = 'utf8_unicode_520_ci';
-``` 
+CREATE DATABASE 'nom_de_la_bd'
+  CHARACTER SET = 'utf8mb4'
+  COLLATE = 'utf8_unicode_520_ci';
+```
 
-# Supprimer
+# Modification de bases de données
 
-Nous allons utiliser la commande __DROP DATABASE__ suivi du nom de la base de données à supprimer. Si elle n'existe pas, MySQL va générer une erreur. Pour l'eviter, on peut ajouter __IF EXISTS__ avant le nom de la base de données.
+Pour modifier les propriétés d'une base de données existante, comme le jeu de caractères ou la collation, utilisez la commande `ALTER DATABASE`. Cette commande permet d'appliquer les mêmes options de jeu de caractères et de collation que celles utilisées avec `CREATE DATABASE`.
 
+## Syntaxe de modification
 ```sql
-    DROP DATABASE IF EXISTS 'nom_de_la_bd';
+ALTER DATABASE nom_de_la_bd
+CHARACTER SET = 'utf8mb4'
+COLLATE = 'utf8_unicode_520_ci';
+```
+
+# Suppression de bases de données
+
+Pour supprimer une base de données, la commande `DROP DATABASE` est utilisée. Si la base de données spécifiée n'existe pas, cette commande générera une erreur. Pour éviter cela, vous pouvez préfixer le nom de la base de données avec `IF EXISTS`, ce qui permet de ne supprimer la base que si elle existe déjà.
+
+## Syntaxe de suppression
+```sql
+DROP DATABASE IF EXISTS nom_de_la_bd;
 ```
 
 # Sources

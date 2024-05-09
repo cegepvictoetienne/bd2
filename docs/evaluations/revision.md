@@ -1,4 +1,4 @@
-# Révision pour l'épreuve finale
+# Révision pour l'évaluation finale
 
 ## Directives
 
