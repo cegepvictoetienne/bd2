@@ -31,7 +31,10 @@ nav:
           - 'Rôles': mysql/roles.md
   - 'Python':
       - 'Installation': python/installation.md
+      - 'Environnement virtuel': python/venv.md
+      - 'PIP': python/pip.md
       - 'Connexion à MySQL': python/mysql_connector.md
+
   - 'Exercices':
       - Exercice 01 - Revision MySQL: exercices/ex01_enonce.md
       - Exercice 02 - Système de prise de présence en cours: exercices/ex02_enonce.md
