@@ -2,26 +2,11 @@
 
 # Base de données exemples
 
-J'ai un système de deux tables, l'une de joueurs et l'autre de guilde. Les joueurs peuvent ou non faire partie d'une guilde et chaque guilde peut avoir de 0 à plusieurs joueurs.
+Le système comprend deux tables : une table "joueurs" et une table "guildes". Les joueurs ont la possibilité d'appartenir ou non à une guilde, tandis que chaque guilde peut avoir de zéro à plusieurs joueurs.  
 
 ![Schéma de la base de données](../images/joueurs_guildes.svg)
-??? note "DBML"
-	```dbml
-	Table guildes {
-		id int [pk]
-		nom varchar(30)
-	}
 
-	Table joueurs {
-		id int [pk]
-		guilde_id int
-		nom varchar(50)
-		prenom varchar(50)
-	}
-	Ref: joueur.guilde_id > guilde.id
-	```
-
-Voici un script de création si vous voulez réaliser les exemples
+Voici un script de création pour réaliser les exemples suivants :  
 
 ```sql 
 CREATE DATABASE IF NOT EXISTS bd2_exemple  
@@ -61,7 +46,26 @@ VALUES (1, 'Fréchette', 'Mathieu'),
 	(2, 'Tousignant', 'Simon'),
 	(null, 'Rivard', 'Etienne');
 ```
-		
+
+# Contenu des deux tables  
+
+## Table guildes
+
+| id  | nom           |
+|-----|---------------|
+| 1   | SqlIsGod      |
+| 2   | Error404      |
+| 3   | IsNobodyHere  |
+
+## Table joueurs
+
+| id  | guilde_id | nom        | prenom   |
+|-----|-----------|------------|----------|
+| 1   | 1         | Fréchette  | Mathieu  |
+| 2   | 1         | Ouellet    | Alexandre|
+| 3   | 2         | Tousignant | Simon    |
+| 4   | NULL      | Rivard     | Etienne  |
+
 # INNER JOIN
 
 Une jointure ```INNER JOIN``` retournera tous les enregistrements correspondants entre deux tables.
@@ -127,33 +131,33 @@ FROM joueurs j
 	
 # UNION
 
-L'opérateur ```UNION``` est utilisé pour combiner les résultats de deux ou plusieurs requêtes ```SELECT```. On doit par contre respecter les trois règles suivantes :
+L'opérateur `UNION` sert à combiner les résultats de deux ou plusieurs requêtes `SELECT`. Toutefois, il est essentiel de respecter les trois règles suivantes pour son utilisation :
 
-- Toutes les requêtes SELECT doivent comporter le même nombre de colonnes.  
-- Les colonnes correspondantes doivent avoir un type de données similaire.  
-- Les colonnes doivent aussi être dans le même ordre.  
+- Chaque requête `SELECT` doit comporter le même nombre de colonnes.
+- Les colonnes correspondantes dans les différentes requêtes doivent avoir des types de données similaires.
+- L'ordre des colonnes doit être identique dans toutes les requêtes. 
 
 ## Syntaxe
 
 ```sql
 SELECT colonne1, colonne2 FROM table1
 UNION
-SELECT colonne1, colonne2 FROM table2;
+SELECT colonne3, colonne4 FROM table2;
 ``` 
 
-Par défaut l'opérateur ```UNION``` conservera que les valeurs uniques des multiples requêtes. Si ont veut conserver les doublons, on doit ajouter ALL.
+Par défaut, l'opérateur `UNION` ne conserve que les valeurs uniques des résultats obtenus à partir de multiples requêtes. Pour inclure les doublons dans les résultats, il est nécessaire d'ajouter le mot-clé `ALL`.
 
 ```sql
 SELECT colonne1, colonne2 FROM table1
 UNION ALL
-SELECT colonne1, colonne2 FROM table2;
+SELECT colonne3, colonne4 FROM table2;
 ```
 
-Le nom des colonnes du résultat sera le nom des colonnes définies dans la première requête.
+Le nom des colonnes dans le résultat de l'opérateur `UNION` correspondra aux noms des colonnes spécifiés dans la première requête.
 
 # OUTER JOIN
 
-Une jointure ```OUTER JOIN``` retournera tous les enregistrements des deux tables. On ne peux pas utiliser la commande ```OUTER JOIN``` en MySQL mais on peut arriver au même résultat en faisant une première requête avec un ```LEFT JOIN``` unis à une deuxième requête avec un ```RIGHT JOIN```.  
+Une jointure de type `OUTER JOIN` retourne tous les enregistrements de deux tables. Bien que la commande `OUTER JOIN` ne soit pas directement utilisable en MySQL, il est possible d'obtenir un résultat équivalent en combinant un `LEFT JOIN` et un `RIGHT JOIN`. Pour ce faire, réalisez d'abord une requête avec un `LEFT JOIN`, puis unissez-la à une seconde requête utilisant un `RIGHT JOIN`. 
 
 ## Exemple
 

@@ -1,60 +1,65 @@
 # Procédures stockées
 
-Une procédure stockée nous permet d'enregistrer sur le serveur MySQL une série d'instructions qu'on pourra réutiliser à notre guise. À la différence de la fonction, la procédure stockée peut retourner un jeu de résultat.
+Une procédure stockée est un ensemble d'instructions SQL enregistrées sur le serveur MySQL, qui peuvent être réutilisées. Contrairement à une fonction, une procédure stockée peut retourner un ou plusieurs jeux de résultats.
 
-# Création d'une procédure
+## Création d'une procédure
+
+### Syntaxe de base
 
 ```sql
 DELIMITER $$
 
 CREATE PROCEDURE nom_procedure()
 BEGIN
-  traitement
+  -- Traitement
 END $$
 
 DELIMITER ;
 ```
 
-# Paramètres
+## Paramètres
 
-- Les paramètres sont définis par un nom, un type de données et un indicateur IN, OUT ou INOUT.
-- IN indique que le paramêtre est en entrée, OUT en sortie et INOUT pour les deux. La valeur d'un paramêtre IN est "passée" dans la fonction et utilisée dans celle-ci. 
-- Pour un paramêtre OUT on peut récupérer sa valeur à la sortie de la fonction. Ce n'est pas la même valeur que le retour de la fonction, on peut donc s'en servir pour retourner plus d'une valeur à la fonction. 
-- INOUT permet les deux. Par défaut et si on ne l'indique pas le paramêtre sera IN.
-- Chaque paramêtre est séparé par une virgule.
+Les paramètres d'une procédure sont définis par leur nom, leur type de données et leur mode (IN, OUT, ou INOUT) :
 
-# Le traitement
+- **IN** : Le paramètre est passé à la procédure et utilisé pour les calculs internes.
+- **OUT** : La procédure peut modifier ce paramètre pour retourner une valeur.
+- **INOUT** : Combinant les modes IN et OUT, ce paramètre peut être modifié et lu.
+- Par défaut, un paramètre est considéré comme IN si aucun mode n'est spécifié.
+- Les paramètres doivent être séparés par des virgules.
 
-- La procédure n'est pas tenue de retourner une valeur. On pourrait par exemple faire une procédure qui supprimerait les enregistrements d'une table selon certain critères.
-- Par contre il est préférable de toujours retourner une valeur, comme un indicateur de succès pour l'exemple précédent.
-- On peut utiliser des HANDLERs dans une procédure pour controller le traitement.
+## Traitement
 
-# Utilisation de variables
+- Une procédure stockée peut mais n'est pas obligée de retourner une valeur. Elle peut effectuer diverses opérations, comme supprimer des enregistrements suivant certains critères.
+- Il est conseillé de retourner un indicateur de succès ou d'erreur pour signaler l'issue de la procédure.
+- Les gestionnaires d'erreurs (`HANDLERs`) peuvent être utilisés pour contrôler le traitement et gérer les exceptions.
 
-Les variables sont déclarées de la façon suivante :
+## Utilisation de variables
 
-```sql
-DECLARE nom_variable type_de_donnee [DEFAULT valeur_default]
-``` 
-
-La section DEFAULT est optionnelle et sert à assigner une valeur par défaut à la variable.
+Les variables dans une procédure sont déclarées comme suit :
 
 ```sql
-DECLARE prenom VARCHAR(50) DEFAULT 'Mathieu';
+DECLARE nom_variable type_de_donnee [DEFAULT valeur_default];
 ```
 
-On peut ensuite assigner une valeur à la variable avec SET ou un SELECT ... INTO ma_variable FROM .... Si on utilise le Select le résultat doit être une valeur unique.
+- **DEFAULT** est optionnel et permet d'assigner une valeur initiale à la variable.
+
+Exemples d'utilisation de variables :
 
 ```sql
-SET prenom = "Alexandre";
+DECLARE prenom VARCHAR(50) DEFAULT 'Lucien';
 
-SELECT u.prenom 
-INTO prenom
+SET prenom = 'Paul';
+
+SELECT u.prenom INTO prenom
 FROM usager u
 WHERE u.id = 1234;
 ```
 
-# Suppression d'une procedure
+- Les variables peuvent être assignées directement avec `SET` ou via un `SELECT ... INTO`, qui doit retourner une valeur unique.
+
+## Suppression d'une procédure
+
+Pour supprimer une procédure stockée, utilisez :
 
 ```sql
 DROP PROCEDURE [IF EXISTS] nom_procedure;

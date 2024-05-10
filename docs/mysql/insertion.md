@@ -1,51 +1,48 @@
 # Insertion de données 
 
-La commande ```INSERT``` est utilisée pour ajouter des enregistrements dans une table.
+La commande `INSERT` permet d'ajouter des enregistrements à une table dans une base de données.
 
-# Syntaxe de base
+## Syntaxe de base
 
-## La méthode la plus simple
+### Méthode simple
 
 ```sql
 INSERT INTO ma_table
 VALUES (valeur1, valeur2, valeur3);
 ```
 
-### Avantages 
-- Requête plus courte 
-- Si on modifie les noms de colonnes, pas besoin de modifier la requête.
+#### Avantages
+- Requête concise.
+- Aucune modification nécessaire si les noms de colonnes changent.
 
-### Inconvénients
+#### Inconvénients
+- Risque accru d'erreurs si les valeurs ne correspondent pas exactement en nombre et en position aux colonnes de la table.
 
-- Possibilité d'erreurs plus grande, il faut que les valeurs concordent avec le nombre de colonnes et leur position.
-
-## La méthode la plus précise
+### Méthode précise
 
 ```sql
 INSERT INTO ma_table (colonne1, colonne2, colonne3)
 VALUES (valeur1, valeur2, valeur3);
-```  
+```
 
-### Avantages 
-- Plus de précisions dans la requête 
-- On n'est pas forcé de suivre l'ordre des colonnes ni d'ajouter une valeur pour chacune d'entre elles.
+#### Avantages
+- Plus grande précision dans la spécification des colonnes.
+- Possibilité d'insérer des valeurs sans respecter l'ordre des colonnes ni inclure toutes les colonnes.
 
-### Inconvénient 
-- Les requêtes sont plus longues à écrire.
-- Au niveau de la maintenance, si on modifie un nom de colonne, il faut modifier toutes les requêtes ajoutant des valeurs dans cette colonne.
+#### Inconvénient
+- Requêtes plus longues à écrire.
+- Nécessite une mise à jour de la requête si le nom d'une colonne est modifié.
 
-## Insérer des données seulement dans certaines colonnes
+### Insérer des données seulement dans certaines colonnes
 
 ```sql
 INSERT INTO ma_table (colonne1)
 VALUES (valeur1);
 ```
 
-Les autres champs non spécifiés prendront la valeur par défaut si elle est défini ou NULL sinon.
+Les champs non spécifiés recevront leur valeur par défaut, ou NULL si aucune valeur par défaut n'est définie.
 
-## Insérer plusieurs lignes dans la même requête
-
-La syntaxe est la même, on doit seulement séparer les séries de valeurs par une virgule :
+### Insérer plusieurs lignes simultanément
 
 ```sql
 INSERT INTO ma_table
@@ -63,36 +60,29 @@ VALUES  (valeur_a1, valeur_a2, valeur_a3),
         (valeur_d1, valeur_d2, valeur_d3);
 ```
 
-## Insérer des valeurs provenant d'une autre table
-
-On peut insérer les valeurs d'autres tables en utilisant une sous-requête de sélection au lieu de spécifier les valeurs dans la section VALUES.
+### Insérer des valeurs provenant d'une autre table
 
 ```sql
 INSERT INTO ma_table (colonne1, colonne2, colonne3)
     SELECT valeur1, valeur2, valeur3
     FROM table_source;
-``` 
+```
 
-La requête SELECT n'a pas de contraintes et peut contenir plusieurs jointures, des conditions WHERE et HAVING, d'autres sous-requête, etc.
+Cette méthode permet l'insertion de données issues de requêtes complexes, y compris avec des jointures et des conditions.
 
-Si on veut insérer tout le contenu d'une table dans une autre, on peut utiliser l'instruction TABLE et le nom de la table d'où proviennent les données à insérer.
+### Insérer tout le contenu d'une autre table
 
 ```sql
 INSERT INTO ma_table TABLE table_source
-``` 
+```
 
-## Les colonnes de type auto-incrément
+### Gestion des colonnes auto-incrément
 
-Ce type de colonne est incrémentée automatiquement lors d'une insertion de données, on ne doit pas les ajouter dans nos requêtes d'insertion.
+Les colonnes de type auto-incrément ne doivent pas être incluses dans les requêtes d'insertion, car elles sont automatiquement remplies.
 
-## Récupérer la valeur d'une colonne auto-incrément
+### Récupérer la valeur d'une colonne auto-incrément
 
-On peut récupérer la première valeur provenant d'un champ auto-incrément qui a été insérer avec succès en utilisant la fonction ```last_insert_id()```.
-
-```sql
-INSERT INTO ma_table (colonne1) 
-VALUES (valeur1);
-``` 
+Après une insertion, récupérez la première valeur auto-incrémentée insérée avec succès :
 
 ```sql
 SELECT last_insert_id();

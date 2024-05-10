@@ -1,51 +1,48 @@
 # Les fonctions
 
-Une fonction est une petite routine qui retourne une valeur unique et qui peut être réutilisée. MySQL comporte déjà plusieurs fonctions (NOW(), CONCAT()) mais il est aussi possible d'en créer de nouvelles.
+Une fonction en SQL est une routine programmée qui retourne une valeur unique et qui peut être utilisée à plusieurs reprises. MySQL inclut plusieurs fonctions prédéfinies telles que `NOW()` et `CONCAT()`, et permet également la création de fonctions personnalisées.
 
-# Création d'une fonction
+## Création d'une fonction
 
-Voici la syntaxe de création d'une fonction
+### Syntaxe de base
 
 ```sql
 DELIMITER $$
 
 CREATE FUNCTION [IF NOT EXISTS] nom_fonction(
-    paramètre1,
-    paramètre2,…
+    paramètre1 TYPE,
+    paramètre2 TYPE, …
 )
-RETURNS type_de_donnée
+RETURNS type_de_retour
 [NOT] DETERMINISTIC
 BEGIN
- -- Le traitement
+    -- Instructions
+    RETURN valeur;
 END $$
 
 DELIMITER ;
 ```
 
-## Paramètres
-- Les paramètres sont définis par un nom et un type de données 
-- Chaque paramêtre est séparé par une virgule.
+#### Paramètres
+- **Définis par un nom et un type** : Chaque paramètre est défini par un nom suivi de son type de données.
+- **Séparés par des virgules** : Les paramètres sont listés et séparés par des virgules.
 
-## Type de retour
+#### Type de retour
+- **Specifié après `RETURNS`** : Le type de la valeur de retour de la fonction doit être un type de données valide en MySQL (par exemple, `INTEGER`, `VARCHAR()`, `TINYINT(1)`).
 
-Après le mot-clé RETURNS on indique le type de données de la valeur de retour de la fonction. Ça peut être n'importe quel type MySQL valide (INTEGER, VARCHAR(), TINYINT(1))
+#### DETERMINISTIC vs NOT DETERMINISTIC
+- **DETERMINISTIC** : La fonction retourne toujours la même valeur pour les mêmes paramètres.
+- **NOT DETERMINISTIC** : La fonction peut retourner des valeurs différentes même pour les mêmes paramètres.
+- **Importance de la spécification** : Cette spécification est importante pour l'optimisation et la performance. Par défaut, une fonction est considérée comme NOT DETERMINISTIC.
 
-## DETERMINISTIC vs NOT DETERMINISTIC
+### Traitement
+- **Déclaration de variables** : Typiquement, une variable est déclarée au début pour stocker le résultat à retourner.
+- **Instruction RETURN** : La fonction doit inclure une instruction `RETURN` qui termine la fonction et retourne la valeur.
 
-Une fonction DETERMINISTIC va toujours retourner la même valeur si on lui donne les mêmes paramètres. Une fonction NOT DETERMINISTIC peut retourner un résultat différent même si on lui donne les mêmes paramètres. C'est une valeur "indicative" et MySQL fait confiance au développeur quand à la véracité de l'affimation. Par contre pour une question d'optimisation et de performance il est préférable d'indiquer le bon type. Par défaut la fonction sera NOT DETERMINISTIC.
+### Gestion des erreurs
+- **Utilisation de HANDLERs** : Des gestionnaires d'erreurs (`HANDLER`) peuvent être utilisés pour contrôler les exceptions et les erreurs.
 
-!!! Note "Truc du métier"
-	Il est commun de qualifier une fonction NOT DETERMINISTIC lorsque la fonctions retourne des données dérivées d'une ou de plusieurs tables.
-
-## Le traitement
-
-Habituellement dans le traitment on va déclarer une variable au tout début qui sera utilisée pour contenir le résultat de retour de la fonction.
-
-Le traitement doit absolument contenir un instruction RETURN qui marque la fin de la fonction et retourne la valeur.
-
-On peut utiliser des HANDLERs dans une fonction pour controller les erreurs et le traitement.
-
-Exemple d'une fonction qui reçoit en paramètre une note et qui retourne un commentaire selon la note.
+#### Exemple de création de fonction
 
 ```sql
 DELIMITER $$
@@ -55,37 +52,35 @@ RETURNS VARCHAR(20)
 DETERMINISTIC
 BEGIN
     DECLARE commentaire VARCHAR(20);
-
     IF resultat >= 60 THEN
-        SET commentaire = "Réussite";
+        SET commentaire = 'Réussite';
     ELSE
-        SET commentaire = "Échec";
+        SET commentaire = 'Échec';
     END IF;
-
     RETURN commentaire;
-
-END$$
+END $$
 
 DELIMITER ;
 ```
 
-# Utilisation d'une fonction
+## Utilisation d'une fonction
 
-On peut utiliser la fonction dans n'importe quelle instruction MySQL ou procédure stockée.
+Les fonctions peuvent être utilisées dans toutes les requêtes SQL ou procédures stockées.
 
 ```sql
 SELECT note_commentaire(r.note)
 FROM resultats AS r
-WHERE r.etudiant_id = 1234; 
+WHERE r.etudiant_id = 1234;
 ```
 
-# Modification d'une fonction
+## Modification d'une fonction
 
-On ne peut pas modifier le traitement d'une fonction. Si des modifications doivent être apportées, il faut supprimer la fonction et la recréer.
+Pour modifier une fonction, il est nécessaire de la supprimer et de la recréer, car SQL ne permet pas de modifier directement le corps d'une fonction.
 
-## Suppression d'une fonction
+### Suppression d'une fonction
 
-Syntaxe
+#### Syntaxe de suppression
+
 ```sql
-DROP FUNCTION [IF EXISTS] function_name;
+DROP FUNCTION [IF EXISTS] nom_fonction;
 ```

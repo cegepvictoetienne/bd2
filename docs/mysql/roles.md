@@ -1,61 +1,67 @@
-# Gestion des rôles
+# Gestion des rôles dans MySQL
 
-Un rôle est une regroupement nommé de privilèges qu'on peut accorder à un ou plusieurs utilisateurs. On retrouve le même fonctionnement qu'avec l'utilisateur : on va créer un rôle et ensuite lui octroyer des privilèges.
+Les rôles dans MySQL sont des collections nommées de privilèges qui simplifient la gestion des droits d'accès des utilisateurs. Un rôle peut être attribué à plusieurs utilisateurs, permettant une gestion centralisée des permissions.
 
-# Créer un rôle
+## Créer un rôle
 
-On va créer un ou plusieurs rôles avec la commande CREATE ROLE suivi du nom du rôle. On peut créer plus d'un rôle à la fois en séparant chaque nom de rôle par une virgule.
+Pour créer un rôle, utilisez la commande `CREATE ROLE`. Vous pouvez créer plusieurs rôles simultanément en les listant, séparés par des virgules.
 
 ```sql
-CREATE ROLE IF NOT EXISTS 'nomRole1', 'nommRole2';
+CREATE ROLE IF NOT EXISTS 'nomRole1', 'nomRole2';
 ```
 
-# Ajouter ou enlever des privilèges à un rôle
+## Ajouter ou enlever des privilèges à un rôle
 
-Voir la section [autorisations](autorisations.md) pour plus d'informations sur les privilèges.
+Pour gérer les privilèges d'un rôle, référez-vous à la documentation sur les privilèges pour les commandes spécifiques, telles que `GRANT` et `REVOKE`.
 
-# Accorder un rôle à un utilisateur
+## Accorder un rôle à un utilisateur
 
-Pour accorder un rôle à un utilisateur on utilise la commande GRANT suivi du nom du rôle et du nom d'un ou plusieurs utilisateur. (Attention il faut ajouter l'hôte de l'utilisateur si celui-ci est différent de %)
+Pour attribuer un rôle à un ou plusieurs utilisateurs, utilisez la commande `GRANT`. Notez qu'il est nécessaire d'indiquer l'hôte si celui-ci est spécifique.
 
 ```sql
 GRANT 'nomRole1' TO 'user1', 'user2'@'192.168.1.%';
 ```
 
-# Révoquer un rôle à un utilisateur
+## Révoquer un rôle d'un utilisateur
 
-Pour révoquer un rôle d'un utilisateur on utilise la commande REVOKE suivi du nom du rôle et du nom d'un ou plusieurs utilisateurs. (Attention il faut ajouter l'hôte de l'utilisateur si celui-ci est différent de %)
+Pour retirer un rôle d'un ou plusieurs utilisateurs, utilisez la commande `REVOKE`. Comme pour l'attribution, l'hôte doit être spécifié si nécessaire.
 
 ```sql
 REVOKE 'nomRole1' FROM 'user1', 'user2'@'192.168.1.%';
-``` 
+```
 
-# Supprimer un rôle
+## Supprimer un rôle
+
+Pour supprimer un rôle existant :
 
 ```sql
 DROP ROLE 'nomRole1';
 ```
 
-# Activer un rôle
+## Activer un rôle
 
-Une fois le rôle créé, il faut qu'il soit activé pour qu'il puisse être appliqué. Attention un usager ne peut avoir qu'un role d'activé à la fois. On doit être connecté à l'usager pour activer son rôle.
+Un rôle doit être activé pour un utilisateur pour qu'il prenne effet. Un utilisateur ne peut avoir qu'un seul rôle actif à la fois. L'utilisateur doit se connecter pour activer son rôle.
 
 ```sql
-SET ROLE nomRole
+SET ROLE 'nomRole';
 ```
 
-# Afficher le rôle qui est actif
+## Afficher le rôle actif
 
-On peut connaître le rôle présentement activé pour l'utilisateur de cette façon. Le résultat sera null si aucun rôle n'est activé.
+Pour vérifier quel rôle est actuellement actif pour l'utilisateur connecté :
 
 ```sql
 SELECT current_role();
 ```
 
-# Définir un rôle par défaut
+Si aucun rôle n'est actif, le résultat sera `NULL`.
 
-Lors de la connexion, le rôle défini de cette façon sera automatiquement activé.
+## Définir un rôle par défaut
+
+Pour que le rôle soit automatiquement activé lors de la connexion d'un utilisateur, vous pouvez le définir comme rôle par défaut :
 
 ```sql
-SET DEFAULT ROLE nomRole FOR nomUsager
+SET DEFAULT ROLE 'nomRole' FOR 'nomUsager';
 ```
+
+Cette configuration facilite la gestion des permissions, en s'assurant que les utilisateurs disposent des privilèges appropriés dès leur connexion.

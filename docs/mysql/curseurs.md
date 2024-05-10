@@ -1,140 +1,93 @@
 # Les curseurs
 
-Parfois on peut vouloir effectuer un traitement sur chaque lignes du résultat d'une requête. Les curseurs (cursor) nous permettent justement de parcourir ligne par ligne un résultat, un peu à la manière d'une boucle "while" en programmation.
+Un curseur en SQL permet de parcourir les lignes d'un résultat de requête une par une, similaire à une boucle "while" en programmation. C'est particulièrement utile pour effectuer des traitements spécifiques sur chaque ligne obtenue d'une requête.
 
-Il y a trois caractéristiques à savoir sur les curseurs :
+## Caractéristiques des curseurs
+- **Lecture seule** : Les curseurs ne permettent pas de modifier les données récupérées; ils servent uniquement à lire les résultats.
+- **Parcours séquentiel** : Les lignes sont lues de la première à la dernière sans possibilité de sauter ou revenir en arrière. Pour modifier l'ordre de lecture, utilisez `ORDER BY` dans votre requête.
+- **Données dynamiques** : En MySQL, les curseurs reflètent l'état actuel de la base de données. Si les données sous-jacentes sont modifiées pendant l'utilisation du curseur, ces modifications seront visibles.
+- **Contexte d'utilisation** : Les curseurs peuvent être utilisés dans les procédures stockées, les fonctions et les déclencheurs.
 
-- Ils sont en lecture seule, on ne peut pas modifier les valeurs du résultat.
-On ne peut que parcourir les lignes du résultat de la première à la dernière et on ne peut pas sauter de ligne. Pour modifier "l'ordre de lecture" on doit utiliser le résultat avec la clause ORDER BY de la requête qui générera le résultat.
-- En MySQL, les données du curseurs pointent vers les vrais données de la base de données. Ce qui veut dire que si une modification est faite durant l'utilisation du curseur, les données de celui-ci seront aussi modifiées.
-- On peut utiliser les curseurs dans des procédures stockées, des fonctions et des "triggers".
+## Mise en œuvre des curseurs
+L'utilisation des curseurs se fait en quatre étapes principales :
 
-L'utilisation des curseurs se fait en quatre étapes :
-
-- DECLARE : On déclare notre curseur en lui spécifiant la requête qui sera utilisée
-- OPEN : On "ouvre" notre curseur. On le place dans un état où il pourra recevoir les données
-- FETCH : On ajoute les données de la ligne courante du résultat de la requête. La valeur de chaque colonne de la ligne de résultat sera ajoutée dans une variable que l'on aura déclaré préalablement.
-- CLOSE : On ferme le curseur une fois notre utilisation terminée.
-
-# Déclaration du curseur
-
-La déclaration du curseur doit se faire après la déclaration des autres variables sinon MySQL va générer un erreur. La syntaxe pour déclarer un curseur est la suivante :
+### 1. Déclaration
+Le curseur doit être déclaré avec une requête `SELECT` qui définit les données à parcourir.
 
 ```sql
-DECLARE mon_curseur CURSOR FOR requete_select;
+DECLARE mon_curseur CURSOR FOR 
+    SELECT colonne1, colonne2 FROM table WHERE condition;
 ```
 
-On doit toujours utiliser une requête SELECT pour générer le résultat qui va être utilisé par le curseur. Voici un exemple où l'on voudrait utiliser le matricule des employées qui ont été embauché il y a 5 ans ou plus
-
-```sql
-DECLARE curseur_employe CURSOR FOR
-    SELECT matricule 
-    FROM employe
-    WHERE TIMESTAMPDIFF(year,date_embauche, now()) >= 5;
-```
-
-# Ouverture du curseur
-
-Pour ouvrir le curseur, on doit simplement utiliser la commande OPEN suivie du nom du curseur :
+### 2. Ouverture
+Avant de pouvoir utiliser le curseur, il doit être ouvert :
 
 ```sql
 OPEN mon_curseur;
 ```
 
-Si on reprend l'exemple plus haut, on ferais
+### 3. Récupération des données
+Les données sont récupérées ligne par ligne à l'aide de la commande `FETCH`. Chaque `FETCH` récupère la ligne suivante du résultat de la requête et stocke les valeurs dans des variables préalablement déclarées.
 
 ```sql
-OPEN curseur_employe;
+FETCH mon_curseur INTO variable1, variable2;
 ```
 
-# Ajout de données au curseur
-
-Une fois le curseur disponible, on peut y ajouter des données avec la commande FETCH. On le verra plus loin mais le cette opération s'effectue à l'intérieur d'une boucle. Le résultat du FETCH sera les valeurs des colonnes du résultat pour la ligne courante. La syntaxe est la suivante :
-
-```sql
-FETCH mon_curseur INTO liste de variable;
-```
-
-Les variables doivent être séparées par des espaces et correspondre au nombre de colonnes du résultat. Ces variables auront été déclarées au début de la procédure comme on l'expliquait plus haut. En reprenant notre exemple, nom allons assigner la valeur du matricule de la ligne courante du résultat dans une variable nommée no_matricule :
-
-```sql
-FETCH curseur_employe INTO no_matricule;
-```
-
-Chaque fois qu'on execute la commande FETCH, MySQL essaie de lire la ligne suivante du résultat. S'il n'y a plus d'enregistrement (qu'on est à la dernière ligne), une exception sera levée. On doit gérer cette exception si on veut que tout se déroule bien. Pour se faire, on va ajouter un HANDLER. Sa déclaration se fera après la déclaration du curseur (on va voir plus loin l'ordre en détail avec un exemple).
-
-```sql
-DECLARE CONTINUE HANDLER FOR NOT FOUND SET fin_enregistrement = 1;
-```
-
-En résumé, on indique à MySQL que si il rencontre l'exception NOT FOUND de continuer le traitement (CONTINUE) et d'assigner à la variable fin_enregistrement la valeur 1. La variable fin_enregistrement aura été déclaré plus haut.
-
-# Fermeture du curseur
-
-Finalement, une fois notre traitement terminé, il nous reste qu'à fermer le curseur.
+### 4. Fermeture
+Une fois toutes les données traitées, le curseur doit être fermé pour libérer les ressources associées.
 
 ```sql
 CLOSE mon_curseur;
 ```
 
-ou avec notre exemple
+## Gestion des exceptions
+Lorsqu'un `FETCH` tente de lire au-delà de la dernière ligne du résultat, une exception `NOT FOUND` est levée. Pour gérer cette exception et éviter l'interruption du processus, un handler peut être défini :
 
 ```sql
-CLOSE curseur_employe;
+DECLARE CONTINUE HANDLER FOR NOT FOUND SET fin_enregistrement = 1;
 ```
 
-# Exemple d'une procédure utilisant un curseur
+Cette déclaration configure le comportement en cas d'exception, permettant au bloc de code de continuer l'exécution, typiquement en vérifiant la valeur de la variable `fin_enregistrement` après chaque `FETCH`.
 
-Une entreprise veut créer deux listes de diffusion pour ses employées, une première pour les employées qui compte moins de x années d'anciennetés et une pour les autres (le nombre d'années sera reçu en paramêtre). La liste comportera le nom et prénom de l'employé ainsi que son adresse courriel. Dans la base de données il y a déjà deux tables qui ont été créé pour recevoir ces listes : employe_moins et employe_plus. En réalité il y aurait plus d'étapes en mettre en place dans notre procédure pour s'assurer de l'intégrité de nos données (utiliser une transaction, vider les tables avant l'ajout, "attraper" les erreurs, etc...). Pour simplifier les choses prenons pour acquis que les tables sont vides et que tout va se dérouler sans erreurs comme par magie.
+## Exemple complet
+Voici un exemple illustrant la création d'une procédure stockée utilisant un curseur pour traiter les données des employés :
 
 ```sql
 DELIMITER $$
-CREATE PROCEDURE generer_liste_employe (IN nombre_annee)
+
+CREATE PROCEDURE generer_listes_employes(IN nombre_annee INT)
 BEGIN
-    -- Déclaration de la variable utilisée dans le handler "NOT FOUND"
     DECLARE fin_enregistrement INTEGER DEFAULT 0;
-    -- Déclaration des variables utilisées dans le fetch du curseur
-    DECLARE nom varchar(30) DEFAULT "";
-    DECLARE prenom varchar(30) DEFAULT "";
-    DECLARE courriel varchar(255) DEFAULT "";
-    DECLARE calcul_anciennete INT DEFAULT 0;
+    DECLARE nom VARCHAR(30);
+    DECLARE prenom VARCHAR(30);
+    DECLARE courriel VARCHAR(255);
+    DECLARE calcul_anciennete INT;
 
-    -- Déclaration du curseur des employées
-    DEClARE curseur_employe CURSOR FOR 
-        SELECT nom, prenom, email, TIMESTAMPDIFF(year,date_embauche, now()) 
-        FROM employees;
+    DECLARE curseur_employe CURSOR FOR 
+        SELECT nom, prenom, courriel, TIMESTAMPDIFF(YEAR, date_embauche, NOW()) 
+        FROM employes;
 
-    -- Déclaration du handler NOT FOUND
     DECLARE CONTINUE HANDLER FOR NOT FOUND SET fin_enregistrement = 1;
 
-    -- Ouverture du curseur
     OPEN curseur_employe;
-
-    -- Début de la boucle
-    liste_employee: LOOP
-        -- On assigne les valeurs de la ligne du résultat aux variables
+    boucle_employes: LOOP
         FETCH curseur_employe INTO nom, prenom, courriel, calcul_anciennete;
-        -- On s'assure qu'on n'a pas atteind la fin des enregistrements avant de continuer
         IF fin_enregistrement = 1 THEN 
-            LEAVE liste_employee;
+            LEAVE boucle_employes;
         END IF;
-
-        -- En utilisant la variable calcul_anciennete utilisée dans le fetch et le paramêtre
-        -- nombre_annee, on valide avec un si dans quelle tables ajoutées les données
-        IF  calcul_anciennete < nombre_annee THEN
-            INSERT INTO employe_moins(nom, prenom, courriel) VALUES (nom, prenom, courriel)
+        IF calcul_anciennete < nombre_annee THEN
+            INSERT INTO employe_moins(nom, prenom, courriel);
         ELSE
-            INSERT INTO employe_plus(nom, prenom, courriel) VALUES (nom, prenom, courriel)
+            INSERT INTO employe_plus(nom, prenom, courriel);
         END IF;
-
-    END LOOP liste_employee;
-
-    -- Fermeture du curseur
+    END LOOP;
     CLOSE curseur_employe;
-
 END$$
+
 DELIMITER ;
 ```
+
+Cette procédure crée deux listes de diffusion basées sur l'ancienneté des employés, en utilisant un curseur pour parcourir et traiter chaque employé individuellement.
 
 # Sources et documentation supplémentaire
 

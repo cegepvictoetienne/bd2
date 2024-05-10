@@ -1,116 +1,71 @@
 # Gestion des erreurs
 
-Pour intercepter les erreurs dans un script, une procédure stockée ou un déclencheur, on va utiliser des handlers. On peut aussi générer une erreur avec la commande SIGNAL.
+La gestion des erreurs dans les scripts SQL, les procédures stockées, ou les déclencheurs est cruciale pour maintenir l'intégrité de la base de données et assurer un traitement approprié des données. On utilise des gestionnaires d'erreurs (HANDLERs) pour intercepter les erreurs, et la commande `SIGNAL` pour générer des erreurs personnalisées.
 
-# HANDLER
+## HANDLER
 
-La syntaxe de déclaration d'un handler est la suivante :
+Un handler permet de gérer les erreurs ou conditions spécifiques qui surviennent dans un bloc SQL. 
+
+### Syntaxe
+
 ```sql
 DECLARE handler_action HANDLER FOR condition_value statement;
-handler_action
 ```
 
-De quelle façon l'exécution des instructions va être affectée lorsque l'erreur survient.
+- **handler_action** : Définit si l'exécution doit continuer (`CONTINUE`) ou se terminer (`EXIT`) après l'interception de l'erreur.
+- **condition_value** : Spécifie l'erreur à intercepter. Peut être un `mysql_error_code`, un `SQLSTATE value`, ou une condition nommée préalablement définie.
 
-- CONTINUE : L'exécution des instructions va se continuer.
-- EXIT : L'exécution des instructions comprisent à l'intérieur du bloc BEGIN ... END d'où l'erreur est survenue se termine.
+#### Exemples de conditions
+- `mysql_error_code` : Code d'erreur MySQL spécifique.
+- `SQLSTATE value` : Code d'état SQL à cinq caractères.
+- `condition_name` : Nom de condition associé à un code d'erreur ou d'état.
+- `SQLWARNINGS` : Pour les avertissements SQLSTATE commençant par '01'.
+- `NOT FOUND` : Utilisé pour gérer les situations où une requête ne retourne pas de résultat.
+- `SQLEXCEPTION` : Pour les erreurs SQLSTATE ne commençant pas par '00', '01', ou '02'.
 
-condition_value
-
-Quelle est l'erreur qu'on veut intercepter avec le handler
-
-mysql_error_code : Un code d'erreur MySQL. En voici la liste [ici](https://dev.mysql.com/doc/refman/8.0/en/server-error-reference.html)  
-
-SQLSTATE [VALUE] : Où VALUE représente un code de 5 caractère qui représente un code d'état MySQL. Très similaire à mysql_error_code. Vous pouvez consulter la liste [ici](https://dev.mysql.com/doc/refman/8.0/en/server-error-reference.html)  
-
-condition_name : On peut définir un nom de condition qui est associé à un code d'erreur ou d'état et l'utiliser ensuite dans le handler.
+### Exemple d'utilisation
 
 ```sql
-DECLARE no_such_table CONDITION FOR 1051;
-DECLARE CONTINUE HANDLER FOR no_such_table
-  BEGIN
-    -- body of handler
-  END;
-```
-
-SQLWARNINGS : Un raccourci pour les code d'état SQLSTATE qui commence par 01, le plus souvent des messages d'avertissements
-
-NOT FOUND: On l'a vue dans notre utilisation des cursors. Se déclenche quand le curseur arrive à la fin de ses résultats
-
-SQLEXCEPTION: Un raccourci pour les code d'état SQLSTATE qui ne commence pas par 00, 01 ou 02.
-
-## Exemple
-
-Quand ma procédure stockée provoque une erreur, je veux annuler les opérations déjà effectuées et quitter le traitement en affichant un message d'erreur. On va utiliser ROLLBACK pour annuler les opérations et SELECT avec notre message d'erreur.
-
-```sql
-CREATE PROCEDURE exemplebd.test_error(valeur INT)
+DECLARE CONTINUE HANDLER FOR SQLEXCEPTION
 BEGIN
+    ROLLBACK;
+    SELECT 'Une erreur est survenue, les opérations ont été annulées.';
+END;
+```
 
-    DECLARE EXIT HANDLER FOR SQLEXCEPTION
+## SIGNAL
+
+`SIGNAL` est utilisé pour générer une erreur ou un état qui interrompt l'exécution du script.
+
+### Syntaxe
+
+```sql
+SIGNAL SQLSTATE VALUE 'erreur_code' SET signal_information_item = value;
+```
+
+- **SQLSTATE** : Utilisé généralement avec '45000' pour indiquer une erreur définie par l'utilisateur.
+- **signal_information_item** : Permet de définir des informations supplémentaires sur l'erreur, comme `MESSAGE_TEXT`.
+
+### Exemple
+
+```sql
+IF (nombre < 0) THEN
+    SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'La valeur doit être supérieure à 0';
+END IF;
+```
+
+## Intégration avec des Handlers
+
+Combinez `SIGNAL` et `HANDLER` pour gérer finement les erreurs dans vos procédures :
+
+### Exemple avec Handler
+
+```sql
+CREATE PROCEDURE exemplebd.test_error(nombre INT)
+BEGIN
+    DECLARE EXIT HANDLER FOR SQLSTATE '45000'
     BEGIN
-        ROLLBACK;
-        SELECT 'Une erreur est survenue, les opérations ont été annulées.';
-    END;
-
-    START TRANSACTION;
-
-    ...
-
-    COMMIT;
-END
-```
-
-# SIGNAL
-
-Avec SIGNAL on va pouvoir géréner une erreur qui va stopper l'éxécution du script. On peut aussi jumeler SIGNAL avec un HANDLER
-
-La syntaxe de déclaration de SIGNAL est la suivante :
-
-```sql
-SIGNAL condition_value SET signal_information_item;
-```
-
-## condition_value
-
-Comme pour le HANDLER, on va utiliser un SQLSTATE ou une condition qu'on aura défini auparavant. Le plus souvent on va utiliser SQLSTATE = '45000' qui indique une erreur définie par l'utilisateur.
-
-## signal_information_item
-
-On peut ensuite définir des valeurs à des variables prédéfinis associés à SIGNAL. Une de cess variables est MESSAGE_TEXT qui nous permet de retourner un message d'erreur. La liste complête est ici.
-
-## Exemple
-
-Dans une procédure je veux arrêter l'éxécution si la valeur de la variable nombre est inférieur à 0
-
-```sql
-CREATE PROCEDURE exemplebd.test_error(nombre INT)
-BEGIN
-    IF (nombre < 0) THEN
-        SIGNAL SQLSTATE SET MESSAGE_TEXT = "La valeur doit être supérieure à 0";
-    END IF;
-
-    SELECT nombre;
-
-END
-```
-
-### résultat 
-
-```terminal
-mysql> CALL test_error(-2);
-ERROR 1644 (45000): La valeur doit être supérieure à 0
-```
-
-Le même exemple avec un HANDLER.
-
-```sql
-CREATE PROCEDURE exemplebd.test_error(nombre INT)
-BEGIN
-
-    DECLARE EXIT HANDLER FOR SQLSTATE '45000' 
-    BEGIN 
-        SELECT "La valeur doit être supérieure à 0" AS message_erreur;
+        SELECT 'La valeur doit être supérieure à 0' AS message_erreur;
     END;
 
     IF (nombre < 0) THEN
@@ -118,52 +73,33 @@ BEGIN
     END IF;
 
     SELECT nombre;
-
-END
+END;
 ```
 
-### résultat
+## Gestion d'erreurs dans les applications clientes
 
-```terminal
-mysql> CALL test_error(-2);
-+------------------------------------+
-| message_erreur                     |
-+------------------------------------+
-| La valeur doit être supérieure à 0 |
-+------------------------------------+
-1 row in set (0.00 sec)
-
-Query OK, 0 rows affected (0.00 sec)
-```
-
-L'avantage d'utiliser le handler est qu'on pourrait éxécuter un traitement lors de l'erreur alors qu'avec signal on ne peut pas. La méthode pour récupérer l'erreur dans notre code ne sera pas la même selon ce qu'on utilise.
-
-Avec le handler, c'est selon le traitement utilisé. Dans notre exemple plus haut, quand on lance la procédure on s'attend à recevoir un résultat de requête. Si une erreur est retournée, on pourrait vérifier qu'il y a un champ message_erreur dans le résultat et l'afficher.
-
-Avec signal uniquement, on va devoir récupérer l'exception avec un try .. catch. 
-
-Voici un exemple en Python avec MySQL Connector
+Les erreurs générées par `SIGNAL` peuvent être capturées et gérées dans les applications clientes, comme avec Python en utilisant MySQL Connector :
 
 ```python
-def TestError():
+import mysql.connector as mysql
 
-    result = []
+def TestError():
     try:
         connection = mysql.connect(**db_config)
         cursor = connection.cursor()
-        cursor.callproc('test_error', (12,))
+        cursor.callproc('test_error', [-2])
         for result in cursor.stored_results():
-            # Si j'utilise un handler avec le signal
-            # mon message d'erreur se retrouvera ici
             print(result.fetchall())
-
-    except mysql.Error as erreur:
-        # Le message d'erreur avec signal est ici
-        print(erreur.msg)
+    except mysql.Error as err:
+        print('Erreur interceptée:', err.msg)
     finally:
-        cursor.close()
-        connection.close()
+        if connection.is_connected():
+            cursor.close()
+            connection.close()
+
+TestError()
 ```
+
 
 # Source
 
