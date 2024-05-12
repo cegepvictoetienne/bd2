@@ -41,8 +41,8 @@ nav:
       - Exercice 03 - Système de stationnement du cégep: exercices/ex03_enonce.md
       - Exercice 04 - Modélisation d'un livre de recettes: exercices/ex04_enonce.md
       - Exercice 05 - Exercice sur les INSERTs: exercices/ex05_enonce.md
-      - Exercice 06 - Exercice sur les VIEWs: exercices/ex06_enonce.md
-      - Exercice 07 - Exercice sur les TRIGGERs: exercices/ex07_enonce.md
+      - Exercice 06 - Exercice sur les vues: exercices/ex06_enonce.md
+      - Exercice 07 - Exercice sur les déclencheurs: exercices/ex07_enonce.md
       - Exercice 08 - Exercice sur les fonctions: exercices/ex08_enonce.md
       - Exercice 09 - Crédit social: exercices/ex09_enonce.md
       - Exercice 10 - Exercice sur les curseurs: exercices/ex10_enonce.md
@@ -88,6 +88,7 @@ theme:
   language: fr
   palette:
     - scheme: light
+      toggle: false
       primary: indigo
       accent: deep orange
 plugins:
@@ -103,23 +104,9 @@ markdown_extensions:
   - admonition
   - pymdownx.details
   - pymdownx.superfences
-  - admonition
   - attr_list
-  - markdown_include.include:
-      base_path: docs/tables
-  - pymdownx.emoji:
-      emoji_index: !!python/name:material.extensions.emoji.twemoji
-      emoji_generator: !!python/name:material.extensions.emoji.to_svg
   - pymdownx.inlinehilite
   - pymdownx.snippets
   - pymdownx.critic
   - pymdownx.tabbed:
       alternate_style: true
-  - pymdownx.escapeall:
-      hardbreak: true # use \ to create new line
-      nbsp: true # use \<space> to create &nbsp;
-  - pymdownx.superfences:
-      custom_fences:
-        - name: mermaid
-          class: mermaid
-          format: !!python/name:pymdownx.superfences.fence_code_format
