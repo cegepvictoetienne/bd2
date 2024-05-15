@@ -6,18 +6,17 @@ La base de données contient une liste de sorts pour le jeu Donjons et Dragons 5
 
 Voici le diagramme de classes de la base de données
 
-![ex01_a](../images/ex01_diagramme.png)
+![ex01_a](../images/ex01_diagramme.svg)
 
 
 ## Création d'une base de données et exécution d'un script SQL
 
-- Créez une nouvelle base de données et nommez la **bd2_01**
 - Téléchargez le fichier [**ex01_create_tables.sql**](../ressources/ex01_create_tables.sql). 
-- Lancez le script pour créer les tables et ajouter les données.
+- Lancez le script pour créer la base de données, les tables et le contenu des tables.
 - Allez-y en ligne de commande ou avec DBeaver
 
 ## Manipulation des données
-Pour chacune des questions, j'ai ajouté une image du résultat attendu avec le nom des colonnes désiré.
+Pour chacune des questions, vous trouverez une image du résultat attendu avec le nom des colonnes désirées.
 
 1. Sélectionnez le nom de toutes les classes trié en ordre alphabétique inversé.
 ![ex01_01](../images/ex01_01.png)
@@ -46,5 +45,6 @@ Pour chacune des questions, j'ai ajouté une image du résultat attendu avec le 
 9. En vous aidant de la requête précédente, affichez la moyenne de sort par classe de personnage. Essayez d'utiliser une sous-requête et la fonction SQL **AVG**
 ![ex01_09](../images/ex01_09.png)
 
-10. Sélectionnez tous les sorts d'une classe donnée et d'un niveau donnée. Pour chaque sort affichez le id et le nom du sort ainsi qu'une colonne composante qui sera généré comme suit. Pour les champs **verbal**, **somatic** et **material**, affichez respectivement un V, S ou M si la valeur est égale à 1, sinon n'affichez rien. Chaque lettre doit être séparée par une virgule. Finalement affichez la valeur du champ **material_cost**. Vous pouvez vous aider des fonctions **IF()** et **CONCAT()**. Dans mon exemple j'affiche tous les sorts de la classe Bard du niveau 0.
+10. Sélectionnez tous les sorts d'une classe et d'un niveau donnés. Pour chaque sort, affichez l'ID et le nom du sort, ainsi qu'une colonne "composante" qui sera générée comme suit : pour les champs **verbal**, **somatic**, et **material**, affichez respectivement "V", "S", ou "M" si la valeur est égale à 1 ; sinon, n'affichez rien. Chaque lettre doit être séparée par une virgule. Enfin, affichez la valeur du champ **material_cost**. Vous pouvez utiliser les fonctions **IF()** et **CONCAT()** pour vous aider. Par exemple, affichez tous les sorts de la classe Bard de niveau 0.
+
 ![ex01_10](../images/ex01_10.png)

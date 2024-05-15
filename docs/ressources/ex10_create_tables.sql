@@ -1,9 +1,9 @@
 CREATE DATABASE IF NOT EXISTS `bd2_ex10` COLLATE utf8_unicode_ci;
 use bd2_ex10;
 
-DROP TABLE IF EXISTS `houblon`;
+DROP TABLE IF EXISTS `houblons`;
 
-CREATE TABLE `houblon` (
+CREATE TABLE `houblons` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `nom` varchar(50) DEFAULT NULL,
   `pays` varchar(50) DEFAULT NULL,
@@ -17,7 +17,7 @@ CREATE TABLE `houblon` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB;
 
-INSERT INTO houblon (nom, pays, utilisation, alpha, beta, coh, huile, profil, similitude) VALUES 
+INSERT INTO houblons (nom, pays, utilisation, alpha, beta, coh, huile, profil, similitude) VALUES 
 ('Admiral', 'Royaume-Uni', 'Amérisant', '13,5-16%', '5-6%', '37%-45%', '1-1,7ml pour 100g', 'Légèrement résineux et légèrement agrumes avec une pointe d''arômes herbeux', 'Target, Challenger'),
 ('Ahtanum', 'États-Unis', 'Aromatique', '5,7-6,3%', '5%-6,5%', '30%-35%', '0,8-1,2mL pour 100g', 'Profil agrumes et floral avec une pointe de pamplemousse un poil plus marquée sur le Cascade, Ce houblon peut Australiesi disposer de notes terreuses et résineuses', 'Cascade, Amarillo'),
 ('Amarillo', 'États-Unis', 'Double', '8-11%', '6-7%', '21-24%', '1,5-1,9mL pour 100g', 'Floral, agrumes, pamplemousse, fruits à noyaux', 'Cascade, Centennial, Citra'),
