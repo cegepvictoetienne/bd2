@@ -8,21 +8,25 @@
       
       
       
-        <link rel="canonical" href="https://bd2.kerzo.ca/evaluations/ldvelh_enonce/">
+        <link rel="canonical" href="https://bd2.kerzo.ca/python/venv/">
       
       
+        <link rel="prev" href="../installation/">
+      
+      
+        <link rel="next" href="../pip/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.21">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.22">
     
     
       
-        <title>Livre dont vous êtes le héro - Cours Bases de donn&eacute;es 2</title>
+        <title>Environnement virtuel - Cours Bases de donn&eacute;es 2</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.66ac8b77.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.732c4fb1.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
@@ -113,7 +117,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#livre-dont-vous-etes-le-hero" class="md-skip">
+        <a href="#gestion-des-environnements-virtuels-en-python" class="md-skip">
           Aller au contenu
         </a>
       
@@ -149,7 +153,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Livre dont vous êtes le héro
+              Environnement virtuel
             
           </span>
         </div>
@@ -287,11 +291,13 @@
         
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../python/installation/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../installation/" class="md-tabs__link">
           
   
   Python
@@ -327,7 +333,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../resume/" class="md-tabs__link">
+        <a href="../../evaluations/resume/" class="md-tabs__link">
           
   
   Évaluations
@@ -597,6 +603,27 @@
   
   <span class="md-ellipsis">
     Normalisation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modelisation/classes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Diagramme de classes UML
   </span>
   
 
@@ -1023,23 +1050,28 @@
       
   
   
+    
   
   
+  
     
     
     
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
         
           
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -1050,7 +1082,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             Python
@@ -1064,7 +1096,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../python/installation/" class="md-nav__link">
+      <a href="../installation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1082,56 +1114,179 @@
                 
   
   
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Environnement virtuel
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Environnement virtuel
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#gestion-des-environnements-virtuels-en-python" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gestion des environnements virtuels en Python
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Gestion des environnements virtuels en Python">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#introduction-a-lenvironnement-virtuel" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction à l'environnement virtuel
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pourquoi-creer-un-environnement-virtuel" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pourquoi créer un environnement virtuel?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-creer-un-environnement-virtuel" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment créer un environnement virtuel?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-cctiver-lenvironnement-virtuel" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment cctiver l'environnement virtuel?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-utiliser-lenvironnement-virtuel" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment utiliser l'environnement virtuel?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-desactiver-lenvironnement-virtuel" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment désactiver l'environnement virtuel?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-exclure-le-dossier-denvironnement-dans-gitignore" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment exclure le dossier d'environnement dans .gitignore?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conclusion
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
   
   
     <li class="md-nav__item">
-      <a href="../../python/mysql_connector/" class="md-nav__link">
+      <a href="../pip/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PIP
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mysql_connector/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     Connexion à MySQL
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../python/libpyqt/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    pyQT5
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../python/qtdesigner/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    qtDesigner
   </span>
   
 
@@ -1302,7 +1457,7 @@
         
   
   <span class="md-ellipsis">
-    Exercice 06 - Exercice sur les VIEWs
+    Exercice 06 - Exercice sur les vues
   </span>
   
 
@@ -1323,7 +1478,7 @@
         
   
   <span class="md-ellipsis">
-    Exercice 07 - Exercice sur les TRIGGERs
+    Exercice 07 - Exercice sur les déclencheurs
   </span>
   
 
@@ -1438,48 +1593,6 @@
 
               
             
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../exercices/ex13_enonce/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Exercice 13 - pyQT5
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../exercices/ex14_enonce/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Exercice 14 - qtDesigner
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
           </ul>
         </nav>
       
@@ -1532,7 +1645,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../resume/" class="md-nav__link">
+      <a href="../../evaluations/resume/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1553,7 +1666,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../evaluation_formative_formelle/" class="md-nav__link">
+      <a href="../../evaluations/evaluation_formative_formelle/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1574,7 +1687,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../projet_long/" class="md-nav__link">
+      <a href="../../evaluations/projet_long/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1633,7 +1746,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../examen01_revision_a/" class="md-nav__link">
+      <a href="../../evaluations/examen01_revision_a/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1654,7 +1767,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../analyse_revision_a/" class="md-nav__link">
+      <a href="../../evaluations/analyse_revision_a/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1675,7 +1788,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../revision/" class="md-nav__link">
+      <a href="../../evaluations/revision/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1849,135 +1962,68 @@
   
 
 
-<h1 id="livre-dont-vous-etes-le-hero">Livre dont vous êtes le héro</h1>
-<h2 id="description-de-lexercice">Description de l'exercice</h2>
-<p>L'objectif du projet est de créer une application qui permettra de lire et de naviguer dans un livre dont vous êtes le héros.</p>
+  <h1>Environnement virtuel</h1>
+
+<h3 id="gestion-des-environnements-virtuels-en-python">Gestion des environnements virtuels en Python</h3>
+<h4 id="introduction-a-lenvironnement-virtuel">Introduction à l'environnement virtuel</h4>
+<p>Un environnement virtuel en Python est un espace isolé qui permet de gérer séparément les dépendances pour différents projets. Utiliser un environnement virtuel assure que chaque projet peut avoir ses propres dépendances, indépendamment des bibliothèques installées globalement.</p>
+<h4 id="pourquoi-creer-un-environnement-virtuel">Pourquoi créer un environnement virtuel?</h4>
+<ol>
+<li><strong>Isolation</strong> : Chaque projet peut avoir ses propres dépendances, même si ces dernières entrent en conflit entre différents projets.</li>
+<li><strong>Contrôle des versions</strong> : Vous pouvez tester différentes versions d'une bibliothèque sans affecter les autres projets.</li>
+<li><strong>Simplicité</strong> : Facilite la gestion des bibliothèques et des dépendances.</li>
+<li><strong>Compatibilité</strong> : Aide à maintenir la compatibilité entre le développement et les environnements de production.</li>
+</ol>
+<h4 id="comment-creer-un-environnement-virtuel">Comment créer un environnement virtuel?</h4>
+<ol>
+<li>
+<p><strong>Installer le paquet</strong> <code>virtualenv</code> si ce n'est pas déjà fait :
+   <div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>virtualenv
+</code></pre></div></p>
+</li>
+<li>
+<p><strong>Créer l'environnement virtuel</strong> :</p>
+</li>
+<li>Naviguez dans votre répertoire de projet :
+     <div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>mon_projet
+</code></pre></div></li>
+<li>Créez l'environnement virtuel :
+     <div class="highlight"><pre><span></span><code>python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>nom_env
+</code></pre></div></li>
+<li><code>nom_env</code> est le nom du dossier qui contiendra l'environnement virtuel.</li>
+</ol>
+<h4 id="comment-cctiver-lenvironnement-virtuel">Comment cctiver l'environnement virtuel?</h4>
 <ul>
-<li>Vous devez faire l'analyse du cas et me produire un diagramme de classes UML de cette analyse. </li>
-<li>Ensuite créez la base de données en lien avec votre analyse. Je vais vous fournir le texte d'un livre divisé en chapitres pour l'inclure dans la base de données ainsi que les liens entre les chapitres sous deux scripts SQL. Libre à vous de modifier ou non ces fichiers. </li>
-<li>Finalement vous allez développer une application fonctionnelle en python avec une interface graphique. </li>
+<li><strong>Windows</strong> :
+  <div class="highlight"><pre><span></span><code>.<span class="se">\n</span>om_env<span class="se">\S</span>cripts<span class="se">\a</span>ctivate
+</code></pre></div></li>
+<li><strong>macOS et Linux</strong> :
+  <div class="highlight"><pre><span></span><code><span class="nb">source</span><span class="w"> </span>nom_env/bin/activate
+</code></pre></div></li>
+<li>Une fois activé, votre prompt changera pour refléter le nom de l'environnement activé.</li>
 </ul>
-<p>L'exercice sera évalué et comptera pour 15% de la note finale. L'exercice se fera individuellement. </p>
-<h2 id="remise-de-lexercice">Remise de l'exercice</h2>
-<p>Créez un dépôt Github de l'exercice à l'intérieur duquel vous allez avoir les éléments suivants : </p>
+<h4 id="comment-utiliser-lenvironnement-virtuel">Comment utiliser l'environnement virtuel?</h4>
 <ul>
-<li>Dans un répertoire nommé ressources, votre diagramme de classes ainsi que les scripts SQL nécessaires à la création de votre base de données et à l'insertion des données une fois <u>l'application fonctionnel</u>.</li>
-<li>Le code de votre application.</li>
-<li>La remise du projet se fera durant le cours du 27 novembre 2023 durant lequel vous allez me présenter votre application.</li>
+<li>Une fois l'environnement activé, vous pouvez installer des paquets spécifiques à l'environnement en utilisant <code>pip</code>, comme vous le feriez normalement :
+  <div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>nom_paquet
+</code></pre></div></li>
+<li>Tout paquet installé lors de l'activation de l'environnement sera isolé des autres environnements.</li>
 </ul>
-<h2 id="analyse-du-cas">Analyse du cas</h2>
-<p>Les points suivants du livre  doivent être couverts par votre analyse :</p>
+<h4 id="comment-desactiver-lenvironnement-virtuel">Comment désactiver l'environnement virtuel?</h4>
 <ul>
-<li>Le texte du livre divisé entre chapitres ainsi que le principe de navigation entre les chapitres. (Pour chaque chapitre il n'y a qu'un choix restreint de chapitres auxquels on peut accéder)</li>
-<li>Pour l'instant on n'aura qu'un livre dans l'application, mais on pourrait en avoir plusieurs. On va prendre pour acquis que tout les livres auraient la même fiche de personnage.</li>
-<li>La fiche du personnage (feuille d'aventure à la page 5 et le haut de la page 6). Pour les sections <strong>disciplines Kai</strong> et <strong>Armes</strong>, les valeurs qu'on peut y entrer doivent provenir d'une liste de choix, celle-ci est décrite plus loin dans le livre. (À partir de la page 9 pour les disciplines et 11 pour les armes)</li>
-<li>On ne couvrira pas le système de règles, ça sera à l'usager de le faire manuellement. (Combat, perte d'endurance, etc...)</li>
-<li>Vous pouvez traiter les cellules objets, repas, objets spéciaux et bourse comme des champs texte.</li>
-<li>On doit pouvoir enregistrer notre progression dans le livre et faire plusieurs parties en même temps.</li>
+<li>Pour sortir de l'environnement virtuel et retourner à l'environnement global de Python :
+  <div class="highlight"><pre><span></span><code>deactivate
+</code></pre></div></li>
 </ul>
-<p>Votre analyse doit respecter les règles de la troisième forme normale, à moins de cas d'exception qui devront être justifiés.</p>
-<h2 id="diagramme-de-classes">Diagramme de classes</h2>
+<h4 id="comment-exclure-le-dossier-denvironnement-dans-gitignore">Comment exclure le dossier d'environnement dans <code>.gitignore</code>?</h4>
 <ul>
-<li>Le diagramme de classes doit respecter votre analyse. </li>
-<li>Les normes de nomenclature défini dans les notes de cours doivent être suivi.</li>
+<li>Pour éviter que l'environnement virtuel ne soit suivi par Git, ajoutez le dossier de l'environnement virtuel à votre fichier <code>.gitignore</code> :
+  <div class="highlight"><pre><span></span><code>nom_env/
+</code></pre></div></li>
+<li>Remplacez <code>nom_env</code> par le nom réel de votre dossier d'environnement.</li>
 </ul>
-<h2 id="base-de-donnees">Base de données</h2>
-<p>Il n'y a pas de minimum ou maximum quand aux nombre de tables à avoir, mais vous devez inclure les éléments suivants : </p>
-<ul>
-<li>Un usager avec des droits restreint qui sera utilisé par l'application. Pour les droits, allez-y au minimum, seulement les tables et commandes nécessaires au fonctionnement de l'application. </li>
-<li>Vous devez au minimum inclure 2 procédures stockées, fonctions ou triggers (Une fonction et un trigger, une procédure stockée et une fonction, deux triggers, etc...).</li>
-</ul>
-<h2 id="application">Application</h2>
-<p>L'application doit être programmé avec pyqt5 et comporter les fonctionnalités suivantes : </p>
-<ul>
-<li>Lire un livre et naviguer entre ses chapitres selon leur numéro.</li>
-<li>Permettre à l'usager de modifier sa fiche de personnage.</li>
-<li>Sauvegarde notre progression de lecture, (numéro de chapitre, feuille d'aventure)</li>
-<li>Supprimer une sauvegarde.</li>
-</ul>
-<h2 id="ressources">Ressources</h2>
-<ul>
-<li><a href="../../ressources/Loup-solitaire-01-les-maitres-des-tenebres.pdf" target="_blank">Loup solitaire T.1</a> : Le livre de référence</li>
-<li><a href="../../ressources/ldvelh_insert_chapitre.sql" target="_blank">insert_chapitre.sql</a> : Les textes de chaque chapitre</li>
-<li><a href="../../ressources/ldvelh_insert_lien_chapitre.sql" target="_blank">insert_lien_chapitre.sql</a> : Les liens du chapitre vers les autres</li>
-</ul>
-<h2 id="grille-de-correction">Grille de correction</h2>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Critères</th>
-<th>Réussi</th>
-<th>Satisfaisant</th>
-<th>insatisfaisant</th>
-<th>Points</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">Les scripts SQL de création de tables et d'insertion de données sont fonctionnels et couvrent l'ensemble de l'application.</td>
-<td>2</td>
-<td>1</td>
-<td>0</td>
-<td>/2</td>
-</tr>
-<tr>
-<td style="text-align: left;">Le diagramme de classes respecte les points à couvrir de l'analyse de cas et les normes de nomenclature définies dans les notes de cours.</td>
-<td>3</td>
-<td>1</td>
-<td>0</td>
-<td>/3</td>
-</tr>
-<tr>
-<td style="text-align: left;">Un usager avec des droits restreints est utilisé pour la connexion entre l'application et la base de données. Sa création est incluse dans les scripts SQL remis.</td>
-<td>2</td>
-<td>1</td>
-<td>0</td>
-<td>/2</td>
-</tr>
-<tr>
-<td style="text-align: left;">La base de données comportent 2 procédures stockées, fonctions ou triggers.</td>
-<td>2</td>
-<td>1</td>
-<td>0</td>
-<td>/2</td>
-</tr>
-<tr>
-<td style="text-align: left;">L'application permet de lire un livre et de naviguer entre les chapitres par leur numéro.</td>
-<td>2</td>
-<td>1</td>
-<td>0</td>
-<td>/2</td>
-</tr>
-<tr>
-<td style="text-align: left;">L'application permet à l'usager de modifier manuellement la feuille de personnage du livre.</td>
-<td>3</td>
-<td>1</td>
-<td>0</td>
-<td>/3</td>
-</tr>
-<tr>
-<td style="text-align: left;">L'application permet de sauvegarder la progression de lecture (le chapitre en cours) et la feuille de personnage.</td>
-<td>4</td>
-<td>2</td>
-<td>0</td>
-<td>/4</td>
-</tr>
-<tr>
-<td style="text-align: left;">L'application permet de supprimer une sauvegarde</td>
-<td>2</td>
-<td>1</td>
-<td>0</td>
-<td>/2</td>
-</tr>
-<tr>
-<td style="text-align: left;">Total</td>
-<td></td>
-<td></td>
-<td></td>
-<td>/20</td>
-</tr>
-</tbody>
-</table>
+<h4 id="conclusion">Conclusion</h4>
+<p>Les environnements virtuels sont essentiels pour une gestion efficace des projets Python, permettant de garder les dépendances requises organisées et isolées. Ils simplifient également la collaboration entre développeurs en s'assurant que tous les membres de l'équipe travaillent avec les mêmes versions de dépendances.</p>
 
 
 
@@ -2027,7 +2073,7 @@
     <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.tracking", "content.code.copy", "toc.integrate"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version": "S\u00e9lectionner la version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.a7c05c9e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.5cfa9459.min.js"></script>
       
         <script src="../../javascript/alltarget.js"></script>
       

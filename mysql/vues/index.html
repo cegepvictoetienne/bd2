@@ -18,7 +18,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.21">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.22">
     
     
       
@@ -26,7 +26,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.66ac8b77.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.732c4fb1.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
@@ -612,6 +612,27 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modelisation/classes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Diagramme de classes UML
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1145,53 +1166,53 @@
   
   
     <li class="md-nav__item">
+      <a href="../../python/venv/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Environnement virtuel
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python/pip/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PIP
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../python/mysql_connector/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     Connexion à MySQL
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../python/libpyqt/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    pyQT5
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../python/qtdesigner/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    qtDesigner
   </span>
   
 
@@ -1362,7 +1383,7 @@
         
   
   <span class="md-ellipsis">
-    Exercice 06 - Exercice sur les VIEWs
+    Exercice 06 - Exercice sur les vues
   </span>
   
 
@@ -1383,7 +1404,7 @@
         
   
   <span class="md-ellipsis">
-    Exercice 07 - Exercice sur les TRIGGERs
+    Exercice 07 - Exercice sur les déclencheurs
   </span>
   
 
@@ -1489,48 +1510,6 @@
   
   <span class="md-ellipsis">
     Exercice 12 - pyCRUD
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../exercices/ex13_enonce/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Exercice 13 - pyQT5
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../exercices/ex14_enonce/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Exercice 14 - qtDesigner
   </span>
   
 
@@ -1910,52 +1889,58 @@
 
 
 <h1 id="vues-views">Vues (Views)</h1>
-<p>En SQL, on peut enregistrer une requête qu'on utilise régulièrement et la réutiliser facilement dans d'autres requêtes. Pour ce faire on crée ce qu'on appelle une vue (VIEW) .</p>
+<p>En SQL, les vues permettent d'enregistrer une requête fréquemment utilisée pour la réutiliser aisément dans d'autres requêtes. Une vue agit comme une requête stockée et nommée, accessible comme une table virtuelle.</p>
 <h2 id="avantages-de-creer-une-vue">Avantages de créer une vue</h2>
 <ul>
-<li>Simplification des requêtes</li>
-<li>Sécuriser des données sensibles</li>
-<li>Faciliter la maintenance</li>
+<li><strong>Simplification des requêtes</strong> : Les vues permettent de réduire la complexité des requêtes en masquant les détails de la jointure et des calculs.</li>
+<li><strong>Sécurisation des données</strong> : Les vues peuvent limiter l'accès à certaines données, ce qui est utile pour protéger les informations sensibles.</li>
+<li><strong>Facilitation de la maintenance</strong> : Les modifications apportées à une vue se répercutent sur toutes les requêtes qui l'utilisent, simplifiant ainsi la maintenance.</li>
 </ul>
-<p>Il faut se rappeler qu'une vue n'est pas une façon d'optimiser nos requêtes. Quand une vue est utilisé dans une requête, la requête de la vue est exécuté en premier lieu et ensuite la requête principale. On pourrait voir ça comme une sous-requête qui est plus simple à utiliser pour le programmeur.</p>
+<p>Il est important de noter que les vues ne sont pas un moyen d'optimiser les performances des requêtes. Lorsqu'une vue est utilisée dans une requête, la requête sous-jacente de la vue est exécutée en premier, suivie de la requête principale.</p>
 <h1 id="creer-une-vue">Créer une vue</h1>
-<p>Pour créer une vue, on utilise la déclaration <code>CREATE VIEW</code> :</p>
+<p>Pour créer une vue, utilisez la syntaxe suivante :</p>
 <div class="highlight"><pre><span></span><code><span class="k">CREATE</span><span class="w"> </span><span class="p">[</span><span class="k">OR</span><span class="w"> </span><span class="k">REPLACE</span><span class="p">]</span><span class="w"> </span><span class="k">VIEW</span><span class="w"> </span><span class="p">[</span><span class="n">nom_bd</span><span class="p">.]</span><span class="n">nom_view</span><span class="w"> </span><span class="p">[(</span><span class="n">liste_colonne</span><span class="p">)]</span>
 <span class="k">AS</span>
 <span class="n">requête_select</span><span class="p">;</span>
 </code></pre></div>
-<p>Le nom de la vue doit être unique dans la base de données, aucune autre vue ni table ne doit avoir le même nom.
-Si on ajoute l'option OR REPLACE et que la vue existe déjà, la nouvelle vue va remplacer l'ancienne, sinon ça n'aura aucun effet.
-On peut définir optionnellement les noms de colonnes de la vue, sinon les noms de colonnes seront celle de la requête select.
-Pour terminer, on ajoute une requête select. La requête peut interroger des tables et d'autres vues.</p>
+<ul>
+<li><strong>CREATE [OR REPLACE]</strong> : Si la vue existe déjà, <code>OR REPLACE</code> permet de la remplacer.</li>
+<li><strong>[nom_bd.]nom_view</strong> : Le nom de la vue doit être unique dans la base de données.</li>
+<li><strong>[(liste_colonne)]</strong> : Les noms des colonnes de la vue peuvent être spécifiés; sinon, ils seront dérivés de la requête SELECT.</li>
+<li><strong>requête_select</strong> : La requête SELECT peut interroger des tables et d'autres vues.</li>
+</ul>
 <h2 id="exemple">Exemple</h2>
 <div class="highlight"><pre><span></span><code><span class="k">CREATE</span><span class="w"> </span><span class="k">OR</span><span class="w"> </span><span class="k">REPLACE</span><span class="w"> </span><span class="k">VIEW</span><span class="w"> </span><span class="n">etudiants_informatique</span><span class="w"> </span><span class="p">(</span><span class="n">nom_complet</span><span class="p">,</span><span class="w"> </span><span class="n">da</span><span class="p">)</span>
 <span class="k">AS</span><span class="w"> </span>
-<span class="w">    </span><span class="k">SELECT</span><span class="w"> </span><span class="n">CONCAT</span><span class="p">(</span><span class="n">e</span><span class="p">.</span><span class="n">nom</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;, &#39;</span><span class="p">,</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">prenom</span><span class="p">),</span>
+<span class="w">    </span><span class="k">SELECT</span><span class="w"> </span><span class="n">CONCAT</span><span class="p">(</span><span class="n">e</span><span class="p">.</span><span class="n">nom</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;, &#39;</span><span class="p">,</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">prenom</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">nom_complet</span><span class="p">,</span>
 <span class="w">           </span><span class="n">e</span><span class="p">.</span><span class="n">da</span>
 <span class="w">    </span><span class="k">FROM</span><span class="w"> </span><span class="n">etudiants</span><span class="w"> </span><span class="n">e</span>
-<span class="w">        </span><span class="k">INNER</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">etudiants_concentration</span><span class="w"> </span><span class="n">ec</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">ec</span><span class="p">.</span><span class="n">etudiant_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">id</span>
-<span class="w">            </span><span class="k">INNER</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">concentrations</span><span class="w"> </span><span class="k">c</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="k">c</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ec</span><span class="p">.</span><span class="n">concentration</span>
-<span class="w">    </span><span class="k">WHERE</span><span class="w"> </span><span class="k">c</span><span class="p">.</span><span class="n">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ss">&quot;Technique informatique&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="k">JOIN</span><span class="w"> </span><span class="n">etudiants_concentration</span><span class="w"> </span><span class="n">ec</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">ec</span><span class="p">.</span><span class="n">etudiant_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">id</span>
+<span class="w">    </span><span class="k">JOIN</span><span class="w"> </span><span class="n">concentrations</span><span class="w"> </span><span class="k">c</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="k">c</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ec</span><span class="p">.</span><span class="n">concentration</span>
+<span class="w">    </span><span class="k">WHERE</span><span class="w"> </span><span class="k">c</span><span class="p">.</span><span class="n">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Technique informatique&#39;</span><span class="p">;</span>
 </code></pre></div>
-<p>Ensuite pour se servir de la vue, on n'a qu'à utiliser la vue comme une table :</p>
+<p>Utilisation de la vue :</p>
 <div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span>
 <span class="k">FROM</span><span class="w"> </span><span class="n">etudiants_informatique</span>
 <span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">da</span><span class="p">;</span>
 </code></pre></div>
 <h1 id="modifier-une-vue">Modifier une vue</h1>
-<p>Pour modifier une vue, on peut utiliser la déclaration <code>CREATE OR REPLACE VIEW</code> ou bien <code>ALTER VIEW</code>. Les deux méthodes sont similaires dans leur résultat. On a déjà vu la syntaxe du <code>CREATE OR REPLACE VIEW</code>. Voici un exemple pour le <code>ALTER VIEW</code> :</p>
+<p>Pour modifier une vue, utilisez <code>CREATE OR REPLACE VIEW</code> ou <code>ALTER VIEW</code>. Les deux commandes modifient la vue existante :</p>
 <div class="highlight"><pre><span></span><code><span class="k">ALTER</span><span class="w"> </span><span class="k">VIEW</span><span class="w"> </span><span class="n">nom_view</span><span class="w"> </span><span class="p">[(</span><span class="n">liste_colonne</span><span class="p">)]</span>
-<span class="k">AS</span><span class="w"> </span><span class="n">requête_select</span><span class="p">;;</span>
+<span class="k">AS</span><span class="w"> </span><span class="n">requête_select</span><span class="p">;</span>
 </code></pre></div>
-<p>On ne peut pas modifier le nom de la vue par ces méthodes, pour se faire, on doit utiliser la déclaration <code>RENAME TABLE</code></p>
-<p>Renommer une vue</p>
-<div class="highlight"><pre><span></span><code><span class="k">RENAME</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">vue</span><span class="w"> </span>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Le nom de la vue ne peut pas être modifié directement par <code>ALTER VIEW</code>. Pour renommer une vue, utilisez :</p>
+<div class="highlight"><pre><span></span><code><span class="k">RENAME</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">ancien_nom_vue</span><span class="w"> </span>
 <span class="k">TO</span><span class="w"> </span><span class="n">nouveau_nom_vue</span><span class="p">;</span>
 </code></pre></div>
+</div>
 <h1 id="supprimer-une-vue">Supprimer une vue</h1>
+<p>Pour supprimer une vue :</p>
 <div class="highlight"><pre><span></span><code><span class="k">DROP</span><span class="w"> </span><span class="k">VIEW</span><span class="w"> </span><span class="p">[</span><span class="k">IF</span><span class="w"> </span><span class="k">EXISTS</span><span class="p">]</span><span class="w"> </span><span class="n">nom_vue</span><span class="p">;</span>
 </code></pre></div>
+<p>L'option <code>IF EXISTS</code> permet d'éviter une erreur si la vue spécifiée n'existe pas.</p>
 <p>Source</p>
 <ul>
 <li><a href="https://dev.mysql.com/doc/refman/8.0/en/create-view.html">https://dev.mysql.com/doc/refman/8.0/en/create-view.html</a></li>
@@ -2010,7 +1995,7 @@ Pour terminer, on ajoute une requête select. La requête peut interroger des ta
     <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.tracking", "content.code.copy", "toc.integrate"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version": "S\u00e9lectionner la version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.a7c05c9e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.5cfa9459.min.js"></script>
       
         <script src="../../javascript/alltarget.js"></script>
       

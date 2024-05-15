@@ -18,7 +18,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.21">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.22">
     
     
       
@@ -26,7 +26,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.66ac8b77.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.732c4fb1.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
@@ -612,6 +612,27 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modelisation/classes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Diagramme de classes UML
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1091,53 +1112,53 @@
   
   
     <li class="md-nav__item">
+      <a href="../../python/venv/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Environnement virtuel
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python/pip/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PIP
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../python/mysql_connector/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     Connexion à MySQL
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../python/libpyqt/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    pyQT5
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../python/qtdesigner/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    qtDesigner
   </span>
   
 
@@ -1313,7 +1334,7 @@
         
   
   <span class="md-ellipsis">
-    Exercice 06 - Exercice sur les VIEWs
+    Exercice 06 - Exercice sur les vues
   </span>
   
 
@@ -1334,7 +1355,7 @@
         
   
   <span class="md-ellipsis">
-    Exercice 07 - Exercice sur les TRIGGERs
+    Exercice 07 - Exercice sur les déclencheurs
   </span>
   
 
@@ -1498,48 +1519,6 @@
   
   <span class="md-ellipsis">
     Exercice 12 - pyCRUD
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../ex13_enonce/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Exercice 13 - pyQT5
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../ex14_enonce/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Exercice 14 - qtDesigner
   </span>
   
 
@@ -1924,7 +1903,7 @@
 <li>Téléchargez et exécutez le script sql disponible ici : <a href="../../ressources/ex10_create_tables.sql">ex10_create_tables</a>. </li>
 </ul>
 <h2 id="premiere-question">Première question</h2>
-<p>Dans la table <em>houblon</em> de la base de données, il y a un champ <em>pays</em> qui contient le nom du pays producteur du type de houblon.  </p>
+<p>Dans la table <em>houblons</em> de la base de données, il y a un champ <em>pays</em> qui contient le nom du pays producteur du type de houblon.  </p>
 <p><strong>Créez une procédure stockée avec curseur qui va lister tous les pays présents dans la table.</strong></p>
 <ul>
 <li>Le format du résultat est un string avec la liste des pays séparés par un point-virgule ("Canada;États-Unis")</li>
@@ -1937,23 +1916,23 @@
 </code></pre></div></td></tr></table></div></p>
 <p>Créez un script SQL nommée <strong>NomPrenom_ex10_1.sql</strong> qui va contenir la création de la procédure et un test à la fin de votre procédure.</p>
 <h2 id="deuxieme-question">Deuxième question</h2>
-<p>Encore dans la table <em>houblon</em>, il y a un champ <em>similitude</em> qui contient une liste de houblon similaire au houblon sélectionné. Le but est de pouvoir proposer des houblons qui s'accompagnent bien ensemble. On va extraire cette information dans une nouvelle table.</p>
+<p>Encore dans la table <em>houblons</em>, il y a un champ <em>similitude</em> qui contient une liste de houblons similaires au houblon sélectionné. Le but est de pouvoir proposer des houblons qui s'accompagnent bien ensemble. On va extraire cette information dans de nouvelles tables.</p>
 <p>Créez un script SQL nommée <strong>NomPrenom_ex10_2.sql</strong> qui va contenir l'ensemble des éléments de votre réponse.</p>
 <p><strong>Créez les tables selon le diagramme UML suivant</strong></p>
-<p><img alt="ex10_01.png" src="../../images/ex10_01.png" /></p>
+<p><img alt="ex10_01" src="../../images/ex10_01.svg" /></p>
 <p><strong>Créez une procédure stockée selon les critères suivants:</strong></p>
 <ul>
 <li>La procédure doit utiliser un curseur</li>
 <li>Créez une transaction qui sera complête uniquement si le traitement se déroule bien jusqu'à la fin</li>
-<li>Supprimez le contenu des tables <em>similitude</em> et <em>similitude_log</em></li>
-<li>Pour chaque ligne de la table <em>houblon</em>, isoler les valeurs de la colonne <em>similitude</em> (elles sont séparées par des virgules)</li>
+<li>Supprimez le contenu des tables <em>similitudes</em> et <em>similitude_logs</em></li>
+<li>Pour chaque ligne de la table <em>houblons</em>, isoler les valeurs de la colonne <em>similitude</em> (elles sont séparées par des virgules)</li>
 <li>Pour chaque valeur, déterminez si un houblon du même nom existe déjà.</li>
-<li>Si oui, ajoutez dans la nouvelle table similitude le id du houblon de la ligne et le id du houblon de la valeur trouvée.</li>
-<li>Si non, ajoutez dans la table <em>similitude_log</em> le id du houblon de la ligne et la valeur en texte.</li>
+<li>Si oui, ajoutez dans la nouvelle table <em>similitudes</em> le id du houblon de la ligne et le id du houblon de la valeur trouvée.</li>
+<li>Si non, ajoutez dans la table <em>similitude_logs</em> le id du houblon de la ligne et la valeur en texte.</li>
 <li>Si on rencontre une erreur de type <strong>SQLEXCEPTION</strong> le traitement doit s'arrêter et les modifications annulées. Affichez aussi un message d'erreur à l'usager.</li>
 </ul>
-<p>Pour tester votre procédure, lancez là et ensuite faites une requête sur le houblon "Admiral" pour sortir ses houblons similaires depuis la table similitude. Vous devriez avoir comme résultat les houblons "Target" et "Challenger".</p>
-<p><strong>Je vais récupérer vos deux scripts SQL dans le devoir sur Teams</strong></p>
+<p>Pour tester votre procédure, lancez-là et ensuite faites une requête sur le houblon "Admiral" pour sortir ses houblons similaires depuis la table similitude. Vous devriez avoir comme résultat les houblons "Target" et "Challenger".</p>
+<p><strong>Déposez vos deux scripts SQL dans le devoir sur Teams</strong></p>
 
 
 
@@ -2003,7 +1982,7 @@
     <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.tracking", "content.code.copy", "toc.integrate"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version": "S\u00e9lectionner la version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.a7c05c9e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.5cfa9459.min.js"></script>
       
         <script src="../../javascript/alltarget.js"></script>
       

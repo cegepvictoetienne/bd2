@@ -14,11 +14,11 @@
         <link rel="prev" href="../ex11_enonce/">
       
       
-        <link rel="next" href="../ex13_enonce/">
+        <link rel="next" href="../../evaluations/resume/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.21">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.22">
     
     
       
@@ -26,7 +26,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.66ac8b77.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.732c4fb1.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
@@ -612,6 +612,27 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modelisation/classes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Diagramme de classes UML
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1091,53 +1112,53 @@
   
   
     <li class="md-nav__item">
+      <a href="../../python/venv/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Environnement virtuel
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python/pip/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PIP
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../python/mysql_connector/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     Connexion à MySQL
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../python/libpyqt/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    pyQT5
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../python/qtdesigner/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    qtDesigner
   </span>
   
 
@@ -1313,7 +1334,7 @@
         
   
   <span class="md-ellipsis">
-    Exercice 06 - Exercice sur les VIEWs
+    Exercice 06 - Exercice sur les vues
   </span>
   
 
@@ -1334,7 +1355,7 @@
         
   
   <span class="md-ellipsis">
-    Exercice 07 - Exercice sur les TRIGGERs
+    Exercice 07 - Exercice sur les déclencheurs
   </span>
   
 
@@ -1553,48 +1574,6 @@
   
 </nav>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../ex13_enonce/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Exercice 13 - pyQT5
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../ex14_enonce/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Exercice 14 - qtDesigner
-  </span>
-  
-
-      </a>
     </li>
   
 
@@ -1970,7 +1949,7 @@
 
 
 <h1 id="exercice-12-pycrud">Exercice 12 - pyCRUD</h1>
-<p>Comme premier exercice avec Python, on va créer une application console simple qui va couvrir sommairement les opération CRUD. Nous allons utiliser la base de données credit_social. Je vous laisse aller pour l'apprentissage de Python et des notions dont vous allez avoir besoin (afficher à l'écran, lire une saisie clavier, boucle, fonction, module?).</p>
+<p>Comme premier exercice avec Python, on va créer une application console simple qui va couvrir sommairement les opération CRUD. Nous allons utiliser la base de données credit_social. Je vous laisse aller pour l'apprentissage de Python et des notions dont vous allez avoir besoin (afficher à l'écran, lire une saisie clavier, boucle, fonction, module).</p>
 <h2 id="creation-du-menu">Création du menu</h2>
 <p>Au lancement du programme, un menu s'affichera avec les options suivantes : </p>
 <ol>
@@ -1980,8 +1959,20 @@
 <li>Supprimer un citoyen</li>
 <li>Quitter</li>
 </ol>
-<p>Exemple de menu</p>
-<p><img alt="ex12_01" class="center shadow" src="../../images/ex12_01.png" /></p>
+<p>Exemple de menu
+<div class="highlight"><pre><span></span><code><span class="go"> =================</span>
+<span class="go"> = Crédit social =</span>
+<span class="go"> =================</span>
+
+<span class="go"> Menu principal</span>
+<span class="go"> 1- Ajouter un nouveau citoyen</span>
+<span class="go"> 2- Obtenir les informations d&#39;un citoyen</span>
+<span class="go"> 3- Modifier un citoyen</span>
+<span class="go"> 4- Supprimer un citoyen</span>
+<span class="go"> 5- Quitter</span>
+
+<span class="go"> Veuillez choisir une option :</span>
+</code></pre></div></p>
 <h2 id="options-du-menu">Options du menu</h2>
 <h3 id="1-ajouter-un-citoyen">1. Ajouter un citoyen</h3>
 <p>Demandez à l'usager les informations suivantes sur le citoyen à ajouter : </p>
@@ -1993,8 +1984,24 @@
 <li>ville</li>
 <li>pin</li>
 </ul>
-<p>Les champs classe_id et credit_initial seront "forcés" à respectivement 4 et 500. Une fois l'ajout fait, affichez un message de confirmation et revenez au menu principal.</p>
-<p><img alt="ex12_02" class="center shadow" src="../../images/ex12_02.png" /></p>
+<p>Utiliser les valeurs suivantes pour les autres champs :
+- classe_id : 4
+- credit_initial : 500</p>
+<p>Une fois l'ajout fait, affichez un message de confirmation et revenez au menu principal.
+<div class="highlight"><pre><span></span><code><span class="go"> ==============================</span>
+<span class="go"> = Ajouter un nouveau citoyen =</span>
+<span class="go"> ==============================</span>
+
+<span class="go"> Veuillez nous donner les informations suivantes au sujet du nouveau citoyen</span>
+<span class="go"> Prénom : Michael</span>
+<span class="go"> Nom : Scott</span>
+<span class="go"> Numéro civique : 1725</span>
+<span class="go"> Adresse : Slough Avenue</span>
+<span class="go"> Ville : Scranton</span>
+<span class="go"> PIN : db123fe-00xx-fagsv</span>
+<span class="go"> Le citoyen Michael Scott - id [50001] a été ajouté avec succès</span>
+<span class="go"> Appuyez sur une touche pour revenir au menu...</span>
+</code></pre></div></p>
 <h3 id="2-obtenir-les-informations-dun-citoyen">2. Obtenir les informations d'un citoyen</h3>
 <p>Demandez à l'usager de saisir le id du citoyen. Affichez ensuite les informations suivantes à l'écran : </p>
 <ul>
@@ -2003,13 +2010,43 @@
 <li>Score de crédit social</li>
 </ul>
 <p>Ensuite revenez au menu principal.</p>
-<p><img alt="ex12_03" class="center shadow" src="../../images/ex12_03.png" /></p>
+<div class="highlight"><pre><span></span><code><span class="go"> =========================================</span>
+<span class="go"> = Obtenir les informations d&#39;un citoyen =</span>
+<span class="go"> =========================================</span>
+
+<span class="go"> Entrez le id du citoyen : 50001</span>
+<span class="go"> &gt; Michael Scott - Classe Delta - Crédit social : 500</span>
+
+<span class="go"> Appuyez sur une touche pour revenir au menu...</span>
+</code></pre></div>
 <h3 id="3-modifier-un-citoyen">3. Modifier un citoyen</h3>
 <p>Permettre en saisissant le id d'un citoyen de modifier son adresse ( no_civique, adresse, ville). Affichez un message de confirmation et revenez au menu principal.</p>
-<p><img alt="ex12_04" class="center shadow" src="../../images/ex12_04.png" /></p>
+<div class="highlight"><pre><span></span><code><span class="go"> =======================</span>
+<span class="go"> = Modifier un citoyen =</span>
+<span class="go"> =======================</span>
+
+<span class="go"> Veuillez nous donner les informations suivantes au sujet du  citoyen à modifier</span>
+<span class="go"> ID du citoyen : 50001</span>
+<span class="go"> Numéro civique : 1725</span>
+<span class="go"> Adresse : Slough Avenue</span>
+<span class="go"> Ville : Scranton, PA</span>
+<span class="go"> Le citoyen Michael Scott - id [50001] a été modifié avec succès</span>
+
+<span class="go"> Appuyez sur une touche pour revenir au menu...</span>
+</code></pre></div>
 <h3 id="4-supprimer-un-citoyen">4. Supprimer un citoyen</h3>
-<p>Supprimez un citoyen de la base de données avec son id. Attention présentement dans la base de données il n'y a aucune clés étrangères entre les tables citoyen, citoyen_evenement et evenement. On peut donc supprimer un citoyen sans supprimer les évènements auxquelles il a participé. Il faudrait s'assurer qu'en supprimant un citoyen, ses évènements soient aussi supprimé. À vous de choisir l'approche que vous voulez (le faire dans la requête suppression, supprimer en cascade depuis une clé étrangère, etc.)</p>
-<p><img alt="ex12_05" class="center shadow" src="../../images/ex12_05.png" /></p>
+<p>Supprimez un citoyen de la base de données avec son id. Attention présentement dans la base de données il n'y a aucune clés étrangères entre les tables <em>citoyens</em>, <em>citoyens_evenements</em> et <em>evenements</em>. On peut donc supprimer un citoyen sans supprimer les évènements auxquelles il a participé. Il faudrait s'assurer qu'en supprimant un citoyen, ses évènements soient aussi supprimés. À vous de choisir l'approche que vous voulez (le faire dans la requête suppression, supprimer en cascade depuis une clé étrangère, etc.)</p>
+<div class="highlight"><pre><span></span><code><span class="go"> ========================</span>
+<span class="go"> = Supprimer un citoyen =</span>
+<span class="go"> ========================</span>
+
+<span class="go"> Veuillez nous donner les informations suivantes au sujet du  citoyen à supprimer</span>
+<span class="go"> ID du citoyen : 50001</span>
+
+<span class="go"> Le citoyen Michael Scott - id [50001] a été supprimé avec succès</span>
+
+<span class="go"> Appuyez sur une touche pour revenir au menu...</span>
+</code></pre></div>
 <h3 id="5-quitter">5. Quitter</h3>
 <p>On quitte la boucle et le programme.</p>
 
@@ -2061,7 +2098,7 @@
     <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.tracking", "content.code.copy", "toc.integrate"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version": "S\u00e9lectionner la version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.a7c05c9e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.5cfa9459.min.js"></script>
       
         <script src="../../javascript/alltarget.js"></script>
       

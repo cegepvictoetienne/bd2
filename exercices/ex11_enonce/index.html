@@ -18,7 +18,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.21">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.22">
     
     
       
@@ -26,7 +26,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.66ac8b77.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.732c4fb1.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
@@ -612,6 +612,27 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modelisation/classes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Diagramme de classes UML
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1091,53 +1112,53 @@
   
   
     <li class="md-nav__item">
+      <a href="../../python/venv/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Environnement virtuel
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python/pip/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PIP
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../python/mysql_connector/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     Connexion à MySQL
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../python/libpyqt/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    pyQT5
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../python/qtdesigner/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    qtDesigner
   </span>
   
 
@@ -1313,7 +1334,7 @@
         
   
   <span class="md-ellipsis">
-    Exercice 06 - Exercice sur les VIEWs
+    Exercice 06 - Exercice sur les vues
   </span>
   
 
@@ -1334,7 +1355,7 @@
         
   
   <span class="md-ellipsis">
-    Exercice 07 - Exercice sur les TRIGGERs
+    Exercice 07 - Exercice sur les déclencheurs
   </span>
   
 
@@ -1507,48 +1528,6 @@
   
   <span class="md-ellipsis">
     Exercice 12 - pyCRUD
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../ex13_enonce/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Exercice 13 - pyQT5
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../ex14_enonce/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Exercice 14 - qtDesigner
   </span>
   
 
@@ -1928,7 +1907,7 @@
 
 
 <h1 id="exercice-11-gestion-des-usagers">Exercice 11 - Gestion des usagers</h1>
-<p>Pour cet exercice nous allons utiliser la base de données <strong>credit_social</strong> (voir le script de création dans l'<a href="../ex09_enonce/">exercice 9</a>).Vous devez me produire un script SQL qui va effectuer les opérations suivantes. Assurez-vous de tester que les permissions sont bien appliquées. Vous pouvez ajouter les réponses des sections "e" dans le même script en commentaire.</p>
+<p>Pour cet exercice nous allons utiliser la base de données <strong>credit_social</strong> (voir le script de création dans l'<a href="../ex09_enonce/">exercice 9</a>).Vous devez produire un script SQL qui va effectuer les opérations suivantes. Assurez-vous de tester que les permissions sont bien appliquées. Vous pouvez ajouter les réponses des sections "e" dans le même script en commentaire.</p>
 <h2 id="1-usager-mike">1. Usager mike</h2>
 <p>a) Créez un usager avec les informations suivantes : </p>
 <ul>
@@ -1941,12 +1920,12 @@
 <ul>
 <li>Il a la permission de tout faire dans la base de données credit_social.</li>
 <li>Il peut aussi ajouter des permissions à d'autre usagers.</li>
-<li>Il peut créer des usagers pour ==toutes les bases de données==, pas seulement credit_social.</li>
+<li>Il peut créer des usagers pour <em>toutes les bases de données</em>, pas seulement credit_social.</li>
 </ul>
 <p>d) Attribuez à l'usager <code>mike</code> le rôle <code>alpha</code> et assurez-vous que le rôles est activé automatiquement lors de la connexion de l'usager</p>
-<p>e) Testez les éléments suivants</p>
+<p>e) Testez les éléments suivants : </p>
 <ul>
-<li>Inscrivez le résultat d'une requête SELECT sur une table d'une autre base de données que credit_social. Par exemple <strong>bd2_ex10</strong>.</li>
+<li>Inscrivez le résultat d'une requête SELECT sur une table d'une autre base de données que credit_social. Par exemple <strong>bd2_ex10</strong>.  </li>
 <li>Faites la création de l'usager suivant (le point #2) avec cet usager. Est-ce que ça fonctionne?</li>
 </ul>
 <h2 id="2-usager-john">2. Usager john</h2>
@@ -1959,15 +1938,15 @@
 <p>b) Creez un rôle nommée <code>beta</code></p>
 <p>c) Donnez les permissions suivantes à ce rôle : </p>
 <ul>
-<li>Il peut faire des requêtes SELECT, UPDATE, INSERT sur les tables citoyen et evenement de la base de données credit_social.</li>
+<li>Il peut faire des requêtes SELECT, UPDATE, INSERT sur les tables <em>citoyens</em> et <em>evenements</em> de la base de données credit_social.</li>
 <li>Il peut exécuter toutes les procédures stockées.</li>
 </ul>
 <p>d) Attribuez à l'usager <code>john</code> le rôle <code>beta</code></p>
-<p>e) Testez les éléments suivants</p>
+<p>e) Testez les éléments suivants :  </p>
 <ul>
 <li>Essayez de supprimer l'événement avec le id 6 de la table evenement. Inscrivez la requête effectuée et le résultat.</li>
 <li>Exécutez une procédure stockée de la base de données credit_social, par exemple <strong>liste_manifestant()</strong>. Est-ce que ça fonctionne?</li>
-<li>Modifiez le crédit initial du citoyen avec le id 2107 pour 800. Inscrivez la requête effectuée pour la mise à jour et pour valider que la valeur a été modifié.</li>
+<li>Modifiez le crédit initial du citoyen avec le id 2107 pour 800. Inscrivez la requête effectuée pour la mise à jour et pour valider que la valeur a été modifiée.</li>
 </ul>
 <h2 id="3-usager-bob">3. Usager bob</h2>
 <p>a) Créer un usager avec les informations suivantes : </p>
@@ -1979,11 +1958,11 @@
 <p>b) Creez un rôle nommée <code>gamma</code></p>
 <p>c) Donnez les permissions suivantes à ce rôle : </p>
 <ul>
-<li>Il peut faire des requêtes SELECT sur les colonnes nom, prenom et pin de la table citoyen de la base de données credit_social.</li>
-<li>Il peut exécuter uniquement la procédure stockée update_classe de la base de données credit_social</li>
+<li>Il peut faire des requêtes SELECT sur les colonnes nom, prenom et pin de la table <em>citoyens</em> de la base de données credit_social.</li>
+<li>Il peut exécuter uniquement la procédure stockée <em>update_classe</em> de la base de données credit_social.</li>
 </ul>
 <p>d) Attribuez à l'usager <code>bob</code> le rôle <code>gamma</code></p>
-<p>e) Testez les éléments suivants</p>
+<p>e) Testez les éléments suivants :  </p>
 <ul>
 <li>Êtes-vous capable de donner le nom et prénom du citoyen avec le id 1111? Sinon pourquoi?</li>
 <li>Faites les modifications nécessaires pour en être capable. Inscrivez l'opération effectuée.</li>
@@ -2039,7 +2018,7 @@
     <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.tracking", "content.code.copy", "toc.integrate"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version": "S\u00e9lectionner la version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.a7c05c9e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.5cfa9459.min.js"></script>
       
         <script src="../../javascript/alltarget.js"></script>
       

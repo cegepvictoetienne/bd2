@@ -18,15 +18,15 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.21">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.22">
     
     
       
-        <title>Exercice 07 - Exercice sur les TRIGGERs - Cours Bases de donn&eacute;es 2</title>
+        <title>Exercice 07 - Exercice sur les déclencheurs - Cours Bases de donn&eacute;es 2</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.66ac8b77.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.732c4fb1.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
@@ -117,7 +117,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#exercice-7-triggers" class="md-skip">
+        <a href="#exercice-7-declencheurs" class="md-skip">
           Aller au contenu
         </a>
       
@@ -153,7 +153,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Exercice 07 - Exercice sur les TRIGGERs
+              Exercice 07 - Exercice sur les déclencheurs
             
           </span>
         </div>
@@ -603,6 +603,27 @@
   
   <span class="md-ellipsis">
     Normalisation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modelisation/classes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Diagramme de classes UML
   </span>
   
 
@@ -1091,53 +1112,53 @@
   
   
     <li class="md-nav__item">
+      <a href="../../python/venv/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Environnement virtuel
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python/pip/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PIP
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../python/mysql_connector/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     Connexion à MySQL
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../python/libpyqt/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    pyQT5
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../python/qtdesigner/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    qtDesigner
   </span>
   
 
@@ -1313,7 +1334,7 @@
         
   
   <span class="md-ellipsis">
-    Exercice 06 - Exercice sur les VIEWs
+    Exercice 06 - Exercice sur les vues
   </span>
   
 
@@ -1343,7 +1364,7 @@
           
   
   <span class="md-ellipsis">
-    Exercice 07 - Exercice sur les TRIGGERs
+    Exercice 07 - Exercice sur les déclencheurs
   </span>
   
 
@@ -1354,7 +1375,7 @@
         
   
   <span class="md-ellipsis">
-    Exercice 07 - Exercice sur les TRIGGERs
+    Exercice 07 - Exercice sur les déclencheurs
   </span>
   
 
@@ -1385,13 +1406,13 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#triggers-a-creer" class="md-nav__link">
+  <a href="#declencheurs-a-creer" class="md-nav__link">
     <span class="md-ellipsis">
-      Triggers à créer
+      Déclencheurs à créer
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Triggers à créer">
+    <nav class="md-nav" aria-label="Déclencheurs à créer">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1540,48 +1561,6 @@
   
   <span class="md-ellipsis">
     Exercice 12 - pyCRUD
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../ex13_enonce/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Exercice 13 - pyQT5
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../ex14_enonce/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Exercice 14 - qtDesigner
   </span>
   
 
@@ -1960,14 +1939,14 @@
   
 
 
-<h1 id="exercice-7-triggers">Exercice 7 - Triggers</h1>
+<h1 id="exercice-7-declencheurs">Exercice 7 - Déclencheurs</h1>
 <h2 id="preparation-des-donnees">Préparation des données</h2>
 <ul>
 <li>Importer le script sql <strong>ex07_create_tables.sql</strong> disponible <a href="../../ressources/ex07_create_tables.sql">ici</a></li>
 </ul>
-<h2 id="triggers-a-creer">Triggers à créer</h2>
+<h2 id="declencheurs-a-creer">Déclencheurs à créer</h2>
 <h3 id="question-1">Question #1</h3>
-<p>Pour chaque modification à la table <strong>resultat</strong>, insérez les informations nécessaires dans la table <strong>resultat_log</strong> APRÈS l'exécution de la requête INSERT, UPDATE et DELETE. Attention, lors d'un UPDATE, ajoutez les informations seulement si la colonne <strong>resultat_ms</strong> a été modifié.</p>
+<p>Pour chaque modification à la table <strong>resultats</strong>, insérez les informations nécessaires dans la table <strong>resultats_log</strong> APRÈS l'exécution de la requête INSERT, UPDATE et DELETE. Attention, lors d'un UPDATE, ajoutez les informations seulement si la colonne <strong>resultat_ms</strong> a été modifié.</p>
 <table>
 <thead>
 <tr>
@@ -2011,11 +1990,11 @@
 </tbody>
 </table>
 <h3 id="question-2">Question #2</h3>
-<p>Quand on ajoute un résultat, validez que la valeur de la colonne cree_par existe dans la table <strong>usager</strong>. Si la valeur est invalide, empêchez la requête INSERT et retournez un message d'erreurs. La valeur à insérer dans le champ cree_par est le id d'un usager de la table <strong>usager</strong>. </p>
+<p>Quand un résultat est inséré, validez que la valeur de la colonne cree_par existe dans la table <strong>usagers</strong>. Si la valeur est invalide, empêchez la requête INSERT et retournez un message d'erreur. La valeur à insérer dans le champ cree_par est le id d'un usager de la table <strong>usagers</strong>. </p>
 <h3 id="question-3">Question #3</h3>
 <p>Effectuez les mêmes opérations que la question #2 quand on modifie un résultat mais sur la colonne modifie_par.</p>
 <h3 id="question-4">Question #4</h3>
-<p>AVANT l'insertion ou la modification de la description d'une épreuve dans la table epreuve_type, valider que la description n'est pas déjà utilisé. Si oui, modifiez la valeur à ajouter ou modifier en ajoutant (x) à la description. ( x vaudra le nombre de fois que le nom se retrouve dans la table -1 ) Ex. On veut insérer Marathon comme valeur mais elle est déjà présente comme description dans la table. On va utiliser Marathon (1) comme nouvelle valeur à insérer.</p>
+<p>AVANT l'insertion ou la modification de la description d'une épreuve dans la table epreuves_types, valider que la description n'est pas déjà utilisée. Si oui, modifiez la valeur à ajouter ou modifier en ajoutant (x) à la description. ( x vaudra le nombre de fois que le nom se retrouve dans la table -1 ) Ex. On veut insérer Marathon comme valeur mais elle est déjà présente comme description dans la table. On va utiliser Marathon (1) comme nouvelle valeur à insérer.</p>
 
 
 
@@ -2065,7 +2044,7 @@
     <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.tracking", "content.code.copy", "toc.integrate"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version": "S\u00e9lectionner la version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.a7c05c9e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.5cfa9459.min.js"></script>
       
         <script src="../../javascript/alltarget.js"></script>
       

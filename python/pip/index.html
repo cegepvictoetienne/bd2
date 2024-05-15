@@ -8,25 +8,25 @@
       
       
       
-        <link rel="canonical" href="https://bd2.kerzo.ca/python/libpyqt/">
+        <link rel="canonical" href="https://bd2.kerzo.ca/python/pip/">
       
       
-        <link rel="prev" href="../mysql_connector/">
+        <link rel="prev" href="../venv/">
       
       
-        <link rel="next" href="../qtdesigner/">
+        <link rel="next" href="../mysql_connector/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.21">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.22">
     
     
       
-        <title>pyQT5 - Cours Bases de donn&eacute;es 2</title>
+        <title>PIP - Cours Bases de donn&eacute;es 2</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.66ac8b77.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.732c4fb1.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
@@ -117,7 +117,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#pyqt5" class="md-skip">
+        <a href="#pip-gestionnaire-de-paquets-python" class="md-skip">
           Aller au contenu
         </a>
       
@@ -153,7 +153,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              pyQT5
+              PIP
             
           </span>
         </div>
@@ -603,6 +603,27 @@
   
   <span class="md-ellipsis">
     Normalisation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modelisation/classes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Diagramme de classes UML
   </span>
   
 
@@ -1096,11 +1117,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../mysql_connector/" class="md-nav__link">
+      <a href="../venv/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Connexion à MySQL
+    Environnement virtuel
   </span>
   
 
@@ -1130,7 +1151,7 @@
           
   
   <span class="md-ellipsis">
-    pyQT5
+    PIP
   </span>
   
 
@@ -1141,7 +1162,7 @@
         
   
   <span class="md-ellipsis">
-    pyQT5
+    PIP
   </span>
   
 
@@ -1163,53 +1184,56 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#installation" class="md-nav__link">
+  <a href="#introduction-a-pip" class="md-nav__link">
     <span class="md-ellipsis">
-      Installation
+      Introduction à PIP
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#documentation" class="md-nav__link">
+  <a href="#principe-des-paquets" class="md-nav__link">
     <span class="md-ellipsis">
-      Documentation
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Documentation">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#tutoriel" class="md-nav__link">
-    <span class="md-ellipsis">
-      Tutoriel
+      Principe des paquets
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#disposition-de-notre-application" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#comment-utiliser-pip" class="md-nav__link">
     <span class="md-ellipsis">
-      Disposition de notre application
+      Comment utiliser PIP?
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#les-widgets" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#utilisation-de-requirementstxt-pour-linstallation-des-dependances" class="md-nav__link">
     <span class="md-ellipsis">
-      Les Widgets
+      Utilisation de requirements.txt pour l'installation des dépendances
     </span>
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#bonnes-pratiques-avec-pip" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bonnes pratiques avec PIP
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conclusion
+    </span>
+  </a>
   
 </li>
       
@@ -1229,11 +1253,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../qtdesigner/" class="md-nav__link">
+      <a href="../mysql_connector/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    qtDesigner
+    Connexion à MySQL
   </span>
   
 
@@ -1404,7 +1428,7 @@
         
   
   <span class="md-ellipsis">
-    Exercice 06 - Exercice sur les VIEWs
+    Exercice 06 - Exercice sur les vues
   </span>
   
 
@@ -1425,7 +1449,7 @@
         
   
   <span class="md-ellipsis">
-    Exercice 07 - Exercice sur les TRIGGERs
+    Exercice 07 - Exercice sur les déclencheurs
   </span>
   
 
@@ -1531,48 +1555,6 @@
   
   <span class="md-ellipsis">
     Exercice 12 - pyCRUD
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../exercices/ex13_enonce/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Exercice 13 - pyQT5
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../exercices/ex14_enonce/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Exercice 14 - qtDesigner
   </span>
   
 
@@ -1951,29 +1933,114 @@
   
 
 
-<h1 id="pyqt5">pyQT5</h1>
-<p>C'est une librairie qui va nous servir à créer des interfaces graphiques pour nos programmes python</p>
-<h2 id="installation">Installation</h2>
-<p>En ligne de commande </p>
-<div class="highlight"><pre><span></span><code>pip install PyQt5
-</code></pre></div>
-<h2 id="documentation">Documentation</h2>
-<h3 id="tutoriel">Tutoriel</h3>
+<h1 id="pip-gestionnaire-de-paquets-python">PIP - Gestionnaire de paquets Python</h1>
+<h2 id="introduction-a-pip">Introduction à PIP</h2>
+<p>PIP (Pip Installs Packages) est le gestionnaire de paquets officiel pour Python. Il permet aux développeurs d'installer et de gérer des bibliothèques et des dépendances supplémentaires qui ne sont pas distribuées dans la bibliothèque standard de Python.</p>
+<h2 id="principe-des-paquets">Principe des paquets</h2>
+<ol>
+<li>
+<p><strong>Définition d'un paquet</strong> :</p>
 <ul>
-<li><a href="https://www.pythonguis.com/courses/start/" target="_blank">https://www.pythonguis.com/courses/start/</a></li>
-<li><a href="https://www.tutorialspoint.com/pyqt5/index.htm" target="_blank">https://www.tutorialspoint.com/pyqt5/index.html</a></li>
-<li><a href="https://build-system.fman.io/pyqt5-tutorial" target="_blank">https://build-system.fman.io/pyqt5-tutorial</a></li>
+<li>Un paquet en Python est une collection de modules qui peut inclure des bibliothèques compilées, des modules Python, des fichiers de données, etc.</li>
+<li>Les paquets sont conçus pour offrir une fonctionnalité spécifique et peuvent être réutilisés dans différents projets.</li>
 </ul>
-<h3 id="disposition-de-notre-application">Disposition de notre application</h3>
+</li>
+<li>
+<p><strong>Avantages des paquets</strong> :</p>
 <ul>
-<li><a href="https://www.pythonguis.com/tutorials/pyqt-layouts/" target="_blank">https://www.pythonguis.com/tutorials/pyqt-layouts/</a></li>
-<li>Le gridLayout plus en détail : <a href="https://www.pythontutorial.net/pyqt/pyqt-qgridlayout/" target="_blank">https://www.pythontutorial.net/pyqt/pyqt-qgridlayout/</a></li>
+<li><strong>Réutilisabilité</strong> : Les paquets peuvent être utilisés dans plusieurs projets sans avoir à réécrire le code.</li>
+<li><strong>Organisation</strong> : Ils aident à garder le code organisé et modulaire.</li>
+<li><strong>Communauté</strong> : Beaucoup de paquets sont développés et maintenus par la communauté, ce qui enrichit les ressources disponibles pour tous les développeurs Python.</li>
 </ul>
-<h3 id="les-widgets">Les Widgets</h3>
+</li>
+</ol>
+<h2 id="comment-utiliser-pip">Comment utiliser PIP?</h2>
+<ol>
+<li>
+<p><strong>Installer PIP</strong> :</p>
 <ul>
-<li><a href="https://www.tutorialspoint.com/pyqt/pyqt_basic_widgets.htm" target="_blank">https://www.tutorialspoint.com/pyqt/pyqt_basic_widgets.htm</a></li>
-<li><a href="https://www.pythonguis.com/tutorials/pyqt-basic-widgets/" target="_blank">https://www.pythonguis.com/tutorials/pyqt-basic-widgets/</a></li>
+<li>PIP est généralement installé par défaut avec Python. Si nécessaire, il peut être installé ou mis à jour via :
+ <div class="highlight"><pre><span></span><code>python<span class="w"> </span>-m<span class="w"> </span>ensurepip<span class="w"> </span>--upgrade
+</code></pre></div></li>
 </ul>
+</li>
+<li>
+<p><strong>Installer des paquets</strong> :</p>
+<ul>
+<li>Pour installer un paquet via PIP :
+ <div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>nom_paquet
+</code></pre></div></li>
+<li>Pour installer une version spécifique d'un paquet :
+ <div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span><span class="nv">nom_paquet</span><span class="o">==</span>version
+</code></pre></div></li>
+</ul>
+</li>
+<li>
+<p><strong>Lister les paquets installés</strong> :</p>
+<ul>
+<li>Pour voir tous les paquets installés dans l'environnement Python actif :
+ <div class="highlight"><pre><span></span><code>pip<span class="w"> </span>list
+</code></pre></div></li>
+</ul>
+</li>
+<li>
+<p><strong>Mettre à jour et supprimer des paquets</strong> :</p>
+<ul>
+<li>Mettre à jour un paquet :
+ <div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>nom_paquet
+</code></pre></div></li>
+<li>Supprimer un paquet :
+ <div class="highlight"><pre><span></span><code>pip<span class="w"> </span>uninstall<span class="w"> </span>nom_paquet
+</code></pre></div></li>
+</ul>
+</li>
+</ol>
+<h2 id="utilisation-de-requirementstxt-pour-linstallation-des-dependances">Utilisation de <code>requirements.txt</code> pour l'installation des dépendances</h2>
+<ol>
+<li>
+<p><strong>Création de <code>requirements.txt</code></strong> :</p>
+<ul>
+<li>Ce fichier contient une liste de paquets nécessaires pour le projet, souvent avec les versions spécifiques pour garantir la compatibilité.</li>
+<li>Le format standard est <code>nom_paquet==version</code>.</li>
+<li>Exemple de contenu pour <code>requirements.txt</code> :
+ <div class="highlight"><pre><span></span><code>flask==1.1.2
+requests==2.23.0
+numpy==1.18.5
+</code></pre></div></li>
+</ul>
+</li>
+<li>
+<p><strong>Installer les dépendances avec <code>requirements.txt</code></strong> :</p>
+<ul>
+<li>Pour installer toutes les dépendances listées dans le fichier :
+ <div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
+</code></pre></div></li>
+</ul>
+</li>
+</ol>
+<h2 id="bonnes-pratiques-avec-pip">Bonnes pratiques avec PIP</h2>
+<ul>
+<li>
+<p><strong>Utiliser des environnements virtuels</strong> :</p>
+<ul>
+<li>Toujours utiliser PIP à l'intérieur d'un environnement virtuel pour éviter les conflits entre les dépendances des différents projets.</li>
+</ul>
+</li>
+<li>
+<p><strong>Garder <code>requirements.txt</code> à jour</strong> :</p>
+<ul>
+<li>Mettre à jour régulièrement <code>requirements.txt</code> pour inclure les nouvelles dépendances et supprimer celles qui ne sont plus utilisées.</li>
+</ul>
+</li>
+<li>
+<p><strong>Sécurité</strong> :</p>
+<ul>
+<li>Faire attention aux paquets que vous installez. Privilégier les paquets bien maintenus et reconnus pour éviter les problèmes de sécurité.</li>
+</ul>
+</li>
+</ul>
+<h2 id="conclusion">Conclusion</h2>
+<p>PIP est un outil essentiel pour tout développeur Python, simplifiant la gestion des dépendances et facilitant le partage de code entre projets. En utilisant PIP et <code>requirements.txt</code>, les développeurs peuvent assurer une gestion efficace et sécurisée des bibliothèques externes.</p>
 
 
 
@@ -2023,7 +2090,7 @@
     <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.tracking", "content.code.copy", "toc.integrate"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version": "S\u00e9lectionner la version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.a7c05c9e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.5cfa9459.min.js"></script>
       
         <script src="../../javascript/alltarget.js"></script>
       

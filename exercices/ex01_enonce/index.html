@@ -11,14 +11,14 @@
         <link rel="canonical" href="https://bd2.kerzo.ca/exercices/ex01_enonce/">
       
       
-        <link rel="prev" href="../../python/qtdesigner/">
+        <link rel="prev" href="../../python/mysql_connector/">
       
       
         <link rel="next" href="../ex02_enonce/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.21">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.22">
     
     
       
@@ -26,7 +26,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.66ac8b77.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.732c4fb1.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
@@ -612,6 +612,27 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modelisation/classes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Diagramme de classes UML
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1091,53 +1112,53 @@
   
   
     <li class="md-nav__item">
+      <a href="../../python/venv/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Environnement virtuel
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python/pip/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PIP
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../python/mysql_connector/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     Connexion à MySQL
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../python/libpyqt/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    pyQT5
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../python/qtdesigner/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    qtDesigner
   </span>
   
 
@@ -1371,7 +1392,7 @@
         
   
   <span class="md-ellipsis">
-    Exercice 06 - Exercice sur les VIEWs
+    Exercice 06 - Exercice sur les vues
   </span>
   
 
@@ -1392,7 +1413,7 @@
         
   
   <span class="md-ellipsis">
-    Exercice 07 - Exercice sur les TRIGGERs
+    Exercice 07 - Exercice sur les déclencheurs
   </span>
   
 
@@ -1498,48 +1519,6 @@
   
   <span class="md-ellipsis">
     Exercice 12 - pyCRUD
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../ex13_enonce/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Exercice 13 - pyQT5
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../ex14_enonce/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Exercice 14 - qtDesigner
   </span>
   
 
@@ -1922,16 +1901,15 @@
 <p>Question de se remettre en mode "BD", voici un petit exercice de révision des concepts vus durant le cours de Base de données 1. Inscrivez-moi dans un fichier SQL les commandes et requêtes que vous avez utilisées pour compléter les questions de la section <strong>Manipulation des données</strong>. Le fichier est à remettre dans le devoir Teams correspondant. </p>
 <p>La base de données contient une liste de sorts pour le jeu Donjons et Dragons 5e édition. Chaque sort appartient à une seule école de magie, mais il peut être utilisé par plus d'une classe de personnage. Il y a aussi une liste d'usagers qui peuvent créer une liste de leurs sorts favoris.</p>
 <p>Voici le diagramme de classes de la base de données</p>
-<p><img alt="ex01_a" src="../../images/ex01_diagramme.png" /></p>
+<p><img alt="ex01_a" src="../../images/ex01_diagramme.svg" /></p>
 <h2 id="creation-dune-base-de-donnees-et-execution-dun-script-sql">Création d'une base de données et exécution d'un script SQL</h2>
 <ul>
-<li>Créez une nouvelle base de données et nommez la <strong>bd2_01</strong></li>
 <li>Téléchargez le fichier <a href="../../ressources/ex01_create_tables.sql"><strong>ex01_create_tables.sql</strong></a>. </li>
-<li>Lancez le script pour créer les tables et ajouter les données.</li>
+<li>Lancez le script pour créer la base de données, les tables et le contenu des tables.</li>
 <li>Allez-y en ligne de commande ou avec DBeaver</li>
 </ul>
 <h2 id="manipulation-des-donnees">Manipulation des données</h2>
-<p>Pour chacune des questions, j'ai ajouté une image du résultat attendu avec le nom des colonnes désiré.</p>
+<p>Pour chacune des questions, vous trouverez une image du résultat attendu avec le nom des colonnes désirées.</p>
 <ol>
 <li>
 <p>Sélectionnez le nom de toutes les classes trié en ordre alphabétique inversé.
@@ -1970,10 +1948,10 @@
 <img alt="ex01_09" src="../../images/ex01_09.png" /></p>
 </li>
 <li>
-<p>Sélectionnez tous les sorts d'une classe donnée et d'un niveau donnée. Pour chaque sort affichez le id et le nom du sort ainsi qu'une colonne composante qui sera généré comme suit. Pour les champs <strong>verbal</strong>, <strong>somatic</strong> et <strong>material</strong>, affichez respectivement un V, S ou M si la valeur est égale à 1, sinon n'affichez rien. Chaque lettre doit être séparée par une virgule. Finalement affichez la valeur du champ <strong>material_cost</strong>. Vous pouvez vous aider des fonctions <strong>IF()</strong> et <strong>CONCAT()</strong>. Dans mon exemple j'affiche tous les sorts de la classe Bard du niveau 0.
-<img alt="ex01_10" src="../../images/ex01_10.png" /></p>
+<p>Sélectionnez tous les sorts d'une classe et d'un niveau donnés. Pour chaque sort, affichez l'ID et le nom du sort, ainsi qu'une colonne "composante" qui sera générée comme suit : pour les champs <strong>verbal</strong>, <strong>somatic</strong>, et <strong>material</strong>, affichez respectivement "V", "S", ou "M" si la valeur est égale à 1 ; sinon, n'affichez rien. Chaque lettre doit être séparée par une virgule. Enfin, affichez la valeur du champ <strong>material_cost</strong>. Vous pouvez utiliser les fonctions <strong>IF()</strong> et <strong>CONCAT()</strong> pour vous aider. Par exemple, affichez tous les sorts de la classe Bard de niveau 0.</p>
 </li>
 </ol>
+<p><img alt="ex01_10" src="../../images/ex01_10.png" /></p>
 
 
 
@@ -2023,7 +2001,7 @@
     <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.tracking", "content.code.copy", "toc.integrate"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version": "S\u00e9lectionner la version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.a7c05c9e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.5cfa9459.min.js"></script>
       
         <script src="../../javascript/alltarget.js"></script>
       

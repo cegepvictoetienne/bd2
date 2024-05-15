@@ -18,15 +18,15 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.21">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.22">
     
     
       
-        <title>Exercice 06 - Exercice sur les VIEWs - Cours Bases de donn&eacute;es 2</title>
+        <title>Exercice 06 - Exercice sur les vues - Cours Bases de donn&eacute;es 2</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.66ac8b77.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.732c4fb1.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
@@ -117,7 +117,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#exercice-6-view" class="md-skip">
+        <a href="#exercice-6-vues" class="md-skip">
           Aller au contenu
         </a>
       
@@ -153,7 +153,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Exercice 06 - Exercice sur les VIEWs
+              Exercice 06 - Exercice sur les vues
             
           </span>
         </div>
@@ -603,6 +603,27 @@
   
   <span class="md-ellipsis">
     Normalisation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modelisation/classes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Diagramme de classes UML
   </span>
   
 
@@ -1091,53 +1112,53 @@
   
   
     <li class="md-nav__item">
+      <a href="../../python/venv/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Environnement virtuel
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python/pip/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PIP
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../python/mysql_connector/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     Connexion à MySQL
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../python/libpyqt/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    pyQT5
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../python/qtdesigner/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    qtDesigner
   </span>
   
 
@@ -1322,7 +1343,7 @@
         
   
   <span class="md-ellipsis">
-    Exercice 06 - Exercice sur les VIEWs
+    Exercice 06 - Exercice sur les vues
   </span>
   
 
@@ -1344,7 +1365,7 @@
         
   
   <span class="md-ellipsis">
-    Exercice 07 - Exercice sur les TRIGGERs
+    Exercice 07 - Exercice sur les déclencheurs
   </span>
   
 
@@ -1450,48 +1471,6 @@
   
   <span class="md-ellipsis">
     Exercice 12 - pyCRUD
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../ex13_enonce/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Exercice 13 - pyQT5
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../ex14_enonce/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Exercice 14 - qtDesigner
   </span>
   
 
@@ -1870,17 +1849,17 @@
   
 
 
-<h1 id="exercice-6-view">Exercice 6 - VIEW</h1>
-<p>À partir de la base de données athlète de l'exercice précédente, (le script sql de génération est disponible <a href="../../ressources/ex05_create_tables.sql"><strong>ici</strong></a>), creez les views suivantes : </p>
+<h1 id="exercice-6-vues">Exercice 6 - VUES</h1>
+<p>À partir de la base de données athlète de l'exercice précédente, (le script sql de génération est disponible <a href="../../ressources/ex05_create_tables.sql"><strong>ici</strong></a>), creez les vues suivantes : </p>
 <ol>
-<li>Créez une view nommée <strong>resultat_hhmmss</strong> qui affiche le résultat formaté en heures, minutes, secondes (hh<img alt="🇲🇲" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f1f2-1f1f2.svg" title=":mm:" />ss). Les colonnes de la view doivent être les mêmes que la table resultat mais en ajoutant une colonne nommée <strong>resultat_hhmmss</strong> dans laquelle le calcul sera fait (id, athlete_id, epreuve_id, date_resultat, resultat_ms, resultat_hhmmss).</li>
-<li>Créez une view nommée <strong>athlete_complet</strong> qui, en combinant les tables nécessaires, affiche les athlètes avec les colonnes suivantes, (id, nom prénom concat, date_epreuve, nom_epreuve, résultat). Attention, je veux que les noms de colonnes de la view soit identique à ce que je demande entre parenthèse)</li>
-<li>À partir de la view précédente, athlete_complet, sélectionné les informations des athlètes qui ont participé à un marathon. </li>
-<li>Créez une view nommée <strong>resultat_21juillet2020</strong> qui va contenir toutes les informations de la table résultat mais uniquement pour la date du 21 juillet 2020.</li>
-<li>Modifier la view <strong>resultat_21juillet2020</strong> pour qu'elle affiche les résultats du 14 juillet 2019. Modifier aussi son nom pour <strong>resultat_14juillet2019</strong></li>
-<li>Supprimer la view <strong>resultat_14juillet2019</strong></li>
+<li>Créez une vue nommée <strong>resultat_hhmmss</strong> qui affiche le résultat formaté en heures, minutes, secondes (hh\:mm\:ss). Les colonnes de la vue doivent être les mêmes que la table resultat mais en ajoutant une colonne nommée <strong>resultat_hhmmss</strong> dans laquelle le calcul sera fait (id, athlete_id, epreuve_id, date_resultat, resultat_ms, resultat_hhmmss).</li>
+<li>Créez une vue nommée <strong>athlete_complet</strong> qui, en combinant les tables nécessaires, affiche les athlètes avec les colonnes suivantes, (id, nom prénom concat, date_epreuve, nom_epreuve, resultat). Attention, les noms de colonnes de la vue doivent être identiques à ce qui est demandé entre parenthèse)</li>
+<li>À partir de la vue précédente, athlete_complet, sélectionnez les informations des athlètes qui ont participé à un marathon. </li>
+<li>Créez une vue nommée <strong>resultat_21juillet2020</strong> qui va contenir toutes les informations de la table résultat mais uniquement pour la date du 21 juillet 2020.</li>
+<li>Modifiez la vue <strong>resultat_21juillet2020</strong> pour qu'elle affiche les résultats du 14 juillet 2019. Modifiez aussi son nom pour <strong>resultat_14juillet2019</strong></li>
+<li>Supprimez la vue <strong>resultat_14juillet2019</strong></li>
 </ol>
-<p>Je veux que vous me remettiez les requêtes dans un script SQL.</p>
+<p>Remettez les requêtes dans un script SQL.</p>
 
 
 
@@ -1930,7 +1909,7 @@
     <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.tracking", "content.code.copy", "toc.integrate"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version": "S\u00e9lectionner la version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.a7c05c9e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.5cfa9459.min.js"></script>
       
         <script src="../../javascript/alltarget.js"></script>
       

@@ -18,7 +18,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.21">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.22">
     
     
       
@@ -26,7 +26,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.66ac8b77.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.732c4fb1.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
@@ -612,6 +612,27 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modelisation/classes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Diagramme de classes UML
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1106,53 +1127,53 @@
   
   
     <li class="md-nav__item">
+      <a href="../../python/venv/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Environnement virtuel
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python/pip/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PIP
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../python/mysql_connector/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     Connexion à MySQL
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../python/libpyqt/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    pyQT5
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../python/qtdesigner/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    qtDesigner
   </span>
   
 
@@ -1323,7 +1344,7 @@
         
   
   <span class="md-ellipsis">
-    Exercice 06 - Exercice sur les VIEWs
+    Exercice 06 - Exercice sur les vues
   </span>
   
 
@@ -1344,7 +1365,7 @@
         
   
   <span class="md-ellipsis">
-    Exercice 07 - Exercice sur les TRIGGERs
+    Exercice 07 - Exercice sur les déclencheurs
   </span>
   
 
@@ -1450,48 +1471,6 @@
   
   <span class="md-ellipsis">
     Exercice 12 - pyCRUD
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../exercices/ex13_enonce/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Exercice 13 - pyQT5
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../exercices/ex14_enonce/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Exercice 14 - qtDesigner
   </span>
   
 
@@ -1872,25 +1851,9 @@
 
 <h1 id="jointures">Jointures</h1>
 <h1 id="base-de-donnees-exemples">Base de données exemples</h1>
-<p>J'ai un système de deux tables, l'une de joueurs et l'autre de guilde. Les joueurs peuvent ou non faire partie d'une guilde et chaque guilde peut avoir de 0 à plusieurs joueurs.</p>
+<p>Le système comprend deux tables : une table "joueurs" et une table "guildes". Les joueurs ont la possibilité d'appartenir ou non à une guilde, tandis que chaque guilde peut avoir de zéro à plusieurs joueurs.  </p>
 <p><img alt="Schéma de la base de données" src="../../images/joueurs_guildes.svg" /></p>
-<details class="note">
-<summary>DBML</summary>
-<div class="highlight"><pre><span></span><code>Table guildes {
-    id int [pk]
-    nom varchar(30)
-}
-
-Table joueurs {
-    id int [pk]
-    guilde_id int
-    nom varchar(50)
-    prenom varchar(50)
-}
-Ref: joueur.guilde_id &gt; guilde.id
-</code></pre></div>
-</details>
-<p>Voici un script de création si vous voulez réaliser les exemples</p>
+<p>Voici un script de création pour réaliser les exemples suivants :  </p>
 <div class="highlight"><pre><span></span><code><span class="k">CREATE</span><span class="w"> </span><span class="k">DATABASE</span><span class="w"> </span><span class="k">IF</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">EXISTS</span><span class="w"> </span><span class="n">bd2_exemple</span><span class="w">  </span>
 <span class="k">COLLATE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;utf8_unicode_520_ci&#39;</span><span class="p">;</span><span class="w">  </span>
 
@@ -1923,11 +1886,72 @@ Ref: joueur.guilde_id &gt; guilde.id
 <span class="p">);</span>
 
 <span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">joueurs</span><span class="w"> </span><span class="p">(</span><span class="n">guilde_id</span><span class="p">,</span><span class="w"> </span><span class="n">nom</span><span class="p">,</span><span class="w"> </span><span class="n">prenom</span><span class="p">)</span><span class="w"> </span>
-<span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Fréchette&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Mathieu&#39;</span><span class="p">),</span><span class="w"> </span>
-<span class="w">    </span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Ouellet&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Alexandre&#39;</span><span class="p">),</span><span class="w"> </span>
-<span class="w">    </span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Tousignant&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Simon&#39;</span><span class="p">),</span>
-<span class="w">    </span><span class="p">(</span><span class="k">null</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Rivard&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Etienne&#39;</span><span class="p">);</span>
+<span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Simms&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Jonah&#39;</span><span class="p">),</span><span class="w"> </span>
+<span class="w">    </span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;McNeill&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Garrett&#39;</span><span class="p">),</span><span class="w"> </span>
+<span class="w">    </span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Sosa&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Amy&#39;</span><span class="p">),</span>
+<span class="w">    </span><span class="p">(</span><span class="k">null</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Fox&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Dina&#39;</span><span class="p">);</span>
 </code></pre></div>
+<h1 id="contenu-des-deux-tables">Contenu des deux tables</h1>
+<h2 id="table-guildes">Table guildes</h2>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>nom</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>SqlIsGod</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Error404</td>
+</tr>
+<tr>
+<td>3</td>
+<td>IsNobodyHere</td>
+</tr>
+</tbody>
+</table>
+<h2 id="table-joueurs">Table joueurs</h2>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>guilde_id</th>
+<th>nom</th>
+<th>prenom</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>Simms</td>
+<td>Jonah</td>
+</tr>
+<tr>
+<td>2</td>
+<td>1</td>
+<td>McNeill</td>
+<td>Garrett</td>
+</tr>
+<tr>
+<td>3</td>
+<td>2</td>
+<td>Sosa</td>
+<td>Amy</td>
+</tr>
+<tr>
+<td>4</td>
+<td>NULL</td>
+<td>Fox</td>
+<td>Dina</td>
+</tr>
+</tbody>
+</table>
 <h1 id="inner-join">INNER JOIN</h1>
 <p>Une jointure <code>INNER JOIN</code> retournera tous les enregistrements correspondants entre deux tables.</p>
 <h2 id="exemple">Exemple</h2>
@@ -1946,18 +1970,18 @@ Ref: joueur.guilde_id &gt; guilde.id
 </thead>
 <tbody>
 <tr>
-<td>Fréchette</td>
-<td>Mathieu</td>
+<td>Simms</td>
+<td>Jonah</td>
 <td>SqlIsGod</td>
 </tr>
 <tr>
-<td>Ouellet</td>
-<td>Alexandre</td>
+<td>McNeill</td>
+<td>Garrett</td>
 <td>SqlIsGod</td>
 </tr>
 <tr>
-<td>Tousignant</td>
-<td>Simon</td>
+<td>Sosa</td>
+<td>Amy</td>
 <td>Error404</td>
 </tr>
 </tbody>
@@ -1980,23 +2004,23 @@ Ref: joueur.guilde_id &gt; guilde.id
 </thead>
 <tbody>
 <tr>
-<td>Fréchette</td>
-<td>Mathieu</td>
+<td>Simms</td>
+<td>Jonah</td>
 <td>SqlIsGod</td>
 </tr>
 <tr>
-<td>Ouellet</td>
-<td>Alexandre</td>
+<td>McNeill</td>
+<td>Garrett</td>
 <td>SqlIsGod</td>
 </tr>
 <tr>
-<td>Tousignant</td>
-<td>Simon</td>
+<td>Sosa</td>
+<td>Amy</td>
 <td>Error404</td>
 </tr>
 <tr>
-<td>Rivard</td>
-<td>Etienne</td>
+<td>Fox</td>
+<td>Dina</td>
 <td>NULL</td>
 </tr>
 </tbody>
@@ -2019,18 +2043,18 @@ Ref: joueur.guilde_id &gt; guilde.id
 </thead>
 <tbody>
 <tr>
-<td>Fréchette</td>
-<td>Mathieu</td>
+<td>Simms</td>
+<td>Jonah</td>
 <td>SqlIsGod</td>
 </tr>
 <tr>
-<td>Ouellet</td>
-<td>Alexandre</td>
+<td>McNeill</td>
+<td>Garrett</td>
 <td>SqlIsGod</td>
 </tr>
 <tr>
-<td>Tousignant</td>
-<td>Simon</td>
+<td>Sosa</td>
+<td>Amy</td>
 <td>Error404</td>
 </tr>
 <tr>
@@ -2041,25 +2065,25 @@ Ref: joueur.guilde_id &gt; guilde.id
 </tbody>
 </table>
 <h1 id="union">UNION</h1>
-<p>L'opérateur <code>UNION</code> est utilisé pour combiner les résultats de deux ou plusieurs requêtes <code>SELECT</code>. On doit par contre respecter les trois règles suivantes :</p>
+<p>L'opérateur <code>UNION</code> sert à combiner les résultats de deux ou plusieurs requêtes <code>SELECT</code>. Toutefois, il est essentiel de respecter les trois règles suivantes pour son utilisation :</p>
 <ul>
-<li>Toutes les requêtes SELECT doivent comporter le même nombre de colonnes.  </li>
-<li>Les colonnes correspondantes doivent avoir un type de données similaire.  </li>
-<li>Les colonnes doivent aussi être dans le même ordre.  </li>
+<li>Chaque requête <code>SELECT</code> doit comporter le même nombre de colonnes.</li>
+<li>Les colonnes correspondantes dans les différentes requêtes doivent avoir des types de données similaires.</li>
+<li>L'ordre des colonnes doit être identique dans toutes les requêtes. </li>
 </ul>
 <h2 id="syntaxe">Syntaxe</h2>
 <div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">colonne1</span><span class="p">,</span><span class="w"> </span><span class="n">colonne2</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">table1</span>
 <span class="k">UNION</span>
-<span class="k">SELECT</span><span class="w"> </span><span class="n">colonne1</span><span class="p">,</span><span class="w"> </span><span class="n">colonne2</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">table2</span><span class="p">;</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="n">colonne3</span><span class="p">,</span><span class="w"> </span><span class="n">colonne4</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">table2</span><span class="p">;</span>
 </code></pre></div>
-<p>Par défaut l'opérateur <code>UNION</code> conservera que les valeurs uniques des multiples requêtes. Si ont veut conserver les doublons, on doit ajouter ALL.</p>
+<p>Par défaut, l'opérateur <code>UNION</code> ne conserve que les valeurs uniques des résultats obtenus à partir de multiples requêtes. Pour inclure les doublons dans les résultats, il est nécessaire d'ajouter le mot-clé <code>ALL</code>.</p>
 <div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">colonne1</span><span class="p">,</span><span class="w"> </span><span class="n">colonne2</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">table1</span>
 <span class="k">UNION</span><span class="w"> </span><span class="k">ALL</span>
-<span class="k">SELECT</span><span class="w"> </span><span class="n">colonne1</span><span class="p">,</span><span class="w"> </span><span class="n">colonne2</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">table2</span><span class="p">;</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="n">colonne3</span><span class="p">,</span><span class="w"> </span><span class="n">colonne4</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">table2</span><span class="p">;</span>
 </code></pre></div>
-<p>Le nom des colonnes du résultat sera le nom des colonnes définies dans la première requête.</p>
+<p>Le nom des colonnes dans le résultat de l'opérateur <code>UNION</code> correspondra aux noms des colonnes spécifiés dans la première requête.</p>
 <h1 id="outer-join">OUTER JOIN</h1>
-<p>Une jointure <code>OUTER JOIN</code> retournera tous les enregistrements des deux tables. On ne peux pas utiliser la commande <code>OUTER JOIN</code> en MySQL mais on peut arriver au même résultat en faisant une première requête avec un <code>LEFT JOIN</code> unis à une deuxième requête avec un <code>RIGHT JOIN</code>.  </p>
+<p>Une jointure de type <code>OUTER JOIN</code> retourne tous les enregistrements de deux tables. Bien que la commande <code>OUTER JOIN</code> ne soit pas directement utilisable en MySQL, il est possible d'obtenir un résultat équivalent en combinant un <code>LEFT JOIN</code> et un <code>RIGHT JOIN</code>. Pour ce faire, réalisez d'abord une requête avec un <code>LEFT JOIN</code>, puis unissez-la à une seconde requête utilisant un <code>RIGHT JOIN</code>. </p>
 <h2 id="exemple_3">Exemple</h2>
 <div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">j</span><span class="p">.</span><span class="n">nom</span><span class="p">,</span><span class="w"> </span><span class="n">j</span><span class="p">.</span><span class="n">prenom</span><span class="p">,</span><span class="w"> </span><span class="k">g</span><span class="p">.</span><span class="n">nom</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">guilde</span>
 <span class="k">FROM</span><span class="w"> </span><span class="n">joueurs</span><span class="w"> </span><span class="n">j</span><span class="w"> </span>
@@ -2082,23 +2106,23 @@ Ref: joueur.guilde_id &gt; guilde.id
 </thead>
 <tbody>
 <tr>
-<td>Fréchette</td>
-<td>Mathieu</td>
+<td>Simms</td>
+<td>Jonah</td>
 <td>SqlIsGod</td>
 </tr>
 <tr>
-<td>Ouellet</td>
-<td>Alexandre</td>
+<td>McNeill</td>
+<td>Garrett</td>
 <td>SqlIsGod</td>
 </tr>
 <tr>
-<td>Tousignant</td>
-<td>Simon</td>
+<td>Sosa</td>
+<td>Amy</td>
 <td>Error404</td>
 </tr>
 <tr>
-<td>Rivard</td>
-<td>Etienne</td>
+<td>Fox</td>
+<td>Dina</td>
 <td>NULL</td>
 </tr>
 <tr>
@@ -2157,7 +2181,7 @@ Ref: joueur.guilde_id &gt; guilde.id
     <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.tracking", "content.code.copy", "toc.integrate"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version": "S\u00e9lectionner la version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.a7c05c9e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.5cfa9459.min.js"></script>
       
         <script src="../../javascript/alltarget.js"></script>
       
