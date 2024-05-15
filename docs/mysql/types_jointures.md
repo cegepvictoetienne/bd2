@@ -41,10 +41,10 @@ CREATE TABLE joueurs (
 );
 
 INSERT INTO joueurs (guilde_id, nom, prenom) 
-VALUES (1, 'Fréchette', 'Mathieu'), 
-	(1, 'Ouellet', 'Alexandre'), 
-	(2, 'Tousignant', 'Simon'),
-	(null, 'Rivard', 'Etienne');
+VALUES (1, 'Simms', 'Jonah'), 
+	(1, 'McNeill', 'Garrett'), 
+	(2, 'Sosa', 'Amy'),
+	(null, 'Fox', 'Dina');
 ```
 
 # Contenu des deux tables  
@@ -61,10 +61,10 @@ VALUES (1, 'Fréchette', 'Mathieu'),
 
 | id  | guilde_id | nom        | prenom   |
 |-----|-----------|------------|----------|
-| 1   | 1         | Fréchette  | Mathieu  |
-| 2   | 1         | Ouellet    | Alexandre|
-| 3   | 2         | Tousignant | Simon    |
-| 4   | NULL      | Rivard     | Etienne  |
+| 1   | 1         | Simms  | Jonah  |
+| 2   | 1         | McNeill    | Garrett|
+| 3   | 2         | Sosa | Amy    |
+| 4   | NULL      | Fox     | Dina  |
 
 # INNER JOIN
 
@@ -82,9 +82,9 @@ FROM joueurs j
 
 | nom        | prenom     | guilde     |
 |------------|------------|------------|
-| Fréchette  | Mathieu    | SqlIsGod   |
-| Ouellet    | Alexandre  | SqlIsGod   |
-| Tousignant | Simon      | Error404   |
+| Simms  | Jonah    | SqlIsGod   |
+| McNeill    | Garrett  | SqlIsGod   |
+| Sosa | Amy      | Error404   |
 
 # LEFT JOIN
 
@@ -102,10 +102,10 @@ FROM joueurs j
 
 | nom        | prenom     | guilde     |
 |------------|------------|------------|
-| Fréchette  | Mathieu    | SqlIsGod   |
-| Ouellet    | Alexandre  | SqlIsGod   |
-| Tousignant | Simon      | Error404   |
-| Rivard      | Etienne   | NULL       |
+| Simms  | Jonah    | SqlIsGod   |
+| McNeill    | Garrett  | SqlIsGod   |
+| Sosa | Amy      | Error404   |
+| Fox      | Dina   | NULL       |
 
 # RIGHT JOIN
 
@@ -123,9 +123,9 @@ FROM joueurs j
 
 | nom        | prenom     | guilde     |
 |------------|------------|------------|
-| Fréchette  | Mathieu    | SqlIsGod   |
-| Ouellet    | Alexandre  | SqlIsGod   |
-| Tousignant | Simon      | Error404   |
+| Simms  | Jonah    | SqlIsGod   |
+| McNeill    | Garrett  | SqlIsGod   |
+| Sosa | Amy      | Error404   |
 | NULL       | NULL       | IsNobodyHere |
 
 	
@@ -177,8 +177,8 @@ FROM joueurs j
 
 | nom        | prenom     | guilde     |
 |------------|------------|------------|
-| Fréchette  | Mathieu    | SqlIsGod   |
-| Ouellet    | Alexandre  | SqlIsGod   |
-| Tousignant | Simon      | Error404   |
-| Rivard      | Etienne   | NULL       |
+| Simms  | Jonah    | SqlIsGod   |
+| McNeill    | Garrett  | SqlIsGod   |
+| Sosa | Amy      | Error404   |
+| Fox      | Dina   | NULL       |
 | NULL       | NULL       | IsNobodyHere |

@@ -9,7 +9,7 @@
 ## Précisions
 
 - Seulement les informations surlignées en jaunes doivent être sauvegardés (ou peuvent être reproduit exactement avec les autres informations sauvegardées).
-- Le nombre 2134521 situé au-dessus du nom "Mathieu Fréchette" est le code de ce client.
+- Le nombre 2134521 situé au-dessus du nom "Michael Scott" est le code de ce client.
 - La description du véhicule est un champs texte associé au compte du client. Le client peut avoir plus d'un véhicule associé à son compte.
 - La case PLAQUE est le numéro de la plaque d'immatriculation du véhicule
 - Les trois champs ODO ... représente trois prise de l'odomètre du véhicule durant le travail facturé.
