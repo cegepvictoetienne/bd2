@@ -1,6 +1,6 @@
 # Exercice 02 - Système de saisie d'absence
 
-On veut reproduire le système de saisie d'absence en cours. Analysez le fonctionnement à l'aide du texte qui suit et des images et créez le schéma conceptuel de votre solution.
+On veut reproduire le système de saisie d'absence en cours. Analysez le fonctionnement à l'aide du texte et des images qui suivent et créez le schéma conceptuel de votre solution.
 
 ## Fonctionnement
 
