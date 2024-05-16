@@ -12,9 +12,9 @@ Une fois ces diagrammes terminés, veuillez les soumettre en format image sur Te
 Tout d'abord, un usager doit créer un compte en fournissant un courriel et un mot de passe. Ensuite, cet usager peut effectuer une commande pour déterminer la durée du droit de stationnement et les véhicules autorisés selon leur plaque d'immatriculation.
 
 - L'usager a le choix entre trois types de droits :
-  - 30 jours
-  - 1 session
-  - Annuel
+     - 30 jours
+     - 1 session
+     - Annuel
 - Il peut enregistrer un maximum de 4 plaques d'immatriculation par commande.
 - Un compte peut contenir plus de 4 plaques d'immatriculation, mais chaque plaque est associée à une commande spécifique, et donc à un droit de stationnement particulier.
 
