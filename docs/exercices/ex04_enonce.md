@@ -2,25 +2,28 @@
 
 ## Consignes
 
-Vous devez analyser et modéliser un livre de recettes. Les deux images qui suivent vous indique ce qui doit être inclus dans la base de données. **<u>Toutes les informations</u>** présentent doivent être sauvegardées.
+Vous devez analyser et modéliser un livre de recettes. Les deux images suivantes vous indiquent ce qui doit être inclus dans la base de données. **Toutes les informations** présentées doivent être sauvegardées.
 
-Précision sur les pictogrammes dans les recettes : 
+### Précisions sur les pictogrammes dans les recettes :
 
-- Le bol représente le temps de préparation de la recette
-- La flamme est le temps de cuisson
-- La main est un temps de préparation autre
+- **Bol** : Temps de préparation de la recette
+- **Flamme** : Temps de cuisson
+- **Main** : Temps de préparation supplémentaire
 
-Vous devez me produire et remettre : 
+### Livrables
+
+Vous devez produire et remettre les éléments suivants :
 
 - [ ] Le modèle entité-association en format image.
-- [ ] Un diagramme de classes UML, aussi à remettre en format image.
-- [ ] Un script sql de génération de la base de données et des tables qui inclus la création de la base de données, des tables et des clés primaires et étrangères.
-- [ ] La base de données doit se nommer **ex04_recette** et avoir comme collation `utf8mb4_unicode_ci`
-- [ ] La table qui contiendra les recettes doit avoir une clé primaire qui débute à la valeur 1000
-- [ ] Le script doit pouvoir être lancé consécutivement sans causer d'erreur (Pensez à ajouter des commandes **drop ... if exists**)
-- [ ] Vous devez respecter les trois première forme normale et la convention de nommage qui est décrite dans les notes de cours.
+- [ ] Un diagramme de classes UML, également en format image.
+- [ ] Un script SQL pour la génération de la base de données et des tables, incluant la création de la base de données, des tables, ainsi que des clés primaires et étrangères.
+  - La base de données doit se nommer **ex04_recette** et utiliser la collation `utf8mb4_unicode_ci`.
+  - La table contenant les recettes doit avoir une clé primaire commençant à la valeur 1000.
+  - Le script doit pouvoir être exécuté plusieurs fois sans provoquer d'erreurs (utilisez les commandes **DROP ... IF EXISTS**).
 
-Le tout dans un dossier compressé dans le devoir sur Teams
+Vous devez respecter les trois premières formes normales ainsi que la convention de nommage décrite dans les notes de cours.
+
+Veuillez soumettre le tout dans un dossier compressé sur Teams.
 
 ## Images
 
