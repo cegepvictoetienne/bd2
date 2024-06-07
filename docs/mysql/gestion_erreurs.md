@@ -68,7 +68,7 @@ BEGIN
         SELECT 'La valeur doit être supérieure à 0' AS message_erreur;
     END;
 
-    IF (nombre < 0) THEN
+    IF (nombre <= 0) THEN
         SIGNAL SQLSTATE '45000';
     END IF;
 

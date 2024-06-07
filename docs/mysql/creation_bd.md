@@ -31,7 +31,7 @@ SHOW CHARACTER SET;
 
 # Collation
 
-La collation définit les règles de comparaison entre caractères, incluant la sensibilité à la casse et l'ordre de tri. La collation par défaut est `utf8mb4_general_ci`, optimisée pour la vitesse mais moins précise. Pour des comparaisons plus précises, `utf8_unicode_520_ci` est recommandée.
+La collation définit les règles de comparaison entre caractères, incluant la sensibilité à la casse et l'ordre de tri. La collation par défaut est `utf8mb4_general_ci`, optimisée pour la vitesse mais moins précise. Pour des comparaisons plus précises, `utf8mb4_unicode_ci` est recommandée.
 
 ## Changer la collation par défaut
 ```sql
@@ -49,7 +49,7 @@ Syntaxe avec les valeurs recommandées pour le jeu de caractères et la collatio
 ```sql
 CREATE DATABASE 'nom_de_la_bd'
   CHARACTER SET = 'utf8mb4'
-  COLLATE = 'utf8_unicode_520_ci';
+  COLLATE = 'utf8mb4_unicode_ci';
 ```
 
 # Modification de bases de données
@@ -60,7 +60,7 @@ Pour modifier les propriétés d'une base de données existante, comme le jeu de
 ```sql
 ALTER DATABASE nom_de_la_bd
 CHARACTER SET = 'utf8mb4'
-COLLATE = 'utf8_unicode_520_ci';
+COLLATE = 'utf8mb4_unicode_ci';
 ```
 
 # Suppression de bases de données
@@ -76,4 +76,4 @@ DROP DATABASE IF EXISTS nom_de_la_bd;
 
 - [Documentation Create table](https://dev.mysql.com/doc/refman/8.0/en/create-database.html)  
 - [Jeux de caractère et collation](https://dev.mysql.com/doc/refman/8.0/en/charset-charsets.html)
-- [Différence entre utf8mb4_general_ci, utf8mb4_unicode_ci et utf8_unicode_520_ci](https://stackoverflow.com/questions/766809/whats-the-difference-between-utf8-general-ci-and-utf8-unicode-ci)
+- [Différence entre utf8mb4_general_ci et utf8mb4_unicode_ci](https://stackoverflow.com/questions/766809/whats-the-difference-between-utf8-general-ci-and-utf8-unicode-ci)

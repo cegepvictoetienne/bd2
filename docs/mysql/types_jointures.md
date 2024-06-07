@@ -1,8 +1,13 @@
 # Jointures  
 
+# Visuel des types de jointures  
+
+![Types de jointures](../images/join.jpg)  
+
+
 # Base de données exemples
 
-Le système comprend deux tables : une table "joueurs" et une table "guildes". Les joueurs ont la possibilité d'appartenir ou non à une guilde, tandis que chaque guilde peut avoir de zéro à plusieurs joueurs.  
+Le système comprend deux tables : une table `joueurs` et une table `guildes`. Les joueurs ont la possibilité d'appartenir ou non à une guilde, tandis que chaque guilde peut avoir de zéro à plusieurs joueurs.  
 
 ![Schéma de la base de données](../images/joueurs_guildes.svg)
 
@@ -10,7 +15,7 @@ Voici un script de création pour réaliser les exemples suivants :
 
 ```sql 
 CREATE DATABASE IF NOT EXISTS bd2_exemple  
-COLLATE = 'utf8_unicode_520_ci';  
+COLLATE = 'utf8mb4_unicode_ci';  
 
 
 USE bd2_exemple;  

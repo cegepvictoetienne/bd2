@@ -1,8 +1,6 @@
-Voici une version améliorée et structurée de votre texte sur la gestion des utilisateurs dans MySQL, avec des clarifications pour faciliter la compréhension et la mise en œuvre :
-
 # Gestion des utilisateurs dans MySQL
 
-Pour se connecter et interagir avec MySQL, chaque utilisateur doit disposer de credentials valides (nom d'utilisateur et mot de passe) ainsi que de privilèges déterminés pour accéder et manipuler la base de données. Ces informations sont stockées dans plusieurs tables système de MySQL.
+Pour se connecter et interagir avec MySQL, chaque utilisateur doit disposer d'informations de connexion valides (nom d'utilisateur et mot de passe) ainsi que de privilèges déterminés pour accéder et manipuler la base de données. Ces informations sont stockées dans plusieurs tables système de MySQL.
 
 ## Tables de privilèges
 - **user** : contient les informations de base sur les utilisateurs.

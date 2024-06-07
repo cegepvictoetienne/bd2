@@ -40,10 +40,9 @@ TO test@localhost;
 GRANT SELECT (id, nom, prenom)
 ON credit_social.citoyen
 TO test2@localhost;
-```
 
-```sql
-/* Après avoir ajouté ou supprimé des privilèges, il est crucial de rafraîchir la liste des privilèges. Pour ce faire, utilisez la commande suivante : */
+/* Après avoir ajouté ou supprimé des privilèges, il est crucial de rafraîchir la liste des privilèges. 
+   Pour ce faire, utilisez la commande suivante : */
 
 FLUSH PRIVILEGES;
 ```

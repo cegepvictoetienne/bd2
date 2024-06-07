@@ -26,4 +26,4 @@ Ces règles sont **obligatoires** dans notre cours.
 - On doit éviter les préfixes
 - Utilisez un nom court, sans utiliser abréviation par contre
 - Ne pas utiliser de mot réservé comme nom de champs, comme date par exemple
-- Le nom d'une clé étrangère devrait contenir le nom de la table et de sa clé primaire. Une clé étrangère vers la table usager dont la clé primaire est le champ id devrait être nommée usager_id
+- Le nom d'une clé étrangère devrait contenir le nom de la table et de sa clé primaire. Une clé étrangère vers la table `usagers` dont la clé primaire est le champ `id` devrait être nommée `usager_id`.
