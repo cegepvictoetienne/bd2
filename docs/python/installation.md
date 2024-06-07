@@ -1,30 +1,26 @@
 # Installation de Python
 
-Téléchardez la dernière version de Python disponible pour votre système à cette adresse [https://www.python.org/downloads/](https://www.python.org/downloads/){target=_blank}.
+Téléchargez la dernière version de Python disponible pour votre système à cette adresse [https://www.python.org/downloads/](https://www.python.org/downloads/).
 
-Exécutez le fichier téléchargé et au premier écran de l'installateur assurez-vous de bien cocher l'option =="Add python.exe to PATH"== dans le bas.
+Exécutez le fichier téléchargé et au premier écran de l'installateur assurez-vous de bien cocher l'option **"Add python.exe to PATH"** dans le bas.
 
 ![py_install_01.png](../images/py_install_01.png){.center .shadow}
 
 Ouvrez ensuite un terminal et entrez la commande suivante pour vérifier que Python est bien installé : 
 
+## Vérifier l'installation sur Windows  
 ```bash
-py --version
+python --version
 ```
 
- Vous pouvez aussi voir la liste de toutes les versions installées ainsi que leur répertoire d'installation avec la commande :
-
+## Vérifier l'installation sur MacOS et Linux
 ```bash
-py -0p
+python3 --version
 ```
-
-Dans cet exemple j'ai deux version d'installée et on voit que la 3.12 est la version active.
-
-![py_install_02.png](../images/py_install_02.png){.center .shadow}
 
 ## Exécuter votre premier programme Python
 
-Pour lancer un programme Python il suffit de faire la commande **py** suivie du nom du fichier dans un terminal. Si vous codez avec vsCode je vous conseille d'installer les extensions suivantes : 
+Pour lancer un programme Python il suffit de faire la commande `python` suivie du nom du fichier dans un terminal. Si vous codez avec vsCode je vous conseille d'installer les extensions suivantes : 
 
 - **Python** *par Microsoft* : [https://marketplace.visualstudio.com/items?itemName=ms-python.python](https://marketplace.visualstudio.com/items?itemName=ms-python.python){target=_blank}
 - **Pylance** *par Microsoft* : [https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance](https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance){target=_blank}

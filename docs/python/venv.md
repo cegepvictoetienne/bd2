@@ -29,7 +29,7 @@ Un environnement virtuel en Python est un espace isolé qui permet de gérer sé
      ```
    - `nom_env` est le nom du dossier qui contiendra l'environnement virtuel.
 
-#### Comment cctiver l'environnement virtuel?
+#### Comment activer l'environnement virtuel?
 
 - **Windows** :
   ```bash
