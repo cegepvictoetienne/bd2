@@ -10,8 +10,6 @@ Bien que huit niveaux de formes normales soient identifiés, dans la pratique et
 
 ## Première forme normale (1FN)
 
-Les règles de la première forme normale sont :
-
 Pour assurer l'intégrité et l'efficacité d'une base de données, il est essentiel de respecter certaines règles de conception :
 
 1. **Clé primaire de la table** : Chaque table doit posséder une clé primaire, qui identifie de manière unique chaque enregistrement. Si aucun attribut ne se prête naturellement à cette fonction, un champ auto-incrémenté peut être ajouté pour servir de clé primaire.
@@ -22,19 +20,19 @@ Pour assurer l'intégrité et l'efficacité d'une base de données, il est essen
 
 4. **Absence de redondance dans les colonnes** : La duplication d'informations dans plusieurs colonnes d'une même table doit être évitée pour prévenir les incohérences.
 
-### Exemple de Non-Respect de la 1FN
+### Exemple de non-respect de la 1FN
 
 Prenons l'exemple de deux tables `Usagers` qui violent la première forme normale :
 
 - **Table Usagers 1** :
-  - `ID` : clé primaire
-  - `Nom` : nom de l'usager
-  - `Téléphones` : liste des numéros de téléphone (violation de la 1FN car l'attribut est une liste)
+    - `ID` : clé primaire
+    - `Nom` : nom de l'usager
+    - `Téléphones` : liste des numéros de téléphone (violation de la 1FN car l'attribut est une liste)
 
 - **Table Usagers 2** :
-  - `ID` : clé primaire
-  - `Nom` : nom de l'usager
-  - `Adresse` : adresse complète (rue, ville, code postal) (violation de la 1FN car l'attribut est composé)
+    - `ID` : clé primaire
+    - `Nom` : nom de l'usager
+    - `Adresse` : adresse complète (rue, ville, code postal) (violation de la 1FN car l'attribut est composé)
 
 Dans chacun de ces cas, l'attribut en violation doit être modifié pour respecter la première forme normale. Pour la table `Usagers 1`, l'attribut `Téléphones` pourrait être géré via une table séparée. Pour la table `Usagers 2`, l'adresse peut être divisée en attributs distincts comme `Rue`, `Ville`, et `Code Postal`.
 
@@ -165,7 +163,7 @@ Considérons, à titre d'exemple, la table d'inventaire suivante :
 | 1  | 3        | 1       | Potion de soins mineures |
 | 2  | 11       | 2       | Épée de cuivre           |
 
-Dans cette table, l'attribut **DESCRIPTION** dépend de **ITEM_ID** et non directement de la clé primaire **ID**. Pour rendre la table conforme à la 3FN, il conviendrait de retirer l'attribut **DESCRIPTION** de cette table, à condition que cette information soit déjà contenue dans une table distincte associée aux **ITEM_ID** (par exemple, une table **Item**). Cette séparation permet d'éliminer les dépendances transitives et d'assurer que chaque attribut non-clé est directement dépendant de la clé primaire seule, garantissant ainsi l'intégrité et la normalisation des données.
+Dans cette table, l'attribut `DESCRIPTION` dépend de `ITEM_ID` et non directement de la clé primaire `ID`. Pour rendre la table conforme à la 3FN, il conviendrait de retirer l'attribut `DESCRIPTION` de cette table, à condition que cette information soit déjà contenue dans une table distincte associée aux `ITEM_ID*`(par exemple, une table `Items`). Cette séparation permet d'éliminer les dépendances transitives et d'assurer que chaque attribut non-clé est directement dépendant de la clé primaire seule, garantissant ainsi l'intégrité et la normalisation des données.
 
 ## Impact de l'application de la règle
 
