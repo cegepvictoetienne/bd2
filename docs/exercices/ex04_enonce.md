@@ -1,31 +1,40 @@
-# Exercice 04 - Modélisation d'un livre de recettes
+# Exercice 04 - Modélisation d'un Livre de Recettes
 
-## Consignes
+## Objectifs
 
-Vous devez analyser et modéliser un livre de recettes. Les deux images suivantes vous indiquent ce qui doit être inclus dans la base de données. **Toutes les informations** présentées doivent être sauvegardées.
+Votre tâche est d'analyser et de modéliser la structure d'un livre de recettes à partir des informations fournies. Vous devez assurer que toutes les données présentées dans les images ci-dessous sont intégrées de manière exhaustive dans votre base de données.
 
-### Précisions sur les pictogrammes dans les recettes :
+## Détails des Pictogrammes des Recettes
 
-- **Bol** : Temps de préparation de la recette
-- **Flamme** : Temps de cuisson
-- **Main** : Temps de préparation supplémentaire
+Les recettes comportent des pictogrammes dont les significations sont les suivantes :
 
-### Livrables
+- **Bol** : Indique le temps de préparation de la recette.
+- **Flamme** : Désigne le temps de cuisson.
+- **Main** : Représente le temps supplémentaire nécessaire pour la préparation.
 
-Vous devez produire et remettre les éléments suivants :
+## Livrables Requis
 
-- [ ] Le modèle entité-association en format image.
-- [ ] Un diagramme de classes UML, également en format image.
-- [ ] Un script SQL pour la génération de la base de données et des tables, incluant la création de la base de données, des tables, ainsi que des clés primaires et étrangères.
-  - La base de données doit se nommer **ex04_recette** et utiliser la collation `utf8mb4_unicode_ci`.
-  - La table contenant les recettes doit avoir une clé primaire commençant à la valeur 1000.
-  - Le script doit pouvoir être exécuté plusieurs fois sans provoquer d'erreurs (utilisez les commandes **DROP ... IF EXISTS**).
+Vous êtes chargé de créer et de soumettre les documents suivants :
 
-Vous devez respecter les trois premières formes normales ainsi que la convention de nommage décrite dans les notes de cours.
+1. **Modèle Entité-Association** :
+    - Ce schéma doit être fourni en format image.
 
-Veuillez soumettre le tout dans un dossier compressé sur Teams.
+2. **Diagramme de classes UML** :
+    - Ce diagramme doit également être présenté en format image.
 
-## Images
+3. **Script SQL de création de la base de données** :
+    - Le script doit inclure la création de la base de données nommée **ex04_recette**, des tables nécessaires, et des clés primaires et étrangères.
+    - La base de données doit utiliser la collation `utf8mb4_unicode_ci`.
+    - La table principale des recettes devra avoir une clé primaire dont la numérotation commence à 1000.
+    - Assurez-vous que le script SQL puisse être exécuté de manière idempotente, c'est-à-dire plusieurs fois sans erreurs, en utilisant les commandes `DROP TABLE IF EXISTS` appropriées.
+
+Les modèles et le script doivent respecter les trois premières formes normales et suivre les conventions de nommage spécifiées dans vos notes de cours.
+
+## Soumission
+
+Veuillez compiler tous les fichiers dans un dossier compressé et le soumettre via la plateforme Teams.
+
+## Ressources Visuelles
 
 ### Recette 1
 
@@ -34,3 +43,5 @@ Veuillez soumettre le tout dans un dossier compressé sur Teams.
 ### Recette 2
 
 ![Recette02](../images/ex04_b.jpg){.center .shadow}
+
+Ces images illustrent les informations spécifiques qui doivent être sauvegardées dans votre modèle de base de données. Assurez-vous de les examiner attentivement pour intégrer tous les éléments nécessaires.

@@ -1,12 +1,27 @@
-# Exercice 6 - VUES
+# Exercice 6 - Création et gestion de vues
 
-À partir de la base de données athlète de l'exercice précédente, (le script sql de génération est disponible [**ici**](../ressources/ex05_create_tables.sql)), creez les vues suivantes : 
+## Contexte
+Cet exercice implique la manipulation de vues dans la base de données des athlètes, utilisée dans l'exercice précédent. Le script SQL pour générer les tables nécessaires est accessible [**ici**](../ressources/ex05_create_tables.sql).
 
-1. Créez une vue nommée **resultat_hhmmss** qui affiche le résultat formaté en heures, minutes, secondes (hh\:mm\:ss). Les colonnes de la vue doivent être les mêmes que la table resultat mais en ajoutant une colonne nommée **resultat_hhmmss** dans laquelle le calcul sera fait (id, athlete_id, epreuve_id, date_resultat, resultat_ms, resultat_hhmmss).
-2. Créez une vue nommée **athlete_complet** qui, en combinant les tables nécessaires, affiche les athlètes avec les colonnes suivantes, (id, nom prénom concat, date_epreuve, nom_epreuve, resultat). Attention, les noms de colonnes de la vue doivent être identiques à ce qui est demandé entre parenthèse)
-3. À partir de la vue précédente, athlete_complet, sélectionnez les informations des athlètes qui ont participé à un marathon. 
-4. Créez une vue nommée **resultat_21juillet2020** qui va contenir toutes les informations de la table résultat mais uniquement pour la date du 21 juillet 2020.
-5. Modifiez la vue **resultat_21juillet2020** pour qu'elle affiche les résultats du 14 juillet 2019. Modifiez aussi son nom pour **resultat_14juillet2019**
-6. Supprimez la vue **resultat_14juillet2019**
+## Instructions
 
-Remettez les requêtes dans un script SQL.
+1. **Vue `resultats_hhmmss`** :
+    - Créez une vue qui convertit et affiche le temps des résultats en format heures, minutes, secondes (hh\:mm\:ss). La vue doit reprendre les colonnes de la table `resultats` en ajoutant une nouvelle colonne `resultat_hhmmss` où le temps est formaté.
+
+2. **Vue `athletes_complets`** :
+    - Cette vue doit regrouper des informations provenant de plusieurs tables pour afficher chaque athlète avec les informations suivantes : `id`, `nom prénom concat`, `date_epreuve`, `nom_epreuve`, `resultat`. Les noms des colonnes doivent correspondre exactement à ceux indiqués.
+
+3. **Filtrage sur `athletes_complets`** :
+    - Utilisez la vue `athletes_complets` pour extraire et afficher uniquement les données des athlètes ayant participé à un marathon.
+
+4. **Vue `resultats_21juillet2020`** :
+    - Créez une vue qui filtre et affiche toutes les entrées de la table `resultats` pour la date du 21 juillet 2020.
+
+5. **Modification de la vue pour une nouvelle date** :
+    - Modifiez la vue `resultats_21juillet2020` pour qu'elle affiche les résultats du 14 juillet 2019 et renommez-la en `resultats_14juillet2019`.
+
+6. **Suppression de la vue** :
+    - Supprimez la vue `resultats_14juillet2019` une fois les modifications effectuées.
+
+## Livrable
+Soumettez toutes les requêtes SQL utilisées pour créer, modifier et supprimer les vues dans un script SQL.

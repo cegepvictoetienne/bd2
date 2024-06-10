@@ -1,16 +1,33 @@
-# Exercice 5 - Insertions
+# Exercice 5 - Insertions de données
 
-À partir de la base de données athlète (le script SQL de génération est disponible [**ici**](../ressources/ex05_create_tables.sql)), réalisez les requêtes d'insertion suivantes :
+## Contexte
+Cet exercice porte sur la manipulation et l'insertion de données dans une base de données dédiée aux athlètes. Le script SQL pour créer les tables nécessaires est disponible [**ici**](../ressources/ex05_create_tables.sql).
 
-1. Insérez un athlète dans la table `athletes` sans spécifier les noms de colonnes dans la requête.
-2. Insérez un autre athlète fictif en spécifiant seulement son nom, prénom et date de naissance.
-3. Récupérez l'ID généré automatiquement lors de la requête précédente et affichez le message suivant avec une requête **SELECT** : "L'athlète [prénom] [nom] a été ajouté avec succès !". Utilisez l'ID récupéré dans la clause **WHERE** de votre requête.
-4. Créez une nouvelle table appelée `athletes_quebec` avec les colonnes suivantes : 
-   - `id` (clé primaire auto-incrémentée)
-   - `nom`
-   - `prénom`
-   - `ville`
-   
-   Ensuite, insérez dans cette table tous les athlètes qui proviennent de la province du Québec à l'aide d'une requête **SELECT**.
+## Instructions
 
-Je souhaite que vous me remettiez les requêtes dans un script SQL, avec pour chaque requête d'insertion une requête **SELECT** qui valide que les données ont bien été ajoutées.
+### Insertion des données
+Vous allez effectuer plusieurs opérations d'insertion en utilisant différentes méthodes :
+
+1. **Insertion simple** :
+    - Insérez un athlète dans la table `athletes` sans spécifier les noms des colonnes dans la requête d'insertion.
+
+2. **Insertion partielle** :
+    - Ajoutez un athlète fictif en spécifiant uniquement son nom, prénom et date de naissance.
+
+3. **Validation et affichage** :
+    - Après l'insertion du deuxième athlète, récupérez l'ID automatiquement généré. 
+    - Utilisez cet ID pour afficher le message suivant avec une requête **SELECT** : "L'athlète [prénom] [nom] a été ajouté avec succès !".
+
+4. **Création et remplissage de table** :
+    - Créez une nouvelle table nommée `athletes_quebec` avec les colonnes suivantes :
+        - `id` : clé primaire auto-incrémentée
+        - `nom`
+        - `prénom`
+        - `ville`
+    - Insérez dans cette table tous les athlètes originaires du Québec à l'aide d'une requête **SELECT**.
+
+### Validation des insertions
+Pour chaque insertion, ajoutez une requête **SELECT** qui confirme que les données ont été correctement ajoutées à la base de données.
+
+## Livrable
+Vous devez soumettre vos requêtes dans un script SQL. Assurez-vous que chaque insertion soit accompagnée d'une validation via une requête **SELECT** appropriée.

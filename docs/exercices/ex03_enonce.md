@@ -1,24 +1,41 @@
 # Exercice 03 - Analyse du système de stationnement du cégep
 
-Pour notre deuxième cas, nous allons analyser le système de gestion des droits de stationnement du cégep. Vous devez étudier ce système et créer les deux diagrammes suivants à l'aide d'un logiciel approprié :
+## Objectif
 
-- Un schéma conceptuel selon le modèle entité-association.
-- Un diagramme de classe UML.
+Dans cet exercice, nous allons analyser le système de gestion des droits de stationnement du cégep. Votre mission est d’étudier ce système et de concevoir deux types de diagrammes à l’aide d’un logiciel spécialisé :
 
-Une fois ces diagrammes terminés, veuillez les soumettre en format image sur Teams dans la section devoir.
+- Schéma Conceptuel : Utilisez le modèle entité-association pour ce schéma.
+- Diagramme de Classe UML.
+
+Après avoir créé ces diagrammes, vous devrez les soumettre sous forme d’images via la plateforme Teams, dans la section dédiée aux devoirs.
 
 ## Mise en situation
 
-Tout d'abord, un usager doit créer un compte en fournissant un courriel et un mot de passe. Ensuite, cet usager peut effectuer une commande pour déterminer la durée du droit de stationnement et les véhicules autorisés selon leur plaque d'immatriculation.
+### Création de Compte
 
-- L'usager a le choix entre trois types de droits :
-     - 30 jours
-     - 1 session
-     - Annuel
-- Il peut enregistrer un maximum de 4 plaques d'immatriculation par commande.
-- Un compte peut contenir plus de 4 plaques d'immatriculation, mais chaque plaque est associée à une commande spécifique, et donc à un droit de stationnement particulier.
+Pour commencer, un utilisateur doit créer un compte en fournissant son adresse courriel et un mot de passe.
 
-Pour les autres informations, veuillez vous référer aux images suivantes :
+### Commande de Droits de Stationnement
+
+Une fois le compte créé, l’utilisateur peut commander un droit de stationnement. Les étapes incluent :
+
+- La sélection de la durée du droit de stationnement.
+- La spécification des véhicules autorisés, identifiés par leurs plaques d’immatriculation.
+
+
+### Options de Durée
+
+Les utilisateurs peuvent choisir parmi les durées suivantes :  
+
+- 30 jours
+- 1 session
+- Annuel
+
+### Gestion des Plaques d’Immatriculation
+- Un maximum de 4 plaques d’immatriculation peut être enregistré par commande.
+- Bien qu’un compte puisse être associé à plus de 4 plaques, chaque plaque est liée à une commande spécifique et, par conséquent, à un droit de stationnement déterminé.
+
+Pour plus de détails, veuillez consulter les images fournies ci-dessous. :
 
 ![Commande](../images/ex03_a.png){.center .shadow}
 
