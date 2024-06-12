@@ -661,7 +661,7 @@
           <li class="md-nav__item">
   <a href="#exemple-de-non-respect-de-la-1fn" class="md-nav__link">
     <span class="md-ellipsis">
-      Exemple de Non-Respect de la 1FN
+      Exemple de non-respect de la 1FN
     </span>
   </a>
   
@@ -1339,6 +1339,27 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python/flask/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Flask
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1479,7 +1500,7 @@
         
   
   <span class="md-ellipsis">
-    Exercice 05 - Exercice sur les INSERTs
+    Exercice 05 - Exercice sur les insertions
   </span>
   
 
@@ -1627,6 +1648,27 @@
   
   <span class="md-ellipsis">
     Exercice 12 - pyCRUD
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../exercices/ex13_enonce/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exercice 13 - Flask
   </span>
   
 
@@ -2014,7 +2056,6 @@
 </ul>
 <p>Bien que huit niveaux de formes normales soient identifiés, dans la pratique et notamment dans le cadre de ce cours, seules les trois premières formes normales sont généralement implémentées. Pour qu'un modèle soit considéré comme étant en troisième forme normale, il est impératif qu'il respecte également les deux premières formes. Cette progression garantit une structuration logique et méthodique des données.</p>
 <h2 id="premiere-forme-normale-1fn">Première forme normale (1FN)</h2>
-<p>Les règles de la première forme normale sont :</p>
 <p>Pour assurer l'intégrité et l'efficacité d'une base de données, il est essentiel de respecter certaines règles de conception :</p>
 <ol>
 <li>
@@ -2030,21 +2071,25 @@
 <p><strong>Absence de redondance dans les colonnes</strong> : La duplication d'informations dans plusieurs colonnes d'une même table doit être évitée pour prévenir les incohérences.</p>
 </li>
 </ol>
-<h3 id="exemple-de-non-respect-de-la-1fn">Exemple de Non-Respect de la 1FN</h3>
+<h3 id="exemple-de-non-respect-de-la-1fn">Exemple de non-respect de la 1FN</h3>
 <p>Prenons l'exemple de deux tables <code>Usagers</code> qui violent la première forme normale :</p>
 <ul>
-<li><strong>Table Usagers 1</strong> :</li>
+<li>
+<p><strong>Table Usagers 1</strong> :</p>
+<ul>
 <li><code>ID</code> : clé primaire</li>
 <li><code>Nom</code> : nom de l'usager</li>
-<li>
-<p><code>Téléphones</code> : liste des numéros de téléphone (violation de la 1FN car l'attribut est une liste)</p>
+<li><code>Téléphones</code> : liste des numéros de téléphone (violation de la 1FN car l'attribut est une liste)</li>
+</ul>
 </li>
 <li>
 <p><strong>Table Usagers 2</strong> :</p>
-</li>
+<ul>
 <li><code>ID</code> : clé primaire</li>
 <li><code>Nom</code> : nom de l'usager</li>
 <li><code>Adresse</code> : adresse complète (rue, ville, code postal) (violation de la 1FN car l'attribut est composé)</li>
+</ul>
+</li>
 </ul>
 <p>Dans chacun de ces cas, l'attribut en violation doit être modifié pour respecter la première forme normale. Pour la table <code>Usagers 1</code>, l'attribut <code>Téléphones</code> pourrait être géré via une table séparée. Pour la table <code>Usagers 2</code>, l'adresse peut être divisée en attributs distincts comme <code>Rue</code>, <code>Ville</code>, et <code>Code Postal</code>.</p>
 <h3 id="table-usagers-1">Table Usagers 1</h3>
@@ -2368,7 +2413,7 @@ Pour rendre les tables <code>Usager 1</code> et <code>Usager 2</code> conformes 
 </tr>
 </tbody>
 </table>
-<p>Dans cette table, l'attribut <strong>DESCRIPTION</strong> dépend de <strong>ITEM_ID</strong> et non directement de la clé primaire <strong>ID</strong>. Pour rendre la table conforme à la 3FN, il conviendrait de retirer l'attribut <strong>DESCRIPTION</strong> de cette table, à condition que cette information soit déjà contenue dans une table distincte associée aux <strong>ITEM_ID</strong> (par exemple, une table <strong>Item</strong>). Cette séparation permet d'éliminer les dépendances transitives et d'assurer que chaque attribut non-clé est directement dépendant de la clé primaire seule, garantissant ainsi l'intégrité et la normalisation des données.</p>
+<p>Dans cette table, l'attribut <code>DESCRIPTION</code> dépend de <code>ITEM_ID</code> et non directement de la clé primaire <code>ID</code>. Pour rendre la table conforme à la 3FN, il conviendrait de retirer l'attribut <code>DESCRIPTION</code> de cette table, à condition que cette information soit déjà contenue dans une table distincte associée aux <code>ITEM_ID*</code>(par exemple, une table <code>Items</code>). Cette séparation permet d'éliminer les dépendances transitives et d'assurer que chaque attribut non-clé est directement dépendant de la clé primaire seule, garantissant ainsi l'intégrité et la normalisation des données.</p>
 <h2 id="impact-de-lapplication-de-la-regle_2">Impact de l'application de la règle</h2>
 <ul>
 <li>Permets d'éliminer plusieurs redondances des données.</li>

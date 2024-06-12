@@ -22,7 +22,7 @@
     
     
       
-        <title>Exercice 05 - Exercice sur les INSERTs - Cours Bases de donn&eacute;es 2</title>
+        <title>Exercice 05 - Exercice sur les insertions - Cours Bases de donn&eacute;es 2</title>
       
     
     
@@ -117,7 +117,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#exercice-5-insert" class="md-skip">
+        <a href="#exercice-5-insertions-de-donnees" class="md-skip">
           Aller au contenu
         </a>
       
@@ -153,7 +153,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Exercice 05 - Exercice sur les INSERTs
+              Exercice 05 - Exercice sur les insertions
             
           </span>
         </div>
@@ -1168,6 +1168,27 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python/flask/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Flask
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1318,15 +1339,96 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Exercice 05 - Exercice sur les insertions
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
-    Exercice 05 - Exercice sur les INSERTs
+    Exercice 05 - Exercice sur les insertions
   </span>
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#contexte" class="md-nav__link">
+    <span class="md-ellipsis">
+      Contexte
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#instructions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instructions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Instructions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#insertion-des-donnees" class="md-nav__link">
+    <span class="md-ellipsis">
+      Insertion des données
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validation-des-insertions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Validation des insertions
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#livrable" class="md-nav__link">
+    <span class="md-ellipsis">
+      Livrable
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1471,6 +1573,27 @@
   
   <span class="md-ellipsis">
     Exercice 12 - pyCRUD
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ex13_enonce/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exercice 13 - Flask
   </span>
   
 
@@ -1849,16 +1972,50 @@
   
 
 
-<h1 id="exercice-5-insert">Exercice 5 - INSERT</h1>
-<p>À partir de la base de données athlète, (le script sql de génération est disponible <a href="../../ressources/ex05_create_tables.sql"><strong>ici</strong></a>), réalisez les requêtes d'insertion suivante.</p>
+<h1 id="exercice-5-insertions-de-donnees">Exercice 5 - Insertions de données</h1>
+<h2 id="contexte">Contexte</h2>
+<p>Cet exercice porte sur la manipulation et l'insertion de données dans une base de données dédiée aux athlètes. Le script SQL pour créer les tables nécessaires est disponible <a href="../../ressources/ex05_create_tables.sql"><strong>ici</strong></a>.</p>
+<h2 id="instructions">Instructions</h2>
+<h3 id="insertion-des-donnees">Insertion des données</h3>
+<p>Vous allez effectuer plusieurs opérations d'insertion en utilisant différentes méthodes :</p>
 <ol>
-<li>Insérez-vous dans la table athlète sans spécifier les noms de colonnes dans la requête.</li>
-<li>Insérez un autre athlète fictif mais en spécifiant seulement son nom, prénom et la date de naissance.</li>
-<li>Récupérez le id qui a été généré automatiquement lors de la requête précédente et faites afficher avec une requête <strong>SELECT</strong> le message suivant : "L'athlète [prenom] [nom] a été ajouté avec succès!". Utilisez le id récupéré dans la clause <strong>WHERE</strong> de votre requête.</li>
-<li>Créez une nouvelle table appelé athlete_quebec avec les colonnes suivante ( id clé primaire auto-incrémenté, nom, prénom, ville )</li>
-<li>Insérez dans cette table tous les athlètes qui proviennent de la province du Québec à l'aide d'une requête select.</li>
+<li>
+<p><strong>Insertion simple</strong> :</p>
+<ul>
+<li>Insérez un athlète dans la table <code>athletes</code> sans spécifier les noms des colonnes dans la requête d'insertion.</li>
+</ul>
+</li>
+<li>
+<p><strong>Insertion partielle</strong> :</p>
+<ul>
+<li>Ajoutez un athlète fictif en spécifiant uniquement son nom, prénom et date de naissance.</li>
+</ul>
+</li>
+<li>
+<p><strong>Validation et affichage</strong> :</p>
+<ul>
+<li>Après l'insertion du deuxième athlète, récupérez l'ID automatiquement généré. </li>
+<li>Utilisez cet ID pour afficher le message suivant avec une requête <strong>SELECT</strong> : "L'athlète [prénom] [nom] a été ajouté avec succès !".</li>
+</ul>
+</li>
+<li>
+<p><strong>Création et remplissage de table</strong> :</p>
+<ul>
+<li>Créez une nouvelle table nommée <code>athletes_quebec</code> avec les colonnes suivantes :<ul>
+<li><code>id</code> : clé primaire auto-incrémentée</li>
+<li><code>nom</code></li>
+<li><code>prénom</code></li>
+<li><code>ville</code></li>
+</ul>
+</li>
+<li>Insérez dans cette table tous les athlètes originaires du Québec à l'aide d'une requête <strong>SELECT</strong>.</li>
+</ul>
+</li>
 </ol>
-<p>Je veux que vous me remettiez les requêtes dans un script SQL avec pour chaque requête d'insertion une requête select qui va valider que les données ont bien été ajouté.</p>
+<h3 id="validation-des-insertions">Validation des insertions</h3>
+<p>Pour chaque insertion, ajoutez une requête <strong>SELECT</strong> qui confirme que les données ont été correctement ajoutées à la base de données.</p>
+<h2 id="livrable">Livrable</h2>
+<p>Vous devez soumettre vos requêtes dans un script SQL. Assurez-vous que chaque insertion soit accompagnée d'une validation via une requête <strong>SELECT</strong> appropriée.</p>
 
 
 

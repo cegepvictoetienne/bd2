@@ -14,7 +14,7 @@
         <link rel="prev" href="../pip/">
       
       
-        <link rel="next" href="../../exercices/ex01_enonce/">
+        <link rel="next" href="../flask/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -1220,6 +1220,30 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Utilisation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exemple-de-requete-select" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exemple de Requête SELECT
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exemple-de-suppression-avec-gestion-derreurs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exemple de Suppression avec Gestion d'Erreurs
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1235,6 +1259,27 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../flask/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Flask
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -1380,7 +1425,7 @@
         
   
   <span class="md-ellipsis">
-    Exercice 05 - Exercice sur les INSERTs
+    Exercice 05 - Exercice sur les insertions
   </span>
   
 
@@ -1528,6 +1573,27 @@
   
   <span class="md-ellipsis">
     Exercice 12 - pyCRUD
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../exercices/ex13_enonce/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exercice 13 - Flask
   </span>
   
 
@@ -1906,135 +1972,71 @@
   
 
 
-<h1 id="mysql-connector-pour-python">MySQL Connector pour python</h1>
-<p>Pour nous permettre de communiquer avec notre base de données MySQL depuis nos programmes Python on va utiliser la librairie MySQL Connector.</p>
+<h1 id="mysql-connector-pour-python">MySQL Connector pour Python</h1>
+<p>Le MySQL Connector permet de communiquer avec des bases de données MySQL à partir de programmes Python. Voici comment l'utiliser.</p>
 <h2 id="installation">Installation</h2>
-<p>En ligne de commande </p>
-<div class="highlight"><pre><span></span><code>pip install mysql-connector-python
+<p>Ouvrez votre terminal et installez MySQL Connector avec la commande suivante :</p>
+<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>mysql-connector-python
 </code></pre></div>
 <h2 id="utilisation">Utilisation</h2>
-<p>Premièrement on doit importer la librairie MySQL Connector. Ensuite on crée une connexion vers la base de données dans laquelle on veut travailler. On va aussi déclarer un curseur qui va s'occuper d'exécuter les requêtes. Finalement on doit refermer le curseur et la connexion à la base de données. </p>
-<p>Voici un petit exemple de programme Python qui exécute une requête SELECT et qui affiche ensuite à la console le résultat obtenue.</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">select_exemple.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span>
-<span class="normal">21</span>
-<span class="normal">22</span>
-<span class="normal">23</span>
-<span class="normal">24</span>
-<span class="normal">25</span>
-<span class="normal">26</span>
-<span class="normal">27</span>
-<span class="normal">28</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># Importation de la librairie mysql.connector</span>
-<span class="kn">import</span> <span class="nn">mysql.connector</span>
+<p>Pour utiliser MySQL Connector, suivez ces étapes :</p>
+<ol>
+<li><strong>Importation</strong> : Importez la librairie MySQL Connector.</li>
+<li><strong>Connexion</strong> : Établissez une connexion avec la base de données.</li>
+<li><strong>Curseur</strong> : Créez un curseur pour exécuter les requêtes.</li>
+<li><strong>Fermeture</strong> : Fermez le curseur et la connexion après l'utilisation.</li>
+</ol>
+<h3 id="exemple-de-requete-select">Exemple de Requête SELECT</h3>
+<p>Voici un exemple simple qui effectue une requête SELECT et affiche les résultats :</p>
+<div class="highlight"><span class="filename">select_exemple.py</span><pre><span></span><code><span class="kn">import</span> <span class="nn">mysql.connector</span>
 
-<span class="c1"># Création de la connexion à la base de données</span>
-<span class="hll"><span class="n">cnx</span> <span class="o">=</span> <span class="n">mysql</span><span class="o">.</span><span class="n">connector</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span>
-</span><span class="hll">    <span class="n">user</span><span class="o">=</span><span class="s1">&#39;root&#39;</span><span class="p">,</span> 
-</span><span class="hll">    <span class="n">password</span><span class="o">=</span><span class="s1">&#39;********&#39;</span><span class="p">,</span>
-</span><span class="hll">    <span class="n">host</span><span class="o">=</span><span class="s1">&#39;localhost&#39;</span><span class="p">,</span>
-</span><span class="hll">    <span class="n">database</span><span class="o">=</span><span class="s1">&#39;bd2_ex10&#39;</span><span class="p">)</span>
-</span>
-<span class="c1"># Création du curseur</span>
-<span class="c1"># Le paramêtre dictionary=True permet de faire </span>
-<span class="c1"># référence aux champs du résultat par leur nom</span>
-<span class="hll"><span class="n">cursor</span> <span class="o">=</span> <span class="n">cnx</span><span class="o">.</span><span class="n">cursor</span><span class="p">(</span><span class="n">dictionary</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-</span>
-<span class="c1"># Stockage de la requête dans une variable</span>
-<span class="n">query</span> <span class="o">=</span> <span class="s2">&quot;SELECT nom FROM houblon h ORDER BY nom;&quot;</span>
+<span class="c1"># Connexion à la base de données</span>
+<span class="n">cnx</span> <span class="o">=</span> <span class="n">mysql</span><span class="o">.</span><span class="n">connector</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">user</span><span class="o">=</span><span class="s1">&#39;root&#39;</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="s1">&#39;********&#39;</span><span class="p">,</span> <span class="n">host</span><span class="o">=</span><span class="s1">&#39;localhost&#39;</span><span class="p">,</span> <span class="n">database</span><span class="o">=</span><span class="s1">&#39;bd2_ex10&#39;</span><span class="p">)</span>
+
+<span class="c1"># Création du curseur avec des résultats nommés</span>
+<span class="n">cursor</span> <span class="o">=</span> <span class="n">cnx</span><span class="o">.</span><span class="n">cursor</span><span class="p">(</span><span class="n">dictionary</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
 <span class="c1"># Exécution de la requête</span>
-<span class="hll"><span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
-</span>
+<span class="n">query</span> <span class="o">=</span> <span class="s2">&quot;SELECT nom FROM houblons ORDER BY nom;&quot;</span>
+<span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
+
 <span class="c1"># Affichage des résultats</span>
-<span class="k">for</span> <span class="p">(</span><span class="n">ligne</span><span class="p">)</span> <span class="ow">in</span> <span class="n">cursor</span><span class="p">:</span>
+<span class="k">for</span> <span class="n">ligne</span> <span class="ow">in</span> <span class="n">cursor</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">ligne</span><span class="p">[</span><span class="s2">&quot;nom&quot;</span><span class="p">])</span>
 
 <span class="c1"># Fermeture du curseur et de la connexion</span>
-<span class="hll"><span class="n">cursor</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-</span><span class="hll"><span class="n">cnx</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-</span></code></pre></div></td></tr></table></div>
-<p>Le résultat contenu dans le curseur est un tableau de toutes les lignes du résultat dont chaque élément est aussi un tableau qui contient chaque colonne de la ligne. Dans l'exemple plus haut chaque élément du tableau est un tableau d'un item, la colonne nom.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Quand vous exécutez une requête INSERT, UPDATE ou DELETE vous devez faire un commit pour que les modifications soit sauvegardées. Utilisez la fontion <strong>commit()</strong> de votre objet connexion.</p>
-</div>
-<p>Voici un autre exemple qui supprime un élément d'une table. Dans cet exemple on voit comment passer des paramètres à la requête et faire une gestion d'erreurs avec un <strong>try ... catch</strong>.</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">delete_exemple.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span>
-<span class="normal">21</span>
-<span class="normal">22</span>
-<span class="normal">23</span>
-<span class="normal">24</span>
-<span class="normal">25</span>
-<span class="normal">26</span>
-<span class="normal">27</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span> <span class="nn">mysql.connector</span>
+<span class="n">cursor</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<span class="n">cnx</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</code></pre></div>
+<p><strong>Note</strong> : Pour les requêtes modifiant les données (INSERT, UPDATE, DELETE), il est nécessaire de valider les changements avec <code>commit()</code>.</p>
+<h3 id="exemple-de-suppression-avec-gestion-derreurs">Exemple de Suppression avec Gestion d'Erreurs</h3>
+<p>Voici comment supprimer un élément tout en gérant les erreurs potentielles :</p>
+<div class="highlight"><span class="filename">delete_exemple.py</span><pre><span></span><code><span class="kn">import</span> <span class="nn">mysql.connector</span>
 
-<span class="n">houlon_id</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
-
-<span class="n">houblonDelete</span> <span class="o">=</span> <span class="kc">False</span>
-<span class="n">requete</span> <span class="o">=</span> <span class="s2">&quot;DELETE FROM houblon WHERE id = </span><span class="si">%(houblon_id)s</span><span class="s2">&quot;</span>
-<span class="n">parametres</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;houblon_id&#39;</span> <span class="p">:</span> <span class="n">houlon_id</span><span class="p">}</span>
+<span class="n">houblon_id</span> <span class="o">=</span> <span class="mi">1</span>
 
 <span class="k">try</span><span class="p">:</span>
-    <span class="n">connexion</span> <span class="o">=</span> <span class="n">mysql</span><span class="o">.</span><span class="n">connector</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span>
-      <span class="n">user</span><span class="o">=</span><span class="s1">&#39;root&#39;</span><span class="p">,</span> 
-      <span class="n">password</span><span class="o">=</span><span class="s1">&#39;r00t_bd2&#39;</span><span class="p">,</span>
-      <span class="n">host</span><span class="o">=</span><span class="s1">&#39;localhost&#39;</span><span class="p">,</span>
-      <span class="n">database</span><span class="o">=</span><span class="s1">&#39;bd2_ex10&#39;</span><span class="p">)</span>
+    <span class="n">connexion</span> <span class="o">=</span> <span class="n">mysql</span><span class="o">.</span><span class="n">connector</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">user</span><span class="o">=</span><span class="s1">&#39;root&#39;</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="s1">&#39;r00t_bd2&#39;</span><span class="p">,</span> <span class="n">host</span><span class="o">=</span><span class="s1">&#39;localhost&#39;</span><span class="p">,</span> <span class="n">database</span><span class="o">=</span><span class="s1">&#39;bd2_ex10&#39;</span><span class="p">)</span>
     <span class="n">cursor</span> <span class="o">=</span> <span class="n">connexion</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
 
-    <span class="c1"># Exécution de la requête avec passage de paramètres</span>
+    <span class="c1"># Exécution de la requête avec paramètres</span>
+    <span class="n">requete</span> <span class="o">=</span> <span class="s2">&quot;DELETE FROM houblons WHERE id = </span><span class="si">%(houblon_id)s</span><span class="s2">&quot;</span>
+    <span class="n">parametres</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;houblon_id&#39;</span><span class="p">:</span> <span class="n">houblon_id</span><span class="p">}</span>
     <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">requete</span><span class="p">,</span> <span class="n">parametres</span><span class="p">)</span>
-    <span class="c1"># Validation de la transaction</span>
-<span class="hll">    <span class="n">connexion</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
-</span>
-    <span class="n">houblonDelete</span> <span class="o">=</span> <span class="kc">True</span>
-<span class="k">except</span> <span class="n">mysql</span><span class="o">.</span><span class="n">Error</span> <span class="k">as</span> <span class="n">erreur</span><span class="p">:</span>
+    <span class="n">connexion</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+
+<span class="k">except</span> <span class="n">mysql</span><span class="o">.</span><span class="n">connector</span><span class="o">.</span><span class="n">Error</span> <span class="k">as</span> <span class="n">erreur</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">erreur</span><span class="p">)</span>
 <span class="k">finally</span><span class="p">:</span>
-    <span class="n">cursor</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-    <span class="n">connexion</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-</code></pre></div></td></tr></table></div>
+    <span class="k">if</span> <span class="n">cursor</span><span class="p">:</span>
+        <span class="n">cursor</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">connexion</span><span class="p">:</span>
+        <span class="n">connexion</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</code></pre></div>
 <h2 id="documentation">Documentation</h2>
 <ul>
-<li><a href="https://dev.mysql.com/doc/connector-python/en/" target="_blank">Documentation officielle</a></li>
-<li><a href="https://www.w3schools.com/python/python_mysql_getstarted.asp" target="_blank">Documentation sur W3Schools</a></li>
+<li><a href="https://dev.mysql.com/doc/connector-python/en/">Documentation officielle</a></li>
+<li><a href="https://www.w3schools.com/python/python_mysql_getstarted.asp">Documentation sur W3Schools</a></li>
 </ul>
 
 

@@ -1288,6 +1288,27 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python/flask/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Flask
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1428,7 +1449,7 @@
         
   
   <span class="md-ellipsis">
-    Exercice 05 - Exercice sur les INSERTs
+    Exercice 05 - Exercice sur les insertions
   </span>
   
 
@@ -1576,6 +1597,27 @@
   
   <span class="md-ellipsis">
     Exercice 12 - pyCRUD
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../exercices/ex13_enonce/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exercice 13 - Flask
   </span>
   
 
@@ -1957,7 +1999,6 @@
 <h1 id="types-de-relations">Types de relations</h1>
 <p>Il existe trois types possibles de relation entre les tables :</p>
 <h2 id="un-a-plusieurs-1-n">Un à plusieurs (1-n)</h2>
-<p>Vous avez bien décrit une manière de structurer une base de données pour un jeu d'aventure afin de gérer les relations entre les usagers et leurs personnages. Voici une version améliorée et plus détaillée de votre explication, en tenant compte des meilleures pratiques de modélisation de bases de données :</p>
 <p>Dans le contexte d'un jeu d'aventure, où un usager peut créer et gérer plusieurs personnages simultanément, la structure de la base de données doit efficacement représenter la relation entre les usagers et leurs personnages. Chaque personnage est exclusif à un usager, ce qui signifie qu'un personnage ne peut appartenir qu'à un seul usager. Pour modéliser cette relation "un à plusieurs" dans la base de données, on utilise la technique de la clé étrangère.</p>
 <p>Voici comment cette relation peut être structurée :</p>
 <ol>
@@ -1969,16 +2010,16 @@
 </ul>
 </li>
 <li>
-<p><strong>Table personnages</strong> : Cette table stocke les informations relatives aux différents personnages créés par les usagers.</p>
+<p><strong>Table Personnages</strong> : Cette table stocke les informations relatives aux différents personnages créés par les usagers.</p>
 <ul>
 <li><strong>id</strong> (clé primaire) : Identifie de manière unique chaque personnage dans le jeu.</li>
-<li><strong>usager_id</strong> (clé étrangère) : Relie chaque personnage à un usager spécifique. Cette clé étrangère fait référence à la clé primaire de la table Usagers, assurant que chaque personnage est lié à un seul usager.</li>
+<li><strong>usager_id</strong> (clé étrangère) : Relie chaque personnage à un usager spécifique. Cette clé étrangère fait référence à la clé primaire de la table <code>Usagers</code>, assurant que chaque personnage est lié à un seul usager.</li>
 <li>Autres attributs : Tels que le nom du personnage, niveau, classe, etc.</li>
 </ul>
 </li>
 </ol>
 <p><img alt="Relation 1-n" src="../../images/relation_un_plusieurs.svg" />  </p>
-<p>En utilisant une clé étrangère dans la table Personnages qui pointe vers la clé primaire de la table Usagers, on assure une intégrité référentielle entre les tables. Cela permet de garantir que chaque personnage est associé à un usager existant et empêche les orphelins de données, c'est-à-dire des personnages sans usagers associés. Cette structure facilite également les requêtes pour retrouver tous les personnages appartenant à un usager spécifique, optimisant ainsi les interactions dans le jeu.</p>
+<p>En utilisant une clé étrangère dans la table <code>Personnages</code> qui pointe vers la clé primaire de la table <code>Usagers</code>, on assure une intégrité référentielle entre les tables. Cela permet de garantir que chaque personnage est associé à un usager existant et empêche les orphelins de données, c'est-à-dire des personnages sans usagers associés. Cette structure facilite également les requêtes pour retrouver tous les personnages appartenant à un usager spécifique, optimisant ainsi les interactions dans le jeu.</p>
 <h2 id="plusieurs-a-plusieurs-n-n">Plusieurs à plusieurs (n-n)</h2>
 <p>Dans le cadre du jeu d'aventure où un personnage peut posséder plusieurs exemplaires d'un même item et où un item peut être présent dans plusieurs inventaires, nous avons affaire à une relation de type plusieurs à plusieurs entre les personnages (ou directement les inventaires) et les items. Pour modéliser correctement cette relation dans la base de données, il est nécessaire de créer une table de jonction qui transforme cette relation complexe en relations plus simples de type un à plusieurs.</p>
 <h3 id="structure-des-tables">Structure des tables :</h3>
@@ -1998,8 +2039,8 @@
 <li>
 <p><strong>Table de Jonction inventaires_items</strong> : Démembre la relation plusieurs à plusieurs entre les inventaires et les items.</p>
 <ul>
-<li><strong>inventaire_id</strong> (clé étrangère) : Relie chaque entrée à un inventaire spécifique dans la table Inventaires.</li>
-<li><strong>item_id</strong> (clé étrangère) : Relie chaque entrée à un item spécifique dans la table Items.</li>
+<li><strong>inventaire_id</strong> (clé étrangère) : Relie chaque entrée à un inventaire spécifique dans la table <code>Inventaires</code>.</li>
+<li><strong>item_id</strong> (clé étrangère) : Relie chaque entrée à un item spécifique dans la table <strong>Items</strong>.</li>
 <li>Autres attributs possibles : Quantité de l'item dans l'inventaire, condition de l'item, etc.</li>
 </ul>
 </li>
@@ -2007,7 +2048,7 @@
 <p><img alt="Relation n-n" src="../../images/relation_plusieurs_plusieurs.svg" />  </p>
 <h3 id="fonctionnement-de-la-table-de-jonction">Fonctionnement de la table de jonction :</h3>
 <p>La table de jonction, souvent appelée table associative, permet de stocker les informations spécifiques à chaque association entre un inventaire et un item, comme la quantité d'un item spécifique dans un inventaire donné. Chaque ligne de cette table représente une occurrence unique d'un item dans un inventaire particulier, ce qui permet de gérer efficacement les multiples instances d'un même item.</p>
-<p>En utilisant des clés étrangères qui pointent vers les clés primaires des tables Inventaires et Items, la table de jonction maintient l'intégrité référentielle et simplifie les requêtes qui visent à déterminer quels items se trouvent dans quel inventaire, ou inversement, dans quels inventaires un item particulier est présent. Cette méthode de modélisation est essentielle pour maintenir une base de données organisée, cohérente et facile à gérer dans le contexte d'un jeu complexe avec de multiples éléments interactifs.</p>
+<p>En utilisant des clés étrangères qui pointent vers les clés primaires des tables <code>Inventaires</code> et <code>Items</code>, la table de jonction maintient l'intégrité référentielle et simplifie les requêtes qui visent à déterminer quels items se trouvent dans quel inventaire, ou inversement, dans quels inventaires un item particulier est présent. Cette méthode de modélisation est essentielle pour maintenir une base de données organisée, cohérente et facile à gérer dans le contexte d'un jeu complexe avec de multiples éléments interactifs.</p>
 <h2 id="un-a-un-1-1">Un à un (1-1)</h2>
 <p>Dans certains cas de figure en modélisation de bases de données, nous rencontrons des relations de type un-à-un, où chaque entrée dans une table est directement liée à une seule entrée dans une autre table, et vice versa. Ce type de relation est relativement rare car, dans de nombreux cas, les données correspondantes pourraient simplement être regroupées au sein d'une seule table. Cependant, il existe des situations spécifiques où une séparation est justifiée.</p>
 <h3 id="utilisation-des-relations-un-a-un">Utilisation des relations un-à-un :</h3>
@@ -2023,7 +2064,7 @@
 <p>Supposons une base de données avec deux tables, <code>Usagers</code> et <code>Informations_Sensibles</code> :  </p>
 <ul>
 <li><strong>Table Usagers</strong> : Contient des données générales comme l'ID de l'usager, le nom, et le courriel.  </li>
-<li><strong>Table Informations_Sensibles</strong> : Contient des données plus délicates, telles que les informations de paiement ou les numéros d'assurance sociale, avec une clé étrangère qui référence la clé primaire de la table Usagers.  </li>
+<li><strong>Table Informations_Sensibles</strong> : Contient des données plus délicates, telles que les informations de paiement ou les numéros d'assurance sociale, avec une clé étrangère qui référence la clé primaire de la table <code>Usagers</code>.  </li>
 </ul>
 <p>Dans cette structure, chaque entrée de la table <code>Usagers</code> a une correspondance unique dans la table <code>Informations_Sensibles</code>, garantissant que chaque usager a exactement un ensemble de données sensibles associé, et inversement.</p>
 <p>Ce modèle offre non seulement une meilleure protection des données grâce à une gestion plus ciblée des accès, mais il facilite également la maintenance et l'évolutivité de la base de données en maintenant la séparation logique des différents types de données.</p>

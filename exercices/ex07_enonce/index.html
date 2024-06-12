@@ -117,7 +117,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#exercice-7-declencheurs" class="md-skip">
+        <a href="#exercice-7-creation-de-declencheurs" class="md-skip">
           Aller au contenu
         </a>
       
@@ -1168,6 +1168,27 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python/flask/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Flask
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1313,7 +1334,7 @@
         
   
   <span class="md-ellipsis">
-    Exercice 05 - Exercice sur les INSERTs
+    Exercice 05 - Exercice sur les insertions
   </span>
   
 
@@ -1397,55 +1418,55 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#preparation-des-donnees" class="md-nav__link">
+  <a href="#preparation" class="md-nav__link">
     <span class="md-ellipsis">
-      Préparation des données
+      Préparation
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#declencheurs-a-creer" class="md-nav__link">
+  <a href="#instructions-pour-les-declencheurs" class="md-nav__link">
     <span class="md-ellipsis">
-      Déclencheurs à créer
+      Instructions pour les déclencheurs
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Déclencheurs à créer">
+    <nav class="md-nav" aria-label="Instructions pour les déclencheurs">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#question-1" class="md-nav__link">
+  <a href="#question-1-suivi-des-modifications" class="md-nav__link">
     <span class="md-ellipsis">
-      Question #1
+      Question #1 : Suivi des modifications
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#question-2" class="md-nav__link">
+  <a href="#question-2-validation-a-linsertion" class="md-nav__link">
     <span class="md-ellipsis">
-      Question #2
+      Question #2 : Validation à l'insertion
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#question-3" class="md-nav__link">
+  <a href="#question-3-validation-a-la-modification" class="md-nav__link">
     <span class="md-ellipsis">
-      Question #3
+      Question #3 : Validation à la modification
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#question-4" class="md-nav__link">
+  <a href="#question-4-gestion-des-doublons-de-descriptions" class="md-nav__link">
     <span class="md-ellipsis">
-      Question #4
+      Question #4 : Gestion des doublons de descriptions
     </span>
   </a>
   
@@ -1453,6 +1474,15 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#livrables" class="md-nav__link">
+    <span class="md-ellipsis">
+      Livrables
+    </span>
+  </a>
   
 </li>
       
@@ -1561,6 +1591,27 @@
   
   <span class="md-ellipsis">
     Exercice 12 - pyCRUD
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ex13_enonce/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exercice 13 - Flask
   </span>
   
 
@@ -1939,62 +1990,59 @@
   
 
 
-<h1 id="exercice-7-declencheurs">Exercice 7 - Déclencheurs</h1>
-<h2 id="preparation-des-donnees">Préparation des données</h2>
-<ul>
-<li>Importer le script sql <strong>ex07_create_tables.sql</strong> disponible <a href="../../ressources/ex07_create_tables.sql">ici</a></li>
-</ul>
-<h2 id="declencheurs-a-creer">Déclencheurs à créer</h2>
-<h3 id="question-1">Question #1</h3>
-<p>Pour chaque modification à la table <strong>resultats</strong>, insérez les informations nécessaires dans la table <strong>resultats_log</strong> APRÈS l'exécution de la requête INSERT, UPDATE et DELETE. Attention, lors d'un UPDATE, ajoutez les informations seulement si la colonne <strong>resultat_ms</strong> a été modifié.</p>
+<h1 id="exercice-7-creation-de-declencheurs">Exercice 7 - Création de déclencheurs</h1>
+<h2 id="preparation">Préparation</h2>
+<p>Importez le script SQL <strong>ex07_create_tables.sql</strong> disponible <a href="../../ressources/ex07_create_tables.sql">ici</a> pour préparer votre environnement de base de données.</p>
+<h2 id="instructions-pour-les-declencheurs">Instructions pour les déclencheurs</h2>
+<h3 id="question-1-suivi-des-modifications">Question #1 : Suivi des modifications</h3>
+<p>Créez un déclencheur qui enregistre chaque modification dans la table <code>resultats</code> dans une table de journalisation <code>resultats_log</code>. Les détails à enregistrer dépendent du type d'opération effectuée :</p>
 <table>
 <thead>
 <tr>
-<th>colonne</th>
-<th>insert</th>
-<th>update</th>
-<th>delete</th>
+<th>Type d'opération</th>
+<th>Colonne <code>operation</code></th>
+<th>Colonne <code>ancien_resultat</code></th>
+<th>Colonne <code>nouveau_resultat</code></th>
+<th>Colonne <code>resultat_id</code></th>
+<th>Colonne <code>date_operation</code></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>operation</td>
+<td>Insertion</td>
 <td>"insert"</td>
+<td>null</td>
+<td><code>new.resultat_ms</code></td>
+<td><code>new.id</code></td>
+<td>Date actuelle</td>
+</tr>
+<tr>
+<td>Mise à jour</td>
 <td>"update"</td>
+<td><code>old.resultat_ms</code></td>
+<td><code>new.resultat_ms</code></td>
+<td><code>new.id</code></td>
+<td>Date actuelle</td>
+</tr>
+<tr>
+<td>Suppression</td>
 <td>"delete"</td>
-</tr>
-<tr>
-<td>ancien_resultat</td>
+<td><code>old.resultat_ms</code></td>
 <td>null</td>
-<td>old.resultat_ms</td>
-<td>old.resultat_ms</td>
-</tr>
-<tr>
-<td>nouveau_resultat</td>
-<td>new.resultat_ms</td>
-<td>new.resultat_ms</td>
-<td>null</td>
-</tr>
-<tr>
-<td>resultat_id</td>
-<td>new.id</td>
-<td>new.id</td>
-<td>new.id</td>
-</tr>
-<tr>
-<td>date_operation</td>
-<td>La date du jour</td>
-<td>La date du jour</td>
-<td>La date du jour</td>
+<td><code>old.id</code></td>
+<td>Date actuelle</td>
 </tr>
 </tbody>
 </table>
-<h3 id="question-2">Question #2</h3>
-<p>Quand un résultat est inséré, validez que la valeur de la colonne cree_par existe dans la table <strong>usagers</strong>. Si la valeur est invalide, empêchez la requête INSERT et retournez un message d'erreur. La valeur à insérer dans le champ cree_par est le id d'un usager de la table <strong>usagers</strong>. </p>
-<h3 id="question-3">Question #3</h3>
-<p>Effectuez les mêmes opérations que la question #2 quand on modifie un résultat mais sur la colonne modifie_par.</p>
-<h3 id="question-4">Question #4</h3>
-<p>AVANT l'insertion ou la modification de la description d'une épreuve dans la table epreuves_types, valider que la description n'est pas déjà utilisée. Si oui, modifiez la valeur à ajouter ou modifier en ajoutant (x) à la description. ( x vaudra le nombre de fois que le nom se retrouve dans la table -1 ) Ex. On veut insérer Marathon comme valeur mais elle est déjà présente comme description dans la table. On va utiliser Marathon (1) comme nouvelle valeur à insérer.</p>
+<p><strong>Note :</strong> Pour les mises à jour, enregistrez les changements uniquement si la colonne <code>resultat_ms</code> est modifiée.</p>
+<h3 id="question-2-validation-a-linsertion">Question #2 : Validation à l'insertion</h3>
+<p>Implémentez un déclencheur pour valider que l'identifiant de l'utilisateur (<code>cree_par</code>) qui insère un nouveau résultat existe dans la table <code>usagers</code>. Si l'identifiant n'est pas valide, la requête INSERT doit être bloquée et un message d'erreur retourné.</p>
+<h3 id="question-3-validation-a-la-modification">Question #3 : Validation à la modification</h3>
+<p>Appliquez la même validation que dans la Question #2 pour les modifications, mais vérifiez la colonne <code>modifie_par</code> lors de la mise à jour d'un résultat.</p>
+<h3 id="question-4-gestion-des-doublons-de-descriptions">Question #4 : Gestion des doublons de descriptions</h3>
+<p>Avant l'insertion ou la modification d'une description dans la table <code>epreuves_types</code>, assurez-vous que la description n'est pas déjà utilisée. Si elle l'est, ajoutez un suffixe numérique entre parenthèses, qui correspond au nombre de fois que la description est déjà présente moins un. Par exemple, si "Marathon" est déjà utilisé, la nouvelle valeur à insérer ou à modifier sera "Marathon (1)".</p>
+<h2 id="livrables">Livrables</h2>
+<p>Soumettez les requêtes SQL des déclencheurs créés, ainsi que des exemples de requêtes qui démontrent leur fonctionnement correct, dans un script SQL.</p>
 
 
 

@@ -117,7 +117,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#exercice-8-fonctions" class="md-skip">
+        <a href="#exercice-8-creation-de-fonctions-sql" class="md-skip">
           Aller au contenu
         </a>
       
@@ -1168,6 +1168,27 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python/flask/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Flask
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1313,7 +1334,7 @@
         
   
   <span class="md-ellipsis">
-    Exercice 05 - Exercice sur les INSERTs
+    Exercice 05 - Exercice sur les insertions
   </span>
   
 
@@ -1418,18 +1439,27 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#formater-un-resutlat" class="md-nav__link">
+  <a href="#fonction-1-formatage-de-resultats" class="md-nav__link">
     <span class="md-ellipsis">
-      Formater un résutlat
+      Fonction 1: Formatage de résultats
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#fonction-de-calcul-de-moyenne-au-5-kilometres" class="md-nav__link">
+  <a href="#fonction-2-calcul-de-la-moyenne-pour-5-kilometres" class="md-nav__link">
     <span class="md-ellipsis">
-      Fonction de calcul de moyenne au 5 kilomètres
+      Fonction 2: Calcul de la moyenne pour 5 Kilomètres
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#livrables" class="md-nav__link">
+    <span class="md-ellipsis">
+      Livrables
     </span>
   </a>
   
@@ -1519,6 +1549,27 @@
   
   <span class="md-ellipsis">
     Exercice 12 - pyCRUD
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ex13_enonce/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exercice 13 - Flask
   </span>
   
 
@@ -1897,25 +1948,37 @@
   
 
 
-<h1 id="exercice-8-fonctions">Exercice 8 - Fonctions</h1>
-<p>Dans la base de données que vous avec importée à l'exercice 7 créez les deux fonctions suivantes : </p>
-<h2 id="formater-un-resutlat">Formater un résutlat</h2>
-<p>Créez une fonction nommée <strong>resultatHMS</strong> qui prendra en paramètre un résultat en millisecondes et qui le retournera en texte sous le format heures minutes et secondes (HH:MM:SS).</p>
-<h2 id="fonction-de-calcul-de-moyenne-au-5-kilometres">Fonction de calcul de moyenne au 5 kilomètres</h2>
-<p>Ajoutez les informations suivantes : </p>
+<h1 id="exercice-8-creation-de-fonctions-sql">Exercice 8 - Création de fonctions SQL</h1>
+<p>Après avoir importé la base de données lors de l'exercice 7, vous allez créer deux fonctions spécifiques pour traiter et analyser les données des athlètes.</p>
+<h2 id="fonction-1-formatage-de-resultats">Fonction 1: Formatage de résultats</h2>
+<p><strong>Objectif :</strong> Créez une fonction nommée <strong>resultatHMS</strong> qui convertit un temps de résultat donné en millisecondes en un format lisible (HH:MM:SS).</p>
+<p><strong>Détails de la fonction :</strong>
+- <strong>Nom de la fonction :</strong> resultatHMS
+- <strong>Paramètre :</strong> Un entier représentant le temps en millisecondes.
+- <strong>Retour :</strong> Une chaîne de caractères formatée en heures, minutes et secondes (HH:MM:SS).</p>
+<h2 id="fonction-2-calcul-de-la-moyenne-pour-5-kilometres">Fonction 2: Calcul de la moyenne pour 5 Kilomètres</h2>
+<p><strong>Contexte :</strong>
+Pour tester cette fonction, vous commencerez par insérer les données d'un athlète et de ses résultats au 5 km :</p>
 <div class="highlight"><pre><span></span><code><span class="c1">-- Insertion de l&#39;athlète John Smith avec trois résultats au 5 km</span>
-<span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">athlete</span><span class="w"> </span><span class="p">(</span><span class="n">nom</span><span class="p">,</span><span class="w"> </span><span class="n">prenom</span><span class="p">,</span><span class="w"> </span><span class="n">date_naissance</span><span class="p">,</span><span class="w"> </span><span class="n">adresse</span><span class="p">,</span><span class="w"> </span><span class="n">ville</span><span class="p">,</span><span class="w"> </span><span class="n">province</span><span class="p">,</span><span class="w"> </span><span class="n">pays</span><span class="p">,</span><span class="w"> </span><span class="n">courriel</span><span class="p">)</span>
+<span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">athletes</span><span class="w"> </span><span class="p">(</span><span class="n">nom</span><span class="p">,</span><span class="w"> </span><span class="n">prenom</span><span class="p">,</span><span class="w"> </span><span class="n">date_naissance</span><span class="p">,</span><span class="w"> </span><span class="n">adresse</span><span class="p">,</span><span class="w"> </span><span class="n">ville</span><span class="p">,</span><span class="w"> </span><span class="n">province</span><span class="p">,</span><span class="w"> </span><span class="n">pays</span><span class="p">,</span><span class="w"> </span><span class="n">courriel</span><span class="p">)</span>
 <span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;Smith&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;John&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;1980-01-01&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;475 Rue Notre Dame E&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Victoriaville&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Québec&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Canada&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;john.smith@gmail.com&#39;</span><span class="p">);</span>
 
 <span class="k">SET</span><span class="w"> </span><span class="o">@</span><span class="n">id_athlete</span><span class="w"> </span><span class="p">:</span><span class="o">=</span><span class="w"> </span><span class="n">LAST_INSERT_ID</span><span class="p">();</span>
 
-<span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">resultat</span><span class="w"> </span><span class="p">(</span><span class="n">athlete_id</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="n">epreuve_type_id</span><span class="p">,</span><span class="w"> </span><span class="n">date_resultat</span><span class="p">,</span><span class="w"> </span><span class="n">resultat_ms</span><span class="p">,</span><span class="w"> </span><span class="n">evenement_id</span><span class="p">)</span>
+<span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">resultats</span><span class="w"> </span><span class="p">(</span><span class="n">athlete_id</span><span class="p">,</span><span class="w"> </span><span class="n">epreuve_type_id</span><span class="p">,</span><span class="w"> </span><span class="n">date_resultat</span><span class="p">,</span><span class="w"> </span><span class="n">resultat_ms</span><span class="p">,</span><span class="w"> </span><span class="n">evenement_id</span><span class="p">)</span>
 <span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="o">@</span><span class="n">id_athlete</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;2023-07-17&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">1529499</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">),</span>
 <span class="w">       </span><span class="p">(</span><span class="o">@</span><span class="n">id_athlete</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;2023-08-17&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">1995742</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">),</span>
 <span class="w">       </span><span class="p">(</span><span class="o">@</span><span class="n">id_athlete</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;2023-09-17&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">1480882</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">);</span>
 </code></pre></div>
-<p>Créez une fonction nommée <strong>moyenne5k</strong> qui va prendre en paramètre le id d'un athlète et qui va retourner la moyenne de ses résultats pour toutes ses résultats au 5 km. La valeur de sortie doit être la moyenne des résultats exprimées en heures, minutes, secondes (hh:mm:ss) et de type VARCHAR(). </p>
-<p>Utilisez l'athlète John Smith qu'on vient d'ajouter pour tester la fonction, le résultat devrait être <code>00:27:48</code>.</p>
+<p><strong>Objectif :</strong> Créez une fonction nommée <strong>moyenne5k</strong> qui calcule la moyenne des temps d'un athlète pour tous ses résultats au 5 km.</p>
+<p><strong>Détails de la fonction :</strong>
+- <strong>Nom de la fonction :</strong> moyenne5k
+- <strong>Paramètre :</strong> ID de l'athlète.
+- <strong>Retour :</strong> La moyenne des résultats exprimée en heures, minutes, secondes (hh:mm:ss) sous forme de VARCHAR.</p>
+<p><strong>Validation :</strong>
+Utilisez l'athlète John Smith pour tester la fonction. Le résultat attendu doit être <code>00:27:48</code>.</p>
+<h2 id="livrables">Livrables</h2>
+<p>Soumettez le script SQL contenant les deux fonctions ainsi que les requêtes d'insertion pour les tests et les validations associées à la fonction moyenne5k.</p>
 
 
 

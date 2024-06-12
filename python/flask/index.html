@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://bd2.kerzo.ca/modelisation/schema_conceptuel/">
+        <link rel="canonical" href="https://bd2.kerzo.ca/python/flask/">
       
       
-        <link rel="prev" href="../modele_entites_relations/">
+        <link rel="prev" href="../mysql_connector/">
       
       
-        <link rel="next" href="../types_relations/">
+        <link rel="next" href="../../exercices/ex01_enonce/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -22,7 +22,7 @@
     
     
       
-        <title>Schéma conceptuel - Cours Bases de donn&eacute;es 2</title>
+        <title>Flask - Cours Bases de donn&eacute;es 2</title>
       
     
     
@@ -117,7 +117,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#exemple-pratique" class="md-skip">
+        <a href="#utilisation-de-flask-pour-afficher-les-donnees-dune-base-de-donnees-mysql" class="md-skip">
           Aller au contenu
         </a>
       
@@ -153,7 +153,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Schéma conceptuel
+              Flask
             
           </span>
         </div>
@@ -255,13 +255,11 @@
         
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="../definition_modelisation/" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../../modelisation/definition_modelisation/" class="md-tabs__link">
           
   
   Modélisation
@@ -293,11 +291,13 @@
         
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../python/installation/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../installation/" class="md-tabs__link">
           
   
   Python
@@ -473,28 +473,23 @@
       
   
   
-    
   
   
-  
     
     
     
       
-        
-        
-      
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
         
           
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -505,7 +500,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Modélisation
@@ -519,7 +514,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../definition_modelisation/" class="md-nav__link">
+      <a href="../../modelisation/definition_modelisation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -540,7 +535,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../modele_entites_relations/" class="md-nav__link">
+      <a href="../../modelisation/modele_entites_relations/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -558,28 +553,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Schéma conceptuel
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../modelisation/schema_conceptuel/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -588,51 +565,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table des matières
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#exemple-pratique" class="md-nav__link">
-    <span class="md-ellipsis">
-      Exemple pratique
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#entites-et-associations" class="md-nav__link">
-    <span class="md-ellipsis">
-      Entités et associations
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#description-des-multiplicites" class="md-nav__link">
-    <span class="md-ellipsis">
-      Description des multiplicités
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -645,7 +577,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../types_relations/" class="md-nav__link">
+      <a href="../../modelisation/types_relations/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -666,7 +598,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../normalisation/" class="md-nav__link">
+      <a href="../../modelisation/normalisation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -687,7 +619,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../classes/" class="md-nav__link">
+      <a href="../../modelisation/classes/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1118,23 +1050,28 @@
       
   
   
+    
   
   
+  
     
     
     
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
         
           
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -1145,7 +1082,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             Python
@@ -1159,7 +1096,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../python/installation/" class="md-nav__link">
+      <a href="../installation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1180,7 +1117,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../python/venv/" class="md-nav__link">
+      <a href="../venv/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1201,7 +1138,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../python/pip/" class="md-nav__link">
+      <a href="../pip/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1222,7 +1159,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../python/mysql_connector/" class="md-nav__link">
+      <a href="../mysql_connector/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1240,10 +1177,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../python/flask/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Flask
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -1252,6 +1209,80 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#objectifs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Objectifs
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation-des-paquets-necessaires" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installation des paquets nécessaires
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration-de-votre-application-flask" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuration de votre application Flask
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creation-du-template-html" class="md-nav__link">
+    <span class="md-ellipsis">
+      Création du template HTML
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#execution-de-lapplication" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exécution de l'application
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conclusion
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1944,79 +1975,66 @@
   
 
 
-  <h1>Schéma conceptuel</h1>
+<h1 id="utilisation-de-flask-pour-afficher-les-donnees-dune-base-de-donnees-mysql">Utilisation de Flask pour afficher les données d'une base de données MySQL</h1>
+<h2 id="objectifs">Objectifs</h2>
+<p>À la fin de cette leçon, vous serez capables de :
+- Configurer un environnement de développement Flask.
+- Connecter une application Flask à une base de données MySQL.
+- Récupérer des données depuis MySQL et les afficher sur une page web.</p>
+<h2 id="installation-des-paquets-necessaires">Installation des paquets nécessaires</h2>
+<p>Commencez par installer Flask et un connecteur MySQL pour Python. Ouvrez votre terminal et exécutez :</p>
+<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>flask<span class="w"> </span>mysql-connector-python
+</code></pre></div>
+<h2 id="configuration-de-votre-application-flask">Configuration de votre application Flask</h2>
+<p>Créez un nouveau dossier pour votre projet et à l'intérieur, créez un fichier appelé <code>app.py</code>. Ajoutez le code suivant pour configurer votre application :</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span><span class="p">,</span> <span class="n">render_template</span>
+<span class="kn">import</span> <span class="nn">mysql.connector</span>
 
-<p>Dans le schéma conceptuel du modèle entité-association, chaque composant est représenté de manière spécifique pour illustrer les relations et les structures de données de manière visuelle et intuitive :</p>
-<ul>
-<li>
-<p><strong>Entités</strong> : Représentées par des rectangles, les entités sont des objets ou des concepts qui possèdent des données dans la base de données. Le nom de l'entité est placé en en-tête du rectangle.</p>
-</li>
-<li>
-<p><strong>Attributs</strong> : Les caractéristiques ou propriétés des entités sont nommées à l'intérieur des rectangles de leur entité respective. Chaque attribut décrit une donnée que l'entité doit contenir.</p>
-</li>
-<li>
-<p><strong>Associations</strong> : Les relations entre deux entités ou plus sont représentées par des cercles, au sein desquels on inscrit un verbe ou un mot-clé décrivant la relation. Ces cercles servent à connecter logiquement les entités concernées.</p>
-</li>
-<li>
-<p><strong>Connexions</strong> : Des lignes ou traits relient les entités aux associations, démontrant comment elles interagissent ou sont liées par la relation définie.</p>
-</li>
-<li>
-<p><strong>Multiplicité</strong> : À chaque trait connectant une entité à une association, une notation spécifie la multiplicité de la relation, c'est-à-dire le nombre minimal et maximal d'instances pouvant être associées. Cette multiplicité est notée sous la forme x..y, où "x" est le nombre minimal d'objets reliés, et "y" le maximum. Des nombres entiers positifs sont utilisés, ou le symbole "*" pour indiquer un nombre illimité.</p>
-</li>
-</ul>
-<h3 id="exemple-pratique">Exemple pratique</h3>
-<p>Imaginons un schéma conceptuel simple pour une application de gestion de bibliothèque :</p>
-<p><img alt="Exemple de schéma conceptuel" src="../../images/schema_conceptuel_exemple.svg" /></p>
-<p>Cet exemple de schéma entité-association illustre les relations entre les auteurs, les livres, les pays, et les genres. Voici comment on pourrait décrire ce modèle :</p>
-<h3 id="entites-et-associations">Entités et associations</h3>
-<ol>
-<li>
-<p><strong>Entité Auteurs</strong> :</p>
-<ul>
-<li><strong>Attributs</strong> : Id, Nom, Prénom, Date de naissance.</li>
-<li><strong>Associations</strong> :<ul>
-<li><strong>Rédige</strong> : Relie un ou plusieurs auteurs à zéro ou plusieurs livres (multiplicité 1..* à 0..*). Cela signifie qu'un auteur peut rédiger aucun ou plusieurs livres, et un livre peut être rédigé par un ou plusieurs auteurs.</li>
-<li><strong>Est originaire de</strong> : Chaque auteur est originaire d'un seul pays  (multiplicité 0..* à 1..1). Cela signifie qu'un auteur peut ou non être lié à un pays, mais un pays peut être associé à aucun, un ou plusieurs auteurs.</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>
-<p><strong>Entité Livres</strong> :</p>
-<ul>
-<li><strong>Attributs</strong> : Id, Titre, isbn.</li>
-<li><strong>Associations</strong> :<ul>
-<li><strong>Appartient à</strong> : Chaque livre appartient à un genre (multiplicité 0..* à 1..*). Cela indique qu'un livre peut ou non appartenir à un genre, mais un genre peut inclure aucun, un, ou plusieurs livres.</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>
-<p><strong>Entité Pays</strong> :</p>
-<ul>
-<li><strong>Attributs</strong> : Id, Nom.</li>
-<li>Cette entité est associée à l'entité Auteur par l'association <strong>Est originaire de</strong>.</li>
-</ul>
-</li>
-<li>
-<p><strong>Entité Genres</strong> :</p>
-<ul>
-<li><strong>Attributs</strong> : Id, Nom.</li>
-<li>Cette entité est liée à l'entité Livre par l'association <strong>Appartient à</strong>.</li>
-</ul>
-</li>
-</ol>
-<h3 id="description-des-multiplicites">Description des multiplicités</h3>
-<ul>
-<li><strong>Rédige (Auteurs-Livres)</strong> : Une association qui peut inclure plusieurs auteurs collaborant sur un même livre, ou un auteur travaillant sur plusieurs livres.</li>
-<li><strong>Est originaire de (Auteurs-Pays)</strong> : Un auteur peut être associé à un seul pays, reflétant la nationalité ou l'origine géographique de l'auteur.</li>
-<li><strong>Appartient à (Livres-Genres)</strong> : Un livre est classé dans un genre spécifique, mais un genre peut regrouper de nombreux livres.</li>
-</ul>
-<p>Cet exemple illustre la complexité et l'interdépendance des entités dans une base de données relationnelle, montrant comment les livres peuvent être liés à leurs auteurs, genres, et pays d'origine. Cette structure aide à organiser les données de manière logique et efficace, facilitant les requêtes et la gestion des informations.</p>
-<div class="admonition note">
-<p class="admonition-title">Astuce</p>
-<p>Les multiplicités sont importantes pour déterminer les contraintes. Un truc pour les lire est de commencer par le nom de l'entité, ensuite le verbe de l'association, la multiplicité et finalement la deuxième entité. Si on prend par exemple l'association Rédige, on va lire que l'auteur peut rédiger entre 0 et plusieurs livres (0..*). À l'inverse un livre peut être rédigé par au moins un auteur mais aussi par plusieurs (1..*).</p>
-</div>
+<span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+
+<span class="c1"># Configuration de la connexion à la base de données</span>
+<span class="n">db</span> <span class="o">=</span> <span class="n">mysql</span><span class="o">.</span><span class="n">connector</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span>
+    <span class="n">host</span><span class="o">=</span><span class="s2">&quot;localhost&quot;</span><span class="p">,</span>
+    <span class="n">user</span><span class="o">=</span><span class="s2">&quot;votre_user&quot;</span><span class="p">,</span>
+    <span class="n">passwd</span><span class="o">=</span><span class="s2">&quot;votre_mot_de_passe&quot;</span><span class="p">,</span>
+    <span class="n">database</span><span class="o">=</span><span class="s2">&quot;nom_de_la_base_de_donnees&quot;</span>
+<span class="p">)</span>
+
+<span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">index</span><span class="p">():</span>
+    <span class="n">cursor</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+    <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;SELECT * FROM votre_table&quot;</span><span class="p">)</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">cursor</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()</span>
+    <span class="n">cursor</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s1">&#39;index.html&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">debug</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</code></pre></div>
+<h2 id="creation-du-template-html">Création du template HTML</h2>
+<p>Dans le même dossier que <code>app.py</code>, créez un dossier <code>templates</code>. À l'intérieur, créez un fichier <code>index.html</code>. Ajoutez le code HTML suivant pour afficher les données :</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Page de données<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Données de la Base<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+        {% for row in data %}
+        <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>{{ row }}<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+        {% endfor %}
+    <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</code></pre></div>
+<h2 id="execution-de-lapplication">Exécution de l'application</h2>
+<p>Pour exécuter votre application, retournez à votre terminal et lancez :</p>
+<div class="highlight"><pre><span></span><code>python<span class="w"> </span>app.py
+</code></pre></div>
+<p>Ouvrez votre navigateur et allez à <code>http://127.0.0.1:5000/</code>. Vous devriez voir les données extraites de votre base de données MySQL affichées sur la page.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Vous avez maintenant une application Flask simple qui peut récupérer des données d'une base de données MySQL et les afficher sur une page web. Ce projet peut être étendu pour inclure des fonctionnalités plus complexes comme des formulaires pour insérer ou modifier les données.</p>
 
 
 

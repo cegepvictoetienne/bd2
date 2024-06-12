@@ -1168,6 +1168,27 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python/flask/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Flask
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1313,11 +1334,62 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#objectif" class="md-nav__link">
+    <span class="md-ellipsis">
+      Objectif
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#mise-en-situation" class="md-nav__link">
     <span class="md-ellipsis">
       Mise en situation
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Mise en situation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creation-de-compte" class="md-nav__link">
+    <span class="md-ellipsis">
+      Création de Compte
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#commande-de-droits-de-stationnement" class="md-nav__link">
+    <span class="md-ellipsis">
+      Commande de Droits de Stationnement
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#options-de-duree" class="md-nav__link">
+    <span class="md-ellipsis">
+      Options de Durée
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gestion-des-plaques-dimmatriculation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gestion des Plaques d’Immatriculation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1362,7 +1434,7 @@
         
   
   <span class="md-ellipsis">
-    Exercice 05 - Exercice sur les INSERTs
+    Exercice 05 - Exercice sur les insertions
   </span>
   
 
@@ -1510,6 +1582,27 @@
   
   <span class="md-ellipsis">
     Exercice 12 - pyCRUD
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ex13_enonce/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exercice 13 - Flask
   </span>
   
 
@@ -1889,29 +1982,39 @@
 
 
 <h1 id="exercice-03-analyse-du-systeme-de-stationnement-du-cegep">Exercice 03 - Analyse du système de stationnement du cégep</h1>
-<p>Pour notre deuxième cas, on va analyser le système de droit de stationnement du cégep. Vous devez analyser le système et ensuite créer les deux diagrammes suivants a l'aide d'un logiciel approprié : </p>
+<h2 id="objectif">Objectif</h2>
+<p>Dans cet exercice, nous allons analyser le système de gestion des droits de stationnement du cégep. Votre mission est d’étudier ce système et de concevoir deux types de diagrammes à l’aide d’un logiciel spécialisé :</p>
 <ul>
-<li>un schéma conceptuel selon le modèle entité-association.</li>
-<li>un diagramme de classe UML</li>
+<li>Schéma Conceptuel : Utilisez le modèle entité-association pour ce schéma.</li>
+<li>Diagramme de Classe UML.</li>
 </ul>
-<p>Une fois terminé, me remettre le schéma et le diagramme en format image sur Teams dans la section devoir.</p>
+<p>Après avoir créé ces diagrammes, vous devrez les soumettre sous forme d’images via la plateforme Teams, dans la section dédiée aux devoirs.</p>
 <h2 id="mise-en-situation">Mise en situation</h2>
-<p>On doit tout d'abord se créer un usager avec un courriel et un mot de passe. Ensuite l'usager créé peut effectuer une commande qui déterminera la durée du droit de stationnement et les véhicules autorisés selon leur plaque d'immatriculation. </p>
+<h3 id="creation-de-compte">Création de Compte</h3>
+<p>Pour commencer, un utilisateur doit créer un compte en fournissant son adresse courriel et un mot de passe.</p>
+<h3 id="commande-de-droits-de-stationnement">Commande de Droits de Stationnement</h3>
+<p>Une fois le compte créé, l’utilisateur peut commander un droit de stationnement. Les étapes incluent :</p>
 <ul>
-<li>L'usager à le choix entre trois type de droit : <ul>
+<li>La sélection de la durée du droit de stationnement.</li>
+<li>La spécification des véhicules autorisés, identifiés par leurs plaques d’immatriculation.</li>
+</ul>
+<h3 id="options-de-duree">Options de Durée</h3>
+<p>Les utilisateurs peuvent choisir parmi les durées suivantes :  </p>
+<ul>
 <li>30 jours</li>
 <li>1 session</li>
-<li>annuelle</li>
+<li>Annuel</li>
 </ul>
-</li>
-<li>Il peut entrer un maximum de 4 plaques d'immatriculation par commande.</li>
-<li>Un compte peut contenir plus de 4 plaque d'immatriculation, mais chaque plaque est associé à une commande, un droit de stationnement.</li>
-<li>Pour les autres informations, référez-vous aux images suivantes : </li>
+<h3 id="gestion-des-plaques-dimmatriculation">Gestion des Plaques d’Immatriculation</h3>
+<ul>
+<li>Un maximum de 4 plaques d’immatriculation peut être enregistré par commande.</li>
+<li>Bien qu’un compte puisse être associé à plus de 4 plaques, chaque plaque est liée à une commande spécifique et, par conséquent, à un droit de stationnement déterminé.</li>
 </ul>
+<p>Pour plus de détails, veuillez consulter les images fournies ci-dessous. :</p>
 <p><img alt="Commande" class="center shadow" src="../../images/ex03_a.png" /></p>
 <p><img alt="Résumé commande" class="center shadow" src="../../images/ex03_b.png" /></p>
-<p>Dans la section <em>Informations personnelles</em> on retrouve le numéro de DA ou d'employé, le nom complet, le courriel et le numéro de téléphone.</p>
-<p><img alt="Information personnelles" class="center shadow" src="../../images/ex03_c.png" /></p>
+<p>Dans la section <em>Informations personnelles</em>, on retrouve le numéro de DA ou d'employé, le nom complet, le courriel et le numéro de téléphone.</p>
+<p><img alt="Informations personnelles" class="center shadow" src="../../images/ex03_c.png" /></p>
 <p><img alt="Mon compte" class="center shadow" src="../../images/ex03_d.png" /></p>
 <p><img alt="Mes commandes" class="center shadow" src="../../images/ex03_e.png" /></p>
 <p><img alt="Ajout de plaque" class="center shadow" src="../../images/ex03_f.png" /></p>

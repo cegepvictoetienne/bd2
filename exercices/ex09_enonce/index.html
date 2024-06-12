@@ -1168,6 +1168,27 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python/flask/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Flask
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1313,7 +1334,7 @@
         
   
   <span class="md-ellipsis">
-    Exercice 05 - Exercice sur les INSERTs
+    Exercice 05 - Exercice sur les insertions
   </span>
   
 
@@ -1448,49 +1469,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#diagramme-des-classes" class="md-nav__link">
+  <a href="#description-du-systeme" class="md-nav__link">
     <span class="md-ellipsis">
-      Diagramme des classes
+      Description du système
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#descriptions" class="md-nav__link">
+  <a href="#fonctionnalites-a-implementer" class="md-nav__link">
     <span class="md-ellipsis">
-      Descriptions
+      Fonctionnalités à implémenter
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#calcul-du-credit-social" class="md-nav__link">
-    <span class="md-ellipsis">
-      Calcul du crédit social
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#calcul-de-la-classe-du-citoyen" class="md-nav__link">
-    <span class="md-ellipsis">
-      Calcul de la classe du citoyen
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#exercices" class="md-nav__link">
-    <span class="md-ellipsis">
-      Exercices
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Exercices">
+    <nav class="md-nav" aria-label="Fonctionnalités à implémenter">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1500,6 +1494,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="1. Fonction calcul_credit()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Validation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -1508,6 +1517,21 @@
       2. Fonction privilege_valide()
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="2. Fonction privilege_valide()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#validations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Validations
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -1540,6 +1564,24 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#diagramme-et-ressources" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagramme et ressources
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#livrables" class="md-nav__link">
+    <span class="md-ellipsis">
+      Livrables
+    </span>
+  </a>
   
 </li>
       
@@ -1606,6 +1648,27 @@
   
   <span class="md-ellipsis">
     Exercice 12 - pyCRUD
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ex13_enonce/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exercice 13 - Flask
   </span>
   
 
@@ -1986,99 +2049,50 @@
 
 <h1 id="exercice-9-credit-social">Exercice 9 - Crédit social</h1>
 <h2 id="installation">Installation</h2>
-<p>Les scripts sql de génération de la base de données sont disponibles <a href="../../ressources/ex09_credit_social.zip">ici</a></p>
+<p>Téléchargez et installez la base de données à partir des scripts SQL disponibles <a href="../../ressources/ex09_credit_social.zip">ici</a>. Suivez les étapes ci-dessous pour une configuration correcte :</p>
+<ol>
+<li><strong>Création de la base de données :</strong> Exécutez le script <code>01_create_table.sql</code> pour créer les tables nécessaires.</li>
+<li>
+<p><strong>Insertion des données :</strong> Exécutez les scripts dans l'ordre suivant. Notez que certains scripts, comme <code>04_insert_citoyen</code>, contiennent jusqu'à 50 000 lignes et peuvent prendre du temps à s'exécuter. Il est recommandé d'importer les scripts via la ligne de commande pour accélérer le processus.</p>
 <ul>
-<li>Créez la base de données et les tables en exécutant le script sql <strong>01_create_table.sql</strong></li>
-<li>Insérez les données en exécutant les scripts suivants (<u><strong>l'ordre est important</strong></u>). Certains scripts comportent beaucoup de lignes, 50 000 pour 04_insert_citoyen, c'est normal que le temps exécution soit long. <mark class="critic">Importez les scripts en ligne de commande pour gagner beaucoup de temps!!!</mark></li>
+<li><code>02_insert_classes</code></li>
+<li><code>03_insert_evenements_types</code></li>
+<li><code>04_insert_citoyens</code></li>
+<li><code>05_insert_evenements</code></li>
+<li><code>06_insert_citoyens_evenements</code></li>
 </ul>
-<p>Liste des scripts à exécuter :  </p>
+</li>
+</ol>
+<h2 id="description-du-systeme">Description du système</h2>
+<p>La base de données est conçue pour stocker des informations sur les citoyens et calculer leur score de crédit social. Ce score, qui varie de 0 à 1000, est une évaluation de leur comportement, influençant leur classe sociale et les avantages associés.</p>
+<h2 id="fonctionnalites-a-implementer">Fonctionnalités à implémenter</h2>
+<h3 id="1-fonction-calcul_credit">1. Fonction <code>calcul_credit()</code></h3>
+<p>Créez une fonction qui retourne le score de crédit social total d'un citoyen, basé sur son crédit initial et les scores des événements auxquels il a participé.</p>
 <ul>
-<li>02_insert_classes</li>
-<li>03_insert_evenements_types</li>
-<li>04_insert_citoyens</li>
-<li>05_insert_evenements</li>
-<li>06_insert_citoyens_evenements</li>
+<li><strong>Paramètre d'entrée :</strong> ID du citoyen (INT)</li>
+<li><strong>Valeur de retour :</strong> Score total (INT)</li>
+<li><strong>Calcul</strong> : Le crédit social total est calculé en ajoutant le crédit initial de 500 points (modifiable) au total des scores ajustés ou par défaut des événements auxquels le citoyen a participé.</li>
 </ul>
-<p>Veuillez inscrire les scripts des cinq numéros dans un fichier SQL. Une fois cette tâche terminée, merci de remettre le fichier dans l'espace de devoirs sur Teams.</p>
-<h2 id="diagramme-des-classes">Diagramme des classes</h2>
-<p><img alt="ex09_diagramme" src="../../images/ex09_diagramme.svg" /></p>
-<h2 id="descriptions">Descriptions</h2>
-<p>La base de données sert à stocker des informations sur les citoyens afin d'établir leur score de crédit social, une note de bon comportement qui détermine à quelle classe sociale appartient chaque citoyen.</p>
-<h2 id="calcul-du-credit-social">Calcul du crédit social</h2>
-<p>À la naissance, un citoyen reçoit un crédit initial de 500 (ce nombre peut être modifié par le parti). Tout au long de sa vie, le total de ce crédit fluctue selon les événements auxquels le citoyen participe. Le crédit social de chaque citoyen est la somme de son crédit initial et du score de tous les événements auxquels il a participé.</p>
-<p>Les événements sont définis par un type et un score par défaut dans la table <strong>evenements_types</strong>. Ce score peut être ajusté selon la nature de l'événement via le champ <strong>score_ajustement</strong> de la table <strong>citoyens_evenements</strong>. Si ce champ est à <strong>null</strong>, le score par défaut de l'événement est utilisé; sinon, le score ajusté est pris en compte. Le score de crédit social peut varier entre 0 et 1000.</p>
-<h2 id="calcul-de-la-classe-du-citoyen">Calcul de la classe du citoyen</h2>
-<p>Chaque citoyen appartient à une classe selon son score de crédit social. Cela lui donne droit aux avantages de sa classe ainsi qu'aux avantages de toutes les classes inférieures. Pour appartenir à une classe, le score de crédit social du citoyen doit être supérieur au crédit minimum de cette classe (colonne <strong>credit_min</strong> de la table <strong>classes</strong>). La classe est recalculée chaque nuit selon le score actuel du citoyen. Pour connaître la classe d'un citoyen, vous pouvez consulter le champ <strong>classe_id</strong> de la table <strong>citoyens</strong>.</p>
-<h2 id="exercices">Exercices</h2>
-<h3 id="1-fonction-calcul_credit">1. Fonction calcul_credit()</h3>
-<p>Créez une fonction nommée <strong>calcul_credit</strong> qui prends en paramètre le id d'un citoyen et retourne le total du calcul de son crédit social. </p>
-<table>
-<thead>
-<tr>
-<th>Paramètres</th>
-<th>IN/OUT</th>
-<th>TYPE</th>
-<th>Valeur test</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>id</td>
-<td>IN</td>
-<td>INT</td>
-<td>20958</td>
-</tr>
-<tr>
-<td>RETURNS</td>
-<td>-</td>
-<td>INT</td>
-<td>365</td>
-</tr>
-</tbody>
-</table>
-<p>Ex. Le citoyen Harry Walsh, id 20958, pin 51d8fbc8-d473-45f5-991e-15aea899e8f9, a un score de crédit social de <mark class="critic">365</mark>. </p>
+<h4 id="validation">Validation</h4>
+<p>Le citoyen Harry Walsh, id 20958, pin 51d8fbc8-d473-45f5-991e-15aea899e8f9, a un score de crédit social de <mark class="critic">365</mark>. </p>
 <div class="highlight"><pre><span></span><code><span class="k">select</span><span class="w"> </span><span class="n">calcul_credit</span><span class="p">(</span><span class="mi">20958</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">score_credit</span>
 </code></pre></div>
-<h3 id="2-fonction-privilege_valide">2. Fonction privilege_valide()</h3>
-<p>Créez une fonction nommée <strong>privilege_valide</strong> qui prend en paramètres le code PIN d'un citoyen ainsi que l'ID d'une classe. Si la classe du citoyen est égale ou supérieure à la classe spécifiée, retournez TRUE, sinon retournez FALSE. Pour déterminer si une classe est supérieure à une autre, vous devez vous baser sur la colonne <strong>credit_min</strong> de la table <strong>classes</strong>.</p>
-<table>
-<thead>
-<tr>
-<th>Paramètres</th>
-<th>IN/OUT</th>
-<th>TYPE</th>
-<th>Valeur test</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>pin</td>
-<td>IN</td>
-<td>VARCHAR(100)</td>
-<td>51d8fbc8-d473-45f5-991e-15aea899e8f9</td>
-</tr>
-<tr>
-<td>classe_id</td>
-<td>IN</td>
-<td>INT</td>
-<td>4</td>
-</tr>
-<tr>
-<td>RETURNS</td>
-<td>-</td>
-<td>BOOLEAN</td>
-<td>FALSE</td>
-</tr>
-</tbody>
-</table>
-<p>Ex. Le citoyen Harry Walsh, id 20958, pin 51d8fbc8-d473-45f5-991e-15aea899e8f9 appartient à la classe Delta. </p>
+<h3 id="2-fonction-privilege_valide">2. Fonction <code>privilege_valide()</code></h3>
+<p>Développez une fonction qui détermine si le citoyen a accès aux privilèges d'une classe donnée, en fonction de son score de crédit social.</p>
+<ul>
+<li><strong>Paramètres d'entrée :</strong> PIN du citoyen (VARCHAR(100)), ID de la classe (INT)</li>
+<li><strong>Valeur de retour :</strong> Vrai ou faux (BOOLEAN)</li>
+<li><strong>Calcul</strong> : Vérifie si le score de crédit social du citoyen est supérieur ou égal au crédit minimum requis pour la classe spécifiée.</li>
+</ul>
+<h4 id="validations">Validations</h4>
+<p>Le citoyen Harry Walsh, id 20958, pin 51d8fbc8-d473-45f5-991e-15aea899e8f9 appartient à la classe Delta. </p>
 <div class="highlight"><pre><span></span><code><span class="c1">-- Cette requête retournera 1</span>
 <span class="k">select</span><span class="w"> </span><span class="n">privilege_valide</span><span class="p">(</span><span class="s1">&#39;51d8fbc8-d473-45f5-991e-15aea899e8f9&#39;</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">valide</span>
 <span class="c1">-- Cette requête retournera 0</span>
 <span class="k">select</span><span class="w"> </span><span class="n">privilege_valide</span><span class="p">(</span><span class="s1">&#39;51d8fbc8-d473-45f5-991e-15aea899e8f9&#39;</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">valide</span>
 </code></pre></div>
-<h3 id="3-vue-citoyens_avec_credit">3. Vue citoyens_avec_credit</h3>
-<p>Créez une vue nommée <strong>citoyens_avec_credit</strong> qui contiendra les champs suivants :  </p>
+<h3 id="3-vue-citoyens_avec_credit">3. Vue <code>citoyens_avec_credit</code></h3>
+<p>Créez une vue qui affiche les informations détaillées des citoyens, y compris leur classe et leur crédit social actuels.</p>
 <table>
 <thead>
 <tr>
@@ -2115,90 +2129,15 @@
 </tr>
 </tbody>
 </table>
-<p>Faites ensuite une requête sur cette vue pour afficher les informations du citoyen id 20958.  </p>
-<h3 id="4-procedure-stockee-liste_manifestants">4. Procédure stockée liste_manifestants</h3>
-<p>Créez une procédure stockée nommée <strong>liste_manifestants</strong> qui prend une date en paramètre et retourne une liste de manifestants présents à cette date. Assurez-vous que l'événement pour la date sélectionnée soit de type "manifestation". Le résultat doit être trié par ordre alphabétique des noms et prénoms.</p>
-<table>
-<thead>
-<tr>
-<th>Nom colonne</th>
-<th>table</th>
-<th>colonne</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>citoyen_id</td>
-<td>citoyens</td>
-<td>id</td>
-</tr>
-<tr>
-<td>evenement_id</td>
-<td>evenements</td>
-<td>id</td>
-</tr>
-<tr>
-<td>nom</td>
-<td>citoyens</td>
-<td>nom, prenom ("Walsh, Harry")</td>
-</tr>
-<tr>
-<td>pin</td>
-<td>citoyens</td>
-<td>pin</td>
-</tr>
-<tr>
-<td>classe</td>
-<td>classes</td>
-<td>titre</td>
-</tr>
-<tr>
-<td>date_evenement</td>
-<td>evenements</td>
-<td>date_evenement</td>
-</tr>
-<tr>
-<td>notes</td>
-<td>evenements</td>
-<td>notes</td>
-</tr>
-</tbody>
-</table>
-<p>Pour valider votre procédure, utilisez la date 2021-04-01. Vous devriez obtenir 17 enregistrements. Si vous essayez avec la date 2022-09-15, vous ne devriez obtenir aucun enregistrement.</p>
-<h3 id="5-procedure-stockee-update_classe">5. Procédure stockée update_classe</h3>
-<p>Créez une procédure stockée nommée <strong>update_classe</strong> qui mettra à jour la classe de chaque citoyen. Vous devrez calculer le crédit social de chaque citoyen, puis déterminer à quelle classe il appartient selon le crédit minimum de chaque classe.</p>
-<ul>
-<li>Parcourez tous les enregistrements de la table <strong>citoyens</strong> en utilisant un curseur.</li>
-<li>Si vous détectez une différence entre la classe actuelle du citoyen et celle déterminée par votre calcul, vous devez enregistrer le problème dans la table <strong>log_update_classe</strong>.</li>
-</ul>
-<p>Pour tester votre procédure, limitez la requête <strong>SELECT</strong> qui alimente le curseur à un seul citoyen et modifiez la valeur du champ <strong>credit_initial</strong> de ce citoyen pour que la valeur du champ <strong>classe_id</strong> ne soit plus valide. Par exemple, modifiez la valeur du crédit initial du citoyen avec l'ID 2 à 850, ce qui lui donne une classe de 2 (Beta) au lieu de 4 (Delta).</p>
-<p>Pour tester votre procédure, voici les étapes :</p>
-<ol>
-<li>
-<p>Limitez la requête <strong>SELECT</strong> pour n'inclure qu'un seul citoyen :
-    <div class="highlight"><pre><span></span><code><span class="k">DECLARE</span><span class="w"> </span><span class="n">curs</span><span class="w"> </span><span class="k">CURSOR</span><span class="w"> </span><span class="k">FOR</span><span class="w"> </span>
-<span class="k">SELECT</span><span class="w"> </span><span class="k">c</span><span class="p">.</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="k">c</span><span class="p">.</span><span class="n">credit_initial</span><span class="p">,</span><span class="w"> </span><span class="k">c</span><span class="p">.</span><span class="n">classe_id</span><span class="w"> </span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">citoyens</span><span class="w"> </span><span class="k">c</span>
-<span class="k">WHERE</span><span class="w"> </span><span class="k">c</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
-</code></pre></div></p>
-</li>
-<li>
-<p>Modifiez la valeur du champ <strong>credit_initial</strong> pour le citoyen avec l'ID 2 :
-    <div class="highlight"><pre><span></span><code><span class="k">UPDATE</span><span class="w"> </span><span class="n">citoyens</span>
-<span class="k">SET</span><span class="w"> </span><span class="n">credit_initial</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">850</span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
-</code></pre></div></p>
-</li>
-<li>
-<p>Appelez la procédure :
-    <div class="highlight"><pre><span></span><code><span class="k">CALL</span><span class="w"> </span><span class="n">update_classe</span><span class="p">();</span>
-</code></pre></div></p>
-</li>
-</ol>
-<p><img alt="ex09_a" src="../../images/ex09_a.png" /> </p>
-<p>Après avoir lancer la procédure, on peut voir que la valeur de classe_id a bien été modifiée et que l'opération a été enregistrée dans la table <strong>log_update_classe</strong>.</p>
-<p><img alt="ex09_b" src="../../images/ex09_b.png" /></p>
-<p><img alt="ex09_c" src="../../images/ex09_c.png" /></p>
+<h3 id="4-procedure-stockee-liste_manifestants">4. Procédure stockée <code>liste_manifestants</code></h3>
+<p>Développez une procédure stockée qui liste les citoyens ayant participé à une manifestation à une date spécifique, triés par nom et prénom.</p>
+<h3 id="5-procedure-stockee-update_classe">5. Procédure stockée <code>update_classe</code></h3>
+<p>Élaborez une procédure qui met à jour la classe sociale des citoyens en fonction de leur score de crédit. Enregistrez toute modification de classe dans la table <code>log_update_classe</code>.</p>
+<h2 id="diagramme-et-ressources">Diagramme et ressources</h2>
+<p>Visualisez le diagramme des classes et les relations entre les tables pour mieux comprendre la structure de la base de données.</p>
+<p><img alt="Diagramme des classes" src="../../images/ex09_diagramme.svg" /></p>
+<h2 id="livrables">Livrables</h2>
+<p>Regroupez toutes les requêtes et procédures dans un fichier SQL unique. Soumettez ce fichier dans l'espace de devoirs sur Teams une fois toutes les tâches complétées.</p>
 
 
 

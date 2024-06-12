@@ -1231,6 +1231,27 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python/flask/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Flask
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1371,7 +1392,7 @@
         
   
   <span class="md-ellipsis">
-    Exercice 05 - Exercice sur les INSERTs
+    Exercice 05 - Exercice sur les insertions
   </span>
   
 
@@ -1519,6 +1540,27 @@
   
   <span class="md-ellipsis">
     Exercice 12 - pyCRUD
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../exercices/ex13_enonce/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exercice 13 - Flask
   </span>
   
 
@@ -1917,7 +1959,7 @@
 <div class="highlight"><pre><span></span><code><span class="k">SHOW</span><span class="w"> </span><span class="nb">CHARACTER</span><span class="w"> </span><span class="k">SET</span><span class="p">;</span>
 </code></pre></div>
 <h1 id="collation">Collation</h1>
-<p>La collation définit les règles de comparaison entre caractères, incluant la sensibilité à la casse et l'ordre de tri. La collation par défaut est <code>utf8mb4_general_ci</code>, optimisée pour la vitesse mais moins précise. Pour des comparaisons plus précises, <code>utf8_unicode_520_ci</code> est recommandée.</p>
+<p>La collation définit les règles de comparaison entre caractères, incluant la sensibilité à la casse et l'ordre de tri. La collation par défaut est <code>utf8mb4_general_ci</code>, optimisée pour la vitesse mais moins précise. Pour des comparaisons plus précises, <code>utf8mb4_unicode_ci</code> est recommandée.</p>
 <h2 id="changer-la-collation-par-defaut">Changer la collation par défaut</h2>
 <div class="highlight"><pre><span></span><code><span class="k">CREATE</span><span class="w"> </span><span class="k">DATABASE</span><span class="w"> </span><span class="n">nom_de_la_base</span><span class="w"> </span>
 <span class="w">  </span><span class="k">COLLATE</span><span class="w"> </span><span class="n">nom_de_la_collation</span><span class="p">;</span>
@@ -1928,14 +1970,14 @@
 <p>Syntaxe avec les valeurs recommandées pour le jeu de caractères et la collation :</p>
 <div class="highlight"><pre><span></span><code><span class="k">CREATE</span><span class="w"> </span><span class="k">DATABASE</span><span class="w"> </span><span class="s1">&#39;nom_de_la_bd&#39;</span>
 <span class="w">  </span><span class="nb">CHARACTER</span><span class="w"> </span><span class="k">SET</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;utf8mb4&#39;</span>
-<span class="w">  </span><span class="k">COLLATE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;utf8_unicode_520_ci&#39;</span><span class="p">;</span>
+<span class="w">  </span><span class="k">COLLATE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;utf8mb4_unicode_ci&#39;</span><span class="p">;</span>
 </code></pre></div>
 <h1 id="modification-de-bases-de-donnees">Modification de bases de données</h1>
 <p>Pour modifier les propriétés d'une base de données existante, comme le jeu de caractères ou la collation, utilisez la commande <code>ALTER DATABASE</code>. Cette commande permet d'appliquer les mêmes options de jeu de caractères et de collation que celles utilisées avec <code>CREATE DATABASE</code>.</p>
 <h2 id="syntaxe-de-modification">Syntaxe de modification</h2>
 <div class="highlight"><pre><span></span><code><span class="k">ALTER</span><span class="w"> </span><span class="k">DATABASE</span><span class="w"> </span><span class="n">nom_de_la_bd</span>
 <span class="nb">CHARACTER</span><span class="w"> </span><span class="k">SET</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;utf8mb4&#39;</span>
-<span class="k">COLLATE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;utf8_unicode_520_ci&#39;</span><span class="p">;</span>
+<span class="k">COLLATE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;utf8mb4_unicode_ci&#39;</span><span class="p">;</span>
 </code></pre></div>
 <h1 id="suppression-de-bases-de-donnees">Suppression de bases de données</h1>
 <p>Pour supprimer une base de données, la commande <code>DROP DATABASE</code> est utilisée. Si la base de données spécifiée n'existe pas, cette commande générera une erreur. Pour éviter cela, vous pouvez préfixer le nom de la base de données avec <code>IF EXISTS</code>, ce qui permet de ne supprimer la base que si elle existe déjà.</p>
@@ -1946,7 +1988,7 @@
 <ul>
 <li><a href="https://dev.mysql.com/doc/refman/8.0/en/create-database.html">Documentation Create table</a>  </li>
 <li><a href="https://dev.mysql.com/doc/refman/8.0/en/charset-charsets.html">Jeux de caractère et collation</a></li>
-<li><a href="https://stackoverflow.com/questions/766809/whats-the-difference-between-utf8-general-ci-and-utf8-unicode-ci">Différence entre utf8mb4_general_ci, utf8mb4_unicode_ci et utf8_unicode_520_ci</a></li>
+<li><a href="https://stackoverflow.com/questions/766809/whats-the-difference-between-utf8-general-ci-and-utf8-unicode-ci">Différence entre utf8mb4_general_ci et utf8mb4_unicode_ci</a></li>
 </ul>
 
 

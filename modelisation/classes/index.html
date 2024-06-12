@@ -1245,6 +1245,27 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python/flask/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Flask
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1385,7 +1406,7 @@
         
   
   <span class="md-ellipsis">
-    Exercice 05 - Exercice sur les INSERTs
+    Exercice 05 - Exercice sur les insertions
   </span>
   
 
@@ -1533,6 +1554,27 @@
   
   <span class="md-ellipsis">
     Exercice 12 - pyCRUD
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../exercices/ex13_enonce/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exercice 13 - Flask
   </span>
   
 
@@ -1918,22 +1960,22 @@
 <li>
 <p><strong>Identification des entités et relations</strong>:</p>
 <ul>
-<li>Dans le modèle conceptuel, les entités principales sont identifiées comme <strong>Auteurs</strong>, <strong>Livres</strong>, <strong>Pays</strong>, et <strong>Genres</strong>. Ces entités deviendront des tables dans le schéma de base de données relationnelle.</li>
+<li>Dans le modèle conceptuel, les entités principales sont identifiées comme <code>Auteurs</code>, <code>Livres</code>, <code>Pays</code>, et <code>Genres</code>. Ces entités deviendront des tables dans le schéma de base de données relationnelle.</li>
 </ul>
 </li>
 <li>
 <p><strong>Définition des attributs</strong>:</p>
 <ul>
-<li>Chaque entité dans le modèle conceptuel contient des attributs (comme Nom, Prénom pour Auteurs; Titre, ISBN pour Livres). Ces attributs sont transformés en colonnes dans les tables correspondantes de la base de données.</li>
-<li>Les attributs principaux de chaque entité deviennent souvent les clés primaires (PK) dans les tables relationnelles. Par exemple, <code>id</code> pour Auteurs, Livres, Pays, et Genres.</li>
+<li>Chaque entité dans le modèle conceptuel contient des attributs (comme <code>Nom</code>, <code>Prénom</code> pour <code>Auteurs</code>; <code>Titre</code>, <code>ISBN</code> pour <code>Livres</code>). Ces attributs sont transformés en colonnes dans les tables correspondantes de la base de données.</li>
+<li>Les attributs principaux de chaque entité deviennent souvent les clés primaires (PK) dans les tables relationnelles. Par exemple, <code>id</code> pour <code>Auteurs</code>, <code>Livres</code>, <code>Pays</code>, et <code>Genres</code>.</li>
 </ul>
 </li>
 <li>
 <p><strong>Gestion des relations</strong>:</p>
 <ul>
 <li>Les relations entre les entités dans le modèle conceptuel doivent être représentées de manière explicite dans le schéma de base de données.</li>
-<li>Pour les relations "plusieurs à plusieurs" comme celle entre Auteurs et Livres ou Livres et Genres, des tables d'association sont créées (auteurs_livres, livres_genres). Ces tables contiennent des clés étrangères (FK) pointant vers les tables qu’elles relient, agissant comme des clés primaires conjointes.</li>
-<li>Pour la relation "un à plusieurs" entre Pays et Auteurs, un attribut de clé étrangère (<code>pays_id</code>) est ajouté à la table Auteurs, référençant la table Pays.</li>
+<li>Pour les relations "plusieurs à plusieurs" comme celle entre <code>Auteurs</code> et <code>Livres</code> ou <code>Livres</code> et <code>Genres</code>, des tables d'association sont créées (<code>auteurs_livres</code>, <code>livres_genres</code>). Ces tables contiennent des clés étrangères (FK) pointant vers les tables qu’elles relient, agissant comme des clés primaires conjointes.</li>
+<li>Pour la relation "un à plusieurs" entre <code>Pays</code> et <code>Auteurs</code>, un attribut de clé étrangère (<code>pays_id</code>) est ajouté à la table <code>Auteurs</code>, référençant la table <code>Pays</code>.</li>
 </ul>
 </li>
 <li>

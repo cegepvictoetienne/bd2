@@ -117,7 +117,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#exercice-10-curseur" class="md-skip">
+        <a href="#exercice-10-maitrise-des-curseurs" class="md-skip">
           Aller au contenu
         </a>
       
@@ -1168,6 +1168,27 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python/flask/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Flask
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1313,7 +1334,7 @@
         
   
   <span class="md-ellipsis">
-    Exercice 05 - Exercice sur les INSERTs
+    Exercice 05 - Exercice sur les insertions
   </span>
   
 
@@ -1460,18 +1481,129 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#premiere-question" class="md-nav__link">
+  <a href="#installation" class="md-nav__link">
     <span class="md-ellipsis">
-      Première question
+      Installation
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#deuxieme-question" class="md-nav__link">
+  <a href="#question-1-listing-des-pays-producteurs" class="md-nav__link">
     <span class="md-ellipsis">
-      Deuxième question
+      Question 1: Listing des pays producteurs
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Question 1: Listing des pays producteurs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#objectif" class="md-nav__link">
+    <span class="md-ellipsis">
+      Objectif
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#specifications" class="md-nav__link">
+    <span class="md-ellipsis">
+      Spécifications
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resultat-exemple" class="md-nav__link">
+    <span class="md-ellipsis">
+      Résultat Exemple
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#script" class="md-nav__link">
+    <span class="md-ellipsis">
+      Script
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#question-2-gestion-des-similitudes-de-houblons" class="md-nav__link">
+    <span class="md-ellipsis">
+      Question 2: Gestion des Similitudes de Houblons
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Question 2: Gestion des Similitudes de Houblons">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#objectif_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Objectif
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagramme-uml" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagramme UML
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#procedure-stockee" class="md-nav__link">
+    <span class="md-ellipsis">
+      Procédure stockée
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test" class="md-nav__link">
+    <span class="md-ellipsis">
+      Test
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#script_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Script
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#soumission" class="md-nav__link">
+    <span class="md-ellipsis">
+      Soumission
     </span>
   </a>
   
@@ -1519,6 +1651,27 @@
   
   <span class="md-ellipsis">
     Exercice 12 - pyCRUD
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ex13_enonce/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exercice 13 - Flask
   </span>
   
 
@@ -1897,42 +2050,43 @@
   
 
 
-<h1 id="exercice-10-curseur">Exercice 10 - Curseur</h1>
-<p>Cet exercice à pour objectif de vous rendre plus à l'aise avec la création et l'utilisation de curseurs.</p>
+<h1 id="exercice-10-maitrise-des-curseurs">Exercice 10 - Maîtrise des curseurs</h1>
+<p>Cet exercice vise à vous familiariser avec la création et l'utilisation de curseurs dans la gestion des bases de données.</p>
+<h2 id="installation">Installation</h2>
+<p>Commencez par télécharger et exécuter le script SQL pour préparer votre environnement : <a href="../../ressources/ex10_create_tables.sql">ex10_create_tables</a>.</p>
+<h2 id="question-1-listing-des-pays-producteurs">Question 1: Listing des pays producteurs</h2>
+<h3 id="objectif">Objectif</h3>
+<p>Créez une procédure stockée utilisant un curseur pour lister tous les pays producteurs de houblon présents dans la table <code>houblons</code>.</p>
+<h3 id="specifications">Spécifications</h3>
 <ul>
-<li>Téléchargez et exécutez le script sql disponible ici : <a href="../../ressources/ex10_create_tables.sql">ex10_create_tables</a>. </li>
+<li><strong>Résultat attendu :</strong> Une chaîne de caractères avec les noms des pays séparés par un point-virgule, sans doublons et classés en ordre alphabétique.</li>
+<li><strong>Variable de sortie :</strong> Utilisez une variable <strong>OUT</strong> pour récupérer et afficher le résultat.</li>
 </ul>
-<h2 id="premiere-question">Première question</h2>
-<p>Dans la table <em>houblons</em> de la base de données, il y a un champ <em>pays</em> qui contient le nom du pays producteur du type de houblon.  </p>
-<p><strong>Créez une procédure stockée avec curseur qui va lister tous les pays présents dans la table.</strong></p>
-<ul>
-<li>Le format du résultat est un string avec la liste des pays séparés par un point-virgule ("Canada;États-Unis")</li>
-<li>Il ne doit pas avoir de doublon dans la liste</li>
-<li>Les pays doivent être classé en ordre alphabétique</li>
-<li>Utilisez une variable <strong>OUT</strong> pour récupérer le résultat</li>
-</ul>
-<p>Vous devriez avoir comme résultat 
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">résultat</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="ss">&quot;Allemagne;Australie;États-Unis;France;Japon;Nouvelle-Zélande;Pologne;République-Tchèque;Royaume-Uni;Russie;Slovénie&quot;</span>
-</code></pre></div></td></tr></table></div></p>
-<p>Créez un script SQL nommée <strong>NomPrenom_ex10_1.sql</strong> qui va contenir la création de la procédure et un test à la fin de votre procédure.</p>
-<h2 id="deuxieme-question">Deuxième question</h2>
-<p>Encore dans la table <em>houblons</em>, il y a un champ <em>similitude</em> qui contient une liste de houblons similaires au houblon sélectionné. Le but est de pouvoir proposer des houblons qui s'accompagnent bien ensemble. On va extraire cette information dans de nouvelles tables.</p>
-<p>Créez un script SQL nommée <strong>NomPrenom_ex10_2.sql</strong> qui va contenir l'ensemble des éléments de votre réponse.</p>
-<p><strong>Créez les tables selon le diagramme UML suivant</strong></p>
+<h3 id="resultat-exemple">Résultat Exemple</h3>
+<div class="highlight"><pre><span></span><code><span class="ss">&quot;Allemagne;Australie;États-Unis;France;Japon;Nouvelle-Zélande;Pologne;République-Tchèque;Royaume-Uni;Russie;Slovénie&quot;</span>
+</code></pre></div>
+<h3 id="script">Script</h3>
+<p>Nommez votre script SQL <strong>NomPrenom_ex10_1.sql</strong>, incluant la création de la procédure et un test pour vérifier son fonctionnement.</p>
+<h2 id="question-2-gestion-des-similitudes-de-houblons">Question 2: Gestion des Similitudes de Houblons</h2>
+<h3 id="objectif_1">Objectif</h3>
+<p>Gérer et extraire les informations sur les houblons similaires pour proposer des associations pertinentes.</p>
+<h3 id="diagramme-uml">Diagramme UML</h3>
+<p>Respectez le diagramme UML fourni pour créer les nouvelles tables nécessaires.</p>
 <p><img alt="ex10_01" src="../../images/ex10_01.svg" /></p>
-<p><strong>Créez une procédure stockée selon les critères suivants:</strong></p>
+<h3 id="procedure-stockee">Procédure stockée</h3>
 <ul>
-<li>La procédure doit utiliser un curseur</li>
-<li>Créez une transaction qui sera complête uniquement si le traitement se déroule bien jusqu'à la fin</li>
-<li>Supprimez le contenu des tables <em>similitudes</em> et <em>similitude_logs</em></li>
-<li>Pour chaque ligne de la table <em>houblons</em>, isoler les valeurs de la colonne <em>similitude</em> (elles sont séparées par des virgules)</li>
-<li>Pour chaque valeur, déterminez si un houblon du même nom existe déjà.</li>
-<li>Si oui, ajoutez dans la nouvelle table <em>similitudes</em> le id du houblon de la ligne et le id du houblon de la valeur trouvée.</li>
-<li>Si non, ajoutez dans la table <em>similitude_logs</em> le id du houblon de la ligne et la valeur en texte.</li>
-<li>Si on rencontre une erreur de type <strong>SQLEXCEPTION</strong> le traitement doit s'arrêter et les modifications annulées. Affichez aussi un message d'erreur à l'usager.</li>
+<li><strong>Utilisation d'un curseur :</strong> La procédure doit implémenter un curseur pour traiter chaque ligne de la table <code>houblons</code>.</li>
+<li><strong>Transaction :</strong> Assurez-vous que la transaction soit complète uniquement si aucun problème n'est survenu durant le traitement.</li>
+<li><strong>Gestion des erreurs :</strong> En cas de <strong>SQLEXCEPTION</strong>, les modifications doivent être annulées et un message d'erreur affiché.</li>
+<li><strong>Tables à manipuler :</strong> Les tables <code>similitudes</code> et <code>similitude_logs</code> doivent être vidées avant de procéder à l'insertion.</li>
+<li><strong>Logique de traitement :</strong> Pour chaque valeur de la colonne <code>similitude</code>, vérifiez l'existence du houblon correspondant et ajoutez l'association ou loguez l'exception comme spécifié.</li>
 </ul>
-<p>Pour tester votre procédure, lancez-là et ensuite faites une requête sur le houblon "Admiral" pour sortir ses houblons similaires depuis la table similitude. Vous devriez avoir comme résultat les houblons "Target" et "Challenger".</p>
-<p><strong>Déposez vos deux scripts SQL dans le devoir sur Teams</strong></p>
+<h3 id="test">Test</h3>
+<p>Testez la procédure en lançant une requête pour le houblon "Admiral" et vérifiez que les résultats incluent "Target" et "Challenger" dans la table de similitude.</p>
+<h3 id="script_1">Script</h3>
+<p>Nommez votre script SQL <strong>NomPrenom_ex10_2.sql</strong> et assurez-vous qu'il contienne tous les éléments nécessaires à la réponse.</p>
+<h2 id="soumission">Soumission</h2>
+<p>Déposez vos scripts SQL sur la plateforme Teams dans l'espace dédié au devoir.</p>
 
 
 

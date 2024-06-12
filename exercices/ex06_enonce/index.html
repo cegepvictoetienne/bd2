@@ -117,7 +117,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#exercice-6-vues" class="md-skip">
+        <a href="#exercice-6-creation-et-gestion-de-vues" class="md-skip">
           Aller au contenu
         </a>
       
@@ -1168,6 +1168,27 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python/flask/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Flask
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1313,7 +1334,7 @@
         
   
   <span class="md-ellipsis">
-    Exercice 05 - Exercice sur les INSERTs
+    Exercice 05 - Exercice sur les insertions
   </span>
   
 
@@ -1339,6 +1360,17 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Exercice 06 - Exercice sur les vues
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -1348,6 +1380,52 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#contexte" class="md-nav__link">
+    <span class="md-ellipsis">
+      Contexte
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#instructions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instructions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#livrable" class="md-nav__link">
+    <span class="md-ellipsis">
+      Livrable
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1471,6 +1549,27 @@
   
   <span class="md-ellipsis">
     Exercice 12 - pyCRUD
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ex13_enonce/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exercice 13 - Flask
   </span>
   
 
@@ -1849,17 +1948,50 @@
   
 
 
-<h1 id="exercice-6-vues">Exercice 6 - VUES</h1>
-<p>À partir de la base de données athlète de l'exercice précédente, (le script sql de génération est disponible <a href="../../ressources/ex05_create_tables.sql"><strong>ici</strong></a>), creez les vues suivantes : </p>
+<h1 id="exercice-6-creation-et-gestion-de-vues">Exercice 6 - Création et gestion de vues</h1>
+<h2 id="contexte">Contexte</h2>
+<p>Cet exercice implique la manipulation de vues dans la base de données des athlètes, utilisée dans l'exercice précédent. Le script SQL pour générer les tables nécessaires est accessible <a href="../../ressources/ex05_create_tables.sql"><strong>ici</strong></a>.</p>
+<h2 id="instructions">Instructions</h2>
 <ol>
-<li>Créez une vue nommée <strong>resultat_hhmmss</strong> qui affiche le résultat formaté en heures, minutes, secondes (hh\:mm\:ss). Les colonnes de la vue doivent être les mêmes que la table resultat mais en ajoutant une colonne nommée <strong>resultat_hhmmss</strong> dans laquelle le calcul sera fait (id, athlete_id, epreuve_id, date_resultat, resultat_ms, resultat_hhmmss).</li>
-<li>Créez une vue nommée <strong>athlete_complet</strong> qui, en combinant les tables nécessaires, affiche les athlètes avec les colonnes suivantes, (id, nom prénom concat, date_epreuve, nom_epreuve, resultat). Attention, les noms de colonnes de la vue doivent être identiques à ce qui est demandé entre parenthèse)</li>
-<li>À partir de la vue précédente, athlete_complet, sélectionnez les informations des athlètes qui ont participé à un marathon. </li>
-<li>Créez une vue nommée <strong>resultat_21juillet2020</strong> qui va contenir toutes les informations de la table résultat mais uniquement pour la date du 21 juillet 2020.</li>
-<li>Modifiez la vue <strong>resultat_21juillet2020</strong> pour qu'elle affiche les résultats du 14 juillet 2019. Modifiez aussi son nom pour <strong>resultat_14juillet2019</strong></li>
-<li>Supprimez la vue <strong>resultat_14juillet2019</strong></li>
+<li>
+<p><strong>Vue <code>resultats_hhmmss</code></strong> :</p>
+<ul>
+<li>Créez une vue qui convertit et affiche le temps des résultats en format heures, minutes, secondes (hh\:mm\:ss). La vue doit reprendre les colonnes de la table <code>resultats</code> en ajoutant une nouvelle colonne <code>resultat_hhmmss</code> où le temps est formaté.</li>
+</ul>
+</li>
+<li>
+<p><strong>Vue <code>athletes_complets</code></strong> :</p>
+<ul>
+<li>Cette vue doit regrouper des informations provenant de plusieurs tables pour afficher chaque athlète avec les informations suivantes : <code>id</code>, <code>nom prénom concat</code>, <code>date_epreuve</code>, <code>nom_epreuve</code>, <code>resultat</code>. Les noms des colonnes doivent correspondre exactement à ceux indiqués.</li>
+</ul>
+</li>
+<li>
+<p><strong>Filtrage sur <code>athletes_complets</code></strong> :</p>
+<ul>
+<li>Utilisez la vue <code>athletes_complets</code> pour extraire et afficher uniquement les données des athlètes ayant participé à un marathon.</li>
+</ul>
+</li>
+<li>
+<p><strong>Vue <code>resultats_21juillet2020</code></strong> :</p>
+<ul>
+<li>Créez une vue qui filtre et affiche toutes les entrées de la table <code>resultats</code> pour la date du 21 juillet 2020.</li>
+</ul>
+</li>
+<li>
+<p><strong>Modification de la vue pour une nouvelle date</strong> :</p>
+<ul>
+<li>Modifiez la vue <code>resultats_21juillet2020</code> pour qu'elle affiche les résultats du 14 juillet 2019 et renommez-la en <code>resultats_14juillet2019</code>.</li>
+</ul>
+</li>
+<li>
+<p><strong>Suppression de la vue</strong> :</p>
+<ul>
+<li>Supprimez la vue <code>resultats_14juillet2019</code> une fois les modifications effectuées.</li>
+</ul>
+</li>
 </ol>
-<p>Remettez les requêtes dans un script SQL.</p>
+<h2 id="livrable">Livrable</h2>
+<p>Soumettez toutes les requêtes SQL utilisées pour créer, modifier et supprimer les vues dans un script SQL.</p>
 
 
 

@@ -1168,6 +1168,27 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python/flask/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Flask
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1334,22 +1355,49 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#consignes" class="md-nav__link">
+  <a href="#objectifs" class="md-nav__link">
     <span class="md-ellipsis">
-      Consignes
+      Objectifs
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#images" class="md-nav__link">
+  <a href="#details-des-pictogrammes-des-recettes" class="md-nav__link">
     <span class="md-ellipsis">
-      Images
+      Détails des Pictogrammes des Recettes
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Images">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#livrables-requis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Livrables Requis
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#soumission" class="md-nav__link">
+    <span class="md-ellipsis">
+      Soumission
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ressources-visuelles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ressources Visuelles
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ressources Visuelles">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1395,7 +1443,7 @@
         
   
   <span class="md-ellipsis">
-    Exercice 05 - Exercice sur les INSERTs
+    Exercice 05 - Exercice sur les insertions
   </span>
   
 
@@ -1543,6 +1591,27 @@
   
   <span class="md-ellipsis">
     Exercice 12 - pyCRUD
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ex13_enonce/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exercice 13 - Flask
   </span>
   
 
@@ -1921,31 +1990,50 @@
   
 
 
-<h1 id="exercice-04-modelisation-dun-livre-de-recettes">Exercice 04 - Modélisation d'un livre de recettes</h1>
-<h2 id="consignes">Consignes</h2>
-<p>Vous devez analyser et modéliser un livre de recettes. Les deux images qui suivent vous indique ce qui doit être inclus dans la base de données. <strong><u>Toutes les informations</u></strong> présentent doivent être sauvegardées.</p>
-<p>Précision sur les pictogrammes dans les recettes : </p>
+<h1 id="exercice-04-modelisation-dun-livre-de-recettes">Exercice 04 - Modélisation d'un Livre de Recettes</h1>
+<h2 id="objectifs">Objectifs</h2>
+<p>Votre tâche est d'analyser et de modéliser la structure d'un livre de recettes à partir des informations fournies. Vous devez assurer que toutes les données présentées dans les images ci-dessous sont intégrées de manière exhaustive dans votre base de données.</p>
+<h2 id="details-des-pictogrammes-des-recettes">Détails des Pictogrammes des Recettes</h2>
+<p>Les recettes comportent des pictogrammes dont les significations sont les suivantes :</p>
 <ul>
-<li>Le bol représente le temps de préparation de la recette</li>
-<li>La flamme est le temps de cuisson</li>
-<li>La main est un temps de préparation autre</li>
+<li><strong>Bol</strong> : Indique le temps de préparation de la recette.</li>
+<li><strong>Flamme</strong> : Désigne le temps de cuisson.</li>
+<li><strong>Main</strong> : Représente le temps supplémentaire nécessaire pour la préparation.</li>
 </ul>
-<p>Vous devez me produire et remettre : </p>
+<h2 id="livrables-requis">Livrables Requis</h2>
+<p>Vous êtes chargé de créer et de soumettre les documents suivants :</p>
+<ol>
+<li>
+<p><strong>Modèle Entité-Association</strong> :</p>
 <ul>
-<li>[ ] Le modèle entité-association en format image.</li>
-<li>[ ] Un diagramme de classes UML, aussi à remettre en format image.</li>
-<li>[ ] Un script sql de génération de la base de données et des tables qui inclus la création de la base de données, des tables et des clés primaires et étrangères.</li>
-<li>[ ] La base de données doit se nommer <strong>ex04_recette</strong> et avoir comme collation <code>utf8mb4_unicode_ci</code></li>
-<li>[ ] La table qui contiendra les recettes doit avoir une clé primaire qui débute à la valeur 1000</li>
-<li>[ ] Le script doit pouvoir être lancé consécutivement sans causer d'erreur (Pensez à ajouter des commandes <strong>drop ... if exists</strong>)</li>
-<li>[ ] Vous devez respecter les trois première forme normale et la convention de nommage qui est décrite dans les notes de cours.</li>
+<li>Ce schéma doit être fourni en format image.</li>
 </ul>
-<p>Le tout dans un dossier compressé dans le devoir sur Teams</p>
-<h2 id="images">Images</h2>
+</li>
+<li>
+<p><strong>Diagramme de classes UML</strong> :</p>
+<ul>
+<li>Ce diagramme doit également être présenté en format image.</li>
+</ul>
+</li>
+<li>
+<p><strong>Script SQL de création de la base de données</strong> :</p>
+<ul>
+<li>Le script doit inclure la création de la base de données nommée <strong>ex04_recette</strong>, des tables nécessaires, et des clés primaires et étrangères.</li>
+<li>La base de données doit utiliser la collation <code>utf8mb4_unicode_ci</code>.</li>
+<li>La table principale des recettes devra avoir une clé primaire dont la numérotation commence à 1000.</li>
+<li>Assurez-vous que le script SQL puisse être exécuté de manière idempotente, c'est-à-dire plusieurs fois sans erreurs, en utilisant les commandes <code>DROP TABLE IF EXISTS</code> appropriées.</li>
+</ul>
+</li>
+</ol>
+<p>Les modèles et le script doivent respecter les trois premières formes normales et suivre les conventions de nommage spécifiées dans vos notes de cours.</p>
+<h2 id="soumission">Soumission</h2>
+<p>Veuillez compiler tous les fichiers dans un dossier compressé et le soumettre via la plateforme Teams.</p>
+<h2 id="ressources-visuelles">Ressources Visuelles</h2>
 <h3 id="recette-1">Recette 1</h3>
 <p><img alt="Recette01" class="center shadow" src="../../images/ex04_a.jpg" /></p>
 <h3 id="recette-2">Recette 2</h3>
 <p><img alt="Recette02" class="center shadow" src="../../images/ex04_b.jpg" /></p>
+<p>Ces images illustrent les informations spécifiques qui doivent être sauvegardées dans votre modèle de base de données. Assurez-vous de les examiner attentivement pour intégrer tous les éléments nécessaires.</p>
 
 
 
