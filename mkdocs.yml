@@ -34,6 +34,7 @@ nav:
       - 'Environnement virtuel': python/venv.md
       - 'PIP': python/pip.md
       - 'Connexion à MySQL': python/mysql_connector.md
+      - 'Flask': python/flask.md
 
   - 'Exercices':
       - Exercice 01 - Revision MySQL: exercices/ex01_enonce.md
@@ -48,6 +49,7 @@ nav:
       - Exercice 10 - Exercice sur les curseurs: exercices/ex10_enonce.md
       - Exercice 11 - Gestion des utilisateurs: exercices/ex11_enonce.md
       - Exercice 12 - pyCRUD: exercices/ex12_enonce.md
+      - Exercice 13 - Flask: exercices/ex13_enonce.md
 
   - Évaluations:
       - Résumé des évaluations: evaluations/resume.md

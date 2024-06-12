@@ -17,8 +17,8 @@ Semaine|Cours|Date|Sujet|Exercice
 7|14|2023-10-18|[Utilisateurs](mysql/utilisateurs.md)<br/>[Autorisations](mysql/autorisations.md)<br/>[Rôles](mysql/roles.md)<br/>Exercice 11|[Exercice 11 - Gestion des utilisateurs](exercices/ex11_enonce.md)
 8|15|2023-10-23|[Installation de Python](python/installation.md)<br/>[Utilisation du connecteur MySQL](python/mysql_connector.md)<br/>Exercice 12|[Exercice 12 - pyCRUD](exercices/ex12_enonce.md)
 8|16|2023-10-25|Exercice 12|[Exercice 12 - pyCRUD](exercices/ex12_enonce.md)
-9|17|2023-10-30|Début [projet long](evaluations/projet_long.md)|
-9|18|2023-11-01|projet long|
+9|17|2023-10-30|[Flask](python/flask.md)<br/>Exercice 13|[Exercice 13 - Flask](exercices/ex13_enonce.md)
+9|18|2023-11-01|Début [projet long](evaluations/projet_long.md)|
 10|19|2023-11-06|projet long|
 10|20|2023-11-09|projet long|
 11|21|2023-11-13|projet long|
