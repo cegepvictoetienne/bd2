@@ -33,6 +33,7 @@ nav:
       - 'Installation': python/installation.md
       - 'Environnement virtuel': python/venv.md
       - 'PIP': python/pip.md
+      - 'Documentation': python/documentation.md
       - 'Connexion à MySQL': python/mysql_connector.md
       - 'Flask': python/flask.md
 
