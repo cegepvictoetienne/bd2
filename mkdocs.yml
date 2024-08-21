@@ -65,6 +65,7 @@ nav:
       - draw.io: outils/drawio.md
   - 'Horaire': horaire.md
   - 'À propos': apropos.md
+  - "Techniques de l'informatique": 'https://techinfo.profinfo.ca/'
 theme:
   name: material
   icon:
