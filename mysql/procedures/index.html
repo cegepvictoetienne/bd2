@@ -2090,6 +2090,94 @@
 <p>Pour supprimer une procédure stockée, utilisez :</p>
 <div class="highlight"><pre><span></span><code><span class="k">DROP</span><span class="w"> </span><span class="k">PROCEDURE</span><span class="w"> </span><span class="p">[</span><span class="k">IF</span><span class="w"> </span><span class="k">EXISTS</span><span class="p">]</span><span class="w"> </span><span class="n">nom_procedure</span><span class="p">;</span>
 </code></pre></div>
+<h1 id="utilisation-de-transactions-dans-une-procedure-stockee">Utilisation de transactions dans une procédure stockée.</h1>
+<p>Une des utilisations de procédures stockées est de regrouper des opérations dans une transaction. Cela permet de garantir l'intégrité des données en cas d'erreur. L'uitilisation de transactions dans une procédure stockée est similaire à celle dans un script SQL.</p>
+<p>Ex: </p>
+<p>Prenons la table <code>compte</code> suivante :</p>
+<div class="highlight"><pre><span></span><code><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">compte</span><span class="w"> </span><span class="p">(</span>
+<span class="w">  </span><span class="n">id</span><span class="w"> </span><span class="nb">INT</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="p">,</span>
+<span class="w">  </span><span class="n">solde</span><span class="w"> </span><span class="nb">DECIMAL</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="p">);</span>
+
+<span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">compte</span><span class="w"> </span><span class="p">(</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">solde</span><span class="p">)</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1000</span><span class="p">.</span><span class="mi">00</span><span class="p">);</span>
+<span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">compte</span><span class="w"> </span><span class="p">(</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">solde</span><span class="p">)</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">500</span><span class="p">.</span><span class="mi">00</span><span class="p">);</span>
+</code></pre></div>
+<p>Nous voulons créer une procédure <code>transfert_fonds</code> qui transfère un montant d'un compte à un autre. Voici un exemple de procédure qui effectue cette opération :</p>
+<div class="highlight"><pre><span></span><code><span class="k">DELIMITER</span><span class="w"> </span><span class="err">$$</span>
+
+<span class="k">CREATE</span><span class="w"> </span><span class="k">PROCEDURE</span><span class="w"> </span><span class="n">transfert_fonds</span><span class="p">(</span>
+<span class="w">    </span><span class="k">IN</span><span class="w"> </span><span class="n">id_source</span><span class="w"> </span><span class="nb">INT</span><span class="p">,</span><span class="w"> </span>
+<span class="w">    </span><span class="k">IN</span><span class="w"> </span><span class="n">id_destination</span><span class="w"> </span><span class="nb">INT</span><span class="p">,</span><span class="w"> </span>
+<span class="w">    </span><span class="k">IN</span><span class="w"> </span><span class="n">montant</span><span class="w"> </span><span class="nb">DECIMAL</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="p">)</span>
+<span class="k">BEGIN</span>
+<span class="w">    </span><span class="c1">-- Déclaration des variables pour la gestion d&#39;erreur</span>
+<span class="w">    </span><span class="k">DECLARE</span><span class="w"> </span><span class="n">error_message</span><span class="w"> </span><span class="nb">TEXT</span><span class="p">;</span>
+<span class="w">    </span><span class="k">DECLARE</span><span class="w"> </span><span class="n">sql_state</span><span class="w"> </span><span class="nb">CHAR</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="p">;</span>
+
+<span class="w">    </span><span class="c1">-- Variable de travail</span>
+<span class="w">    </span><span class="k">DECLARE</span><span class="w"> </span><span class="n">solde_source</span><span class="w"> </span><span class="nb">DECIMAL</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">2</span><span class="p">);</span>
+
+
+<span class="w">    </span><span class="k">DECLARE</span><span class="w"> </span><span class="n">EXIT</span><span class="w"> </span><span class="k">HANDLER</span><span class="w"> </span><span class="k">FOR</span><span class="w"> </span><span class="k">SQLEXCEPTION</span>
+<span class="w">    </span><span class="k">BEGIN</span>
+<span class="w">        </span><span class="c1">-- Rollback de la transaction</span>
+<span class="w">        </span><span class="k">ROLLBACK</span><span class="p">;</span>
+
+<span class="w">        </span><span class="c1">-- Extraire les informations d&#39;erreur</span>
+<span class="w">        </span><span class="k">GET</span><span class="w"> </span><span class="n">STACKED</span><span class="w"> </span><span class="k">DIAGNOSTICS</span><span class="w"> </span><span class="n">CONDITION</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">            </span><span class="n">error_message</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">MESSAGE_TEXT</span><span class="p">,</span>
+<span class="w">            </span><span class="n">sql_state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">RETURNED_SQLSTATE</span><span class="p">;</span>
+
+<span class="w">        </span><span class="c1">-- Afficher le message d&#39;erreur</span>
+<span class="w">        </span><span class="k">SELECT</span><span class="w"> </span><span class="n">sql_state</span><span class="p">,</span>
+<span class="w">            </span><span class="n">error_message</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">message_erreur</span><span class="p">;</span>
+<span class="w">    </span><span class="k">END</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">START</span><span class="w"> </span><span class="k">TRANSACTION</span><span class="p">;</span>
+
+<span class="w">    </span><span class="c1">-- Extraire le solde du compte source</span>
+<span class="w">    </span><span class="k">SELECT</span><span class="w"> </span><span class="n">solde</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">solde_source</span>
+<span class="w">    </span><span class="k">FROM</span><span class="w"> </span><span class="n">compte</span>
+<span class="w">    </span><span class="k">WHERE</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">id_source</span>
+<span class="w">    </span><span class="k">FOR</span><span class="w"> </span><span class="k">UPDATE</span><span class="p">;</span><span class="w"> </span><span class="c1">-- Optional: Pour barrer l&#39;enregistrement pour éviter la concurence (race condition)</span>
+
+<span class="w">    </span><span class="c1">-- Vérifier si le compte existe</span>
+<span class="w">    </span><span class="k">IF</span><span class="w"> </span><span class="n">solde_source</span><span class="w"> </span><span class="k">IS</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">THEN</span>
+<span class="w">        </span><span class="n">SIGNAL</span><span class="w"> </span><span class="k">SQLSTATE</span><span class="w"> </span><span class="s1">&#39;45000&#39;</span><span class="w"> </span>
+<span class="w">            </span><span class="k">SET</span><span class="w"> </span><span class="k">MESSAGE_TEXT</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Compte source inexistant&#39;</span><span class="p">;</span>
+<span class="w">    </span><span class="k">END</span><span class="w"> </span><span class="k">IF</span><span class="p">;</span>
+
+<span class="w">    </span><span class="c1">-- Vérifier si le solde du compte source est suffisant</span>
+<span class="w">    </span><span class="k">IF</span><span class="w"> </span><span class="n">solde_source</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">montant</span><span class="w"> </span><span class="k">THEN</span>
+<span class="w">        </span><span class="n">SIGNAL</span><span class="w"> </span><span class="k">SQLSTATE</span><span class="w"> </span><span class="s1">&#39;45000&#39;</span><span class="w"> </span>
+<span class="w">            </span><span class="k">SET</span><span class="w"> </span><span class="k">MESSAGE_TEXT</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Solde insuffisant&#39;</span><span class="p">;</span>
+<span class="w">    </span><span class="k">END</span><span class="w"> </span><span class="k">IF</span><span class="p">;</span>
+
+<span class="w">    </span><span class="c1">-- Enlever le montant du compte source</span>
+<span class="w">    </span><span class="k">UPDATE</span><span class="w"> </span><span class="n">compte</span>
+<span class="w">    </span><span class="k">SET</span><span class="w"> </span><span class="n">solde</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">solde</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">montant</span>
+<span class="w">    </span><span class="k">WHERE</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">id_source</span><span class="p">;</span>
+
+<span class="w">    </span><span class="c1">-- Ajouter le montant au compte de destination</span>
+<span class="w">    </span><span class="k">UPDATE</span><span class="w"> </span><span class="n">compte</span>
+<span class="w">    </span><span class="k">SET</span><span class="w"> </span><span class="n">solde</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">solde</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">montant</span>
+<span class="w">    </span><span class="k">WHERE</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">id_destination</span><span class="p">;</span>
+
+<span class="w">    </span><span class="c1">-- Vérifier si le compte de destination existe</span>
+<span class="w">    </span><span class="k">IF</span><span class="w"> </span><span class="k">ROW_COUNT</span><span class="p">()</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="k">THEN</span>
+<span class="w">        </span><span class="n">SIGNAL</span><span class="w"> </span><span class="k">SQLSTATE</span><span class="w"> </span><span class="s1">&#39;45000&#39;</span><span class="w"> </span>
+<span class="w">            </span><span class="k">SET</span><span class="w"> </span><span class="k">MESSAGE_TEXT</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Compte destination inexistant&#39;</span><span class="p">;</span>
+<span class="w">    </span><span class="k">END</span><span class="w"> </span><span class="k">IF</span><span class="p">;</span>
+
+<span class="w">    </span><span class="c1">-- Transaction réussie!</span>
+<span class="w">    </span><span class="k">COMMIT</span><span class="p">;</span>
+
+<span class="w">    </span><span class="c1">-- Message pour indiquer que le transfert est réussi</span>
+<span class="w">    </span><span class="k">SELECT</span><span class="w"> </span><span class="s1">&#39;Transfert réussi&#39;</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">message_succes</span><span class="p">;</span>
+<span class="k">END</span><span class="w"> </span><span class="err">$$</span>
+<span class="k">DELIMITER</span><span class="w"> </span><span class="p">;</span>
+</code></pre></div>
 <p>Ressources</p>
 <ul>
 <li><a href="https://dev.mysql.com/doc/refman/8.0/en/create-procedure.html">Documentation officielle</a>  </li>
