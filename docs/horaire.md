@@ -9,9 +9,9 @@ Semaine|Cours|Date|Sujet|Exercice
 3|6|2024-09-11 13:15:00|[Déclencheurs](mysql/declencheurs.md)|[Exercice 7 - Exercice sur les déclencheurs](exercices/ex07_enonce.md)
 4|7|2024-09-16 08:15:00|Évaluation formative formelle|
 4|8|2024-09-18 13:15:00|Retour sur formatif <br/> [Fonctions](mysql/fonctions.md)<br/>Exercice 8<br/>[Types de jointures](mysql/types_jointures.md)|[Exercice 8 - Exercice sur les fonctions](exercices/ex08_enonce.md)
-5|9|2024-09-23 08:15:00|[Procédures stockées](mysql/procedures.md)<br/>[Transactions](mysql/transactions.md)<br/>[Gestion des erreurs](mysql/gestion_erreurs.md)<br/>[Curseurs](mysql/curseurs.md)<br/>Exercice 9|[Exercice 9 - Crédit social](exercices/ex09_enonce.md)
+5|9|2024-09-23 08:15:00|[Transactions](mysql/transactions.md)<br/>[Procédures stockées](mysql/procedures.md)<br/>[Gestion des erreurs](mysql/gestion_erreurs.md)<br/>[Curseurs](mysql/curseurs.md)<br/>Exercice 9|[Exercice 9 - Crédit social](exercices/ex09_enonce.md)
 5|10|2024-09-25 13:15:00|Finaliser Exercice 9|[Exercice 9 - Crédit social](exercices/ex09_enonce.md)
-6|11|2024-09-30 08:15:00|Révision|
+6|11|2024-09-30 08:15:00|Révision|[Révision Modélisation](evaluations/revision_modelisation.md)
 6|12|2024-10-02 13:15:00|__Examen 1 (35%)__|
 7|13|2024-10-07 08:15:00|Retour sur l'examen 1<br/>Retour sur les curseurs et la gestion d'erreurs, les jointures et union<br/>Exercice 10|[Exercice 10 - Exercice sur les curseurs](exercices/ex10_enonce.md)
 7|14|2024-10-09 13:15:00|[Utilisateurs](mysql/utilisateurs.md)<br/>[Autorisations](mysql/autorisations.md)<br/>[Rôles](mysql/roles.md)<br/>Exercice 11|[Exercice 11 - Gestion des utilisateurs](exercices/ex11_enonce.md)
@@ -24,10 +24,10 @@ Semaine|Cours|Date|Sujet|Exercice
 11|21|2024-11-11 08:15:00|projet long|
 11|22|2024-11-13 13:15:00|projet long|
 12|23|2024-11-18 08:15:00|projet long|
-12|24|2024-11-20 13:15:00|projet long|
-13|25|2024-11-25 08:15:00|__Présentation et remise du projet long (15%)__|
-13|26|2024-11-27 13:15:00|Révision analyse|
-14|27|2024-12-02 08:15:00|Formatif partie 1|
-14|28|2024-12-04 13:15:00|Formatif partie 2|
+12|24|2024-11-20 13:15:00|__Présentation et remise du projet long (15%)__|
+13|25|2024-11-25 08:15:00|Révision analyse|
+13|26|2024-11-27 13:15:00|Formatif partie 1|
+14|27|2024-12-02 08:15:00|Formatif partie 2|
+14|28|2024-12-04 13:15:00|Retour sur formatif|
 15|29|2024-12-09 08:15:00|__Évaluation finale partie 1__|
 15|30|2024-12-11 13:15:00|__Évaluation finale partie 2__|

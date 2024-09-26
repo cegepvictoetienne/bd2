@@ -57,6 +57,7 @@ nav:
       - Évaluation formative formelle: evaluations/evaluation_formative_formelle.md
       - Projet long: evaluations/projet_long.md
       - Révision:
+          - Révision modélisation: evaluations/revision_modelisation.md
           - Examen 01 - Révision A: evaluations/examen01_revision_a.md
           - Analyse - Révision: evaluations/analyse_revision_a.md
           - Évaluation finale - révision: evaluations/revision.md

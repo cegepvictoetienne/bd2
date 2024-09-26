@@ -9,11 +9,11 @@ Vous trouverez ici les notes et exercices du cours. J'ajouterai du nouveau conte
 
 **Préalable à ce cours** : 420-2B4-VI Bases de données 1
 
-**Ce cours est préalable à** :
-420-4C4-VI : Mégadonnées (efficacité des traitements sur de grands ensembles et base de données NoSQL)  
-420-4B4-VI : Conception de systèmes (modélisation et analyse)
+**Ce cours est préalable à** :  
+-  420-4C4-VI : Mégadonnées (efficacité des traitements sur de grands ensembles et base de données NoSQL)   
+-  420-4B4-VI : Conception de systèmes (modélisation et analyse)  
 
-**Cheminement complet**: [https://informatique.apical.xyz/](https://informatique.apical.xyz/)
+**Cheminement complet**: [https://techinfo.profinfo.ca/grille/](https://techinfo.profinfo.ca/grille/)
 
 ## Environnement de travail
 
