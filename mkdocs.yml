@@ -34,6 +34,7 @@ nav:
       - 'Environnement virtuel': python/venv.md
       - 'PIP': python/pip.md
       - 'Documentation': python/documentation.md
+      - 'Dotenv': python/dotenv.md
       - 'Connexion à MySQL': python/mysql_connector.md
       - 'Flask': python/flask.md
 

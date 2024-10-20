@@ -13,9 +13,9 @@ Semaine|Cours|Date|Sujet|Exercice
 5|10|2024-09-25 13:15:00|Finaliser Exercice 9|[Exercice 9 - Crédit social](exercices/ex09_enonce.md)
 6|11|2024-09-30 08:15:00|Révision|[Révision Modélisation](evaluations/revision_modelisation.md)
 6|12|2024-10-02 13:15:00|__Examen 1 (35%)__|
-7|13|2024-10-07 08:15:00|Retour sur l'examen 1<br/>Retour sur les curseurs et la gestion d'erreurs, les jointures et union<br/>Exercice 10|[Exercice 10 - Exercice sur les curseurs](exercices/ex10_enonce.md)
+7|13|2024-10-07 08:15:00|Retour sur l'examen 1<br/>Exercice 10|[Exercice 10 - Exercice sur les curseurs](exercices/ex10_enonce.md)
 7|14|2024-10-09 13:15:00|[Utilisateurs](mysql/utilisateurs.md)<br/>[Autorisations](mysql/autorisations.md)<br/>[Rôles](mysql/roles.md)<br/>Exercice 11|[Exercice 11 - Gestion des utilisateurs](exercices/ex11_enonce.md)
-8|15|2024-10-21 08:15:00|[Installation de Python](python/installation.md)<br/>[Utilisation du connecteur MySQL](python/mysql_connector.md)<br/>[PyDoc](python/documentation.md)<br/>Exercice 12|[Exercice 12 - pyCRUD](exercices/ex12_enonce.md)
+8|15|2024-10-21 08:15:00|[Installation de Python](python/installation.md)<br/>[Environnements virtuels](python/venv.md)<br/>[PIP](python/pip.md)<br/>[DotEnv](python/dotenv.md)<br/>[Utilisation du connecteur MySQL](python/mysql_connector.md)<br/>[PyDoc](python/documentation.md)<br/>Exercice 12|[Exercice 12 - pyCRUD](exercices/ex12_enonce.md)
 8|16|2024-10-23 13:15:00|Exercice 12|[Exercice 12 - pyCRUD](exercices/ex12_enonce.md)
 9|17|2024-10-28 08:15:00|[Flask](python/flask.md)<br/>Exercice 13|[Exercice 13 - Flask](exercices/ex13_enonce.md)
 9|18|2024-10-30 13:15:00|Début [projet long](evaluations/projet_long.md)|
