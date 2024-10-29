@@ -4,7 +4,7 @@ Cet exercice introduit le développement d'une application Web simple en utilisa
 
 ## Installation
 
-Commencez par télécharger et exécuter le script SQL disponible ici : [ex10_create_tables](../ressources/ex10_create_tables.sql) pour configurer votre base de données.
+Commencez par télécharger et exécuter le script SQL disponible ici : [Crédit social](../ressources/ex09_credit_social.zip) pour configurer votre base de données.
 
 ## Affichage de la liste des citoyens
 
