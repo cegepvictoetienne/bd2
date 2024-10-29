@@ -19,15 +19,15 @@ Un environnement virtuel en Python est un espace isolé qui permet de gérer sé
    ```
 
 2. **Créer l'environnement virtuel** :
-   - Naviguez dans votre répertoire de projet :
+     - Naviguez dans votre répertoire de projet :
      ```bash
      cd mon_projet
      ```
-   - Créez l'environnement virtuel :
+    - Créez l'environnement virtuel :
      ```bash
      python -m venv nom_env
      ```
-   - `nom_env` est le nom du dossier qui contiendra l'environnement virtuel.
+    - `nom_env` est le nom du dossier qui contiendra l'environnement virtuel.
 
 #### Comment activer l'environnement virtuel?
 

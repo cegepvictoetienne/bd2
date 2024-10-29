@@ -116,3 +116,5 @@ markdown_extensions:
   - pymdownx.critic
   - pymdownx.tabbed:
       alternate_style: true
+  - markdown_include.include:
+      base_path: code

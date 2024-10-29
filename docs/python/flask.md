@@ -76,6 +76,41 @@ python app.py
 
 Ouvrez votre navigateur et allez à `http://127.0.0.1:5000/`. Vous devriez voir les données extraites de votre base de données MySQL affichées sur la page.
 
-## Conclusion
+# Traiter un formulaire HTML avec Flask
 
-Vous avez maintenant une application Flask simple qui peut récupérer des données d'une base de données MySQL et les afficher sur une page web. Ce projet peut être étendu pour inclure des fonctionnalités plus complexes comme des formulaires pour insérer ou modifier les données.
+## 1 - Créez un formulaire HTML dans votre fichier `index.html` pour ajouter un citoyen à la base de données :
+
+``` html
+{!demo-flask/templates/index.html!}
+```
+## 2 - Créer un fichier html pour saluer l'utilisateur
+
+``` html
+{!demo-flask/templates/saluer.html!}
+```
+
+## 3 - Créez une route dans votre fichier `app.py` pour traiter le formulaire :
+
+``` python
+{!demo-flask/app.py!}
+```
+
+# Routes dynamiques
+
+## 1 - Créer la page d'accueil
+
+``` html
+{!flask-dynamique/templates/index.html!}
+```
+
+## 2 - Créez la page d'affichage d'un article
+
+``` html
+{!flask-dynamique/templates/article.html!}
+```
+
+## 3 - Créez une route dynamique pour afficher les détails d'un article :
+
+``` python
+{!flask-dynamique/app.py!}
+```

@@ -13,3 +13,7 @@ Créez une application Flask qui se connecte à la base de données "credit_soci
 ## Affichage du détail d'un citoyen
 
 Ajoutez une fonctionnalité pour afficher le détail d'un citoyen en cliquant sur son nom dans la liste.
+
+## Ajouter un citoyen
+
+Ajoutez une fonctionnalité pour ajouter un citoyen à la base de données en remplissant un formulaire HTML.

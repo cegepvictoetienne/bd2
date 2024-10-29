@@ -17,9 +17,9 @@ Semaine|Cours|Date|Sujet|Exercice
 7|14|2024-10-09 13:15:00|[Utilisateurs](mysql/utilisateurs.md)<br/>[Autorisations](mysql/autorisations.md)<br/>[Rôles](mysql/roles.md)<br/>Exercice 11|[Exercice 11 - Gestion des utilisateurs](exercices/ex11_enonce.md)
 8|15|2024-10-21 08:15:00|[Installation de Python](python/installation.md)<br/>[Environnements virtuels](python/venv.md)<br/>[PIP](python/pip.md)<br/>[DotEnv](python/dotenv.md)<br/>[Utilisation du connecteur MySQL](python/mysql_connector.md)<br/>[PyDoc](python/documentation.md)<br/>Exercice 12|[Exercice 12 - pyCRUD](exercices/ex12_enonce.md)
 8|16|2024-10-23 13:15:00|Exercice 12|[Exercice 12 - pyCRUD](exercices/ex12_enonce.md)
-9|17|2024-10-28 08:15:00|[Flask](python/flask.md)<br/>Exercice 13|[Exercice 13 - Flask](exercices/ex13_enonce.md)
-9|18|2024-10-30 13:15:00|Début [projet long](evaluations/projet_long.md)|
-10|19|2024-11-04 08:15:00|projet long|
+9|17|2024-10-28 08:15:00|Exercice 12|[Exercice 12 - pyCRUD](exercices/ex12_enonce.md)
+9|18|2024-10-30 13:15:00|[Flask](python/flask.md)<br/>Exercice 13|[Exercice 13 - Flask](exercices/ex13_enonce.md)
+10|19|2024-11-04 08:15:00|Début [projet long](evaluations/projet_long.md)|
 10|20|2024-11-08 13:15:00|projet long|
 11|21|2024-11-11 08:15:00|projet long|
 11|22|2024-11-13 13:15:00|projet long|

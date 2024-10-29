@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Liste des articles</title>
+  </head>
+  <body>
+    <h1>Liste des articles</h1>
+    <ul>
+      {% for id, article in articles.items() %}
+      <li>
+        <a href="{{ url_for('afficher_article', id=id) }}"
+          >{{ article.titre }}</a
+        >
+      </li>
+      {% endfor %}
+    </ul>
+  </body>
+</html>
