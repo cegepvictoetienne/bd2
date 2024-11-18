@@ -24,7 +24,7 @@ Semaine|Cours|Date|Sujet|Exercice
 11|21|2024-11-11 08:15:00|projet long|
 11|22|2024-11-13 13:15:00|projet long|
 12|23|2024-11-18 08:15:00|projet long|
-12|24|2024-11-20 13:15:00|__Présentation et remise du projet long (15%)__|
+12|24|2024-11-20 13:15:00|__Fin et remise du projet long (15%)__|
 13|25|2024-11-25 08:15:00|Révision analyse|
 13|26|2024-11-27 13:15:00|Formatif partie 1|
 14|27|2024-12-02 08:15:00|Formatif partie 2|
