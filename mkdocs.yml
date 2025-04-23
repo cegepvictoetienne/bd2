@@ -106,6 +106,11 @@ extra_css:
 extra_javascript:
   - javascript/alltarget.js
 
+extra:
+  analytics:
+    provider: google
+    property: G-DJR06E0QJN
+
 markdown_extensions:
   - admonition
   - pymdownx.details
