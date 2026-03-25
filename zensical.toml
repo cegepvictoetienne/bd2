@@ -9,7 +9,7 @@ extra_javascript = ["javascripts/alltarget.js"]
 language = "fr"
 
 nav = [
-{"Accueil" = ["index.md"]},
+{"Accueil" = "index.md"},
 {"Modélisation" = [
      "modelisation/definition_modelisation.md",
      "modelisation/modele_entites_relations.md",
