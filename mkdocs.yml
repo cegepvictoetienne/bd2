@@ -67,6 +67,7 @@ nav:
       - draw.io: outils/drawio.md
   - 'Horaire': horaire.md
   - 'À propos': apropos.md
+  - "Déclaration sur l'utilisation de l'IA": declaration-ia.md
   - "Techniques de l'informatique": 'https://techinfo.profinfo.ca/'
 theme:
   name: material

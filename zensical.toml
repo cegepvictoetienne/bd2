@@ -1,0 +1,67 @@
+[project]
+site_name = "Cours Bases de donn&eacute;es 2"
+site_url = "https://bd2.kerzo.ca/"
+docs_dir = "docs"
+site_dir = "site"
+use_directory_urls = true
+extra_css = ["css/extra.css"]
+extra_javascript = ["javascripts/alltarget.js"]
+language = "fr"
+
+nav = [
+{"Accueil" = ["index.md"]},
+{"Modélisation" = [
+     "modelisation/definition_modelisation.md",
+     "modelisation/modele_entites_relations.md",
+     "modelisation/schema_conceptuel.md",
+     "modelisation/types_relations.md",
+     "modelisation/normalisation.md",
+     "modelisation/classes.md"
+]},
+{"MySQL" = [
+     "mysql/creation_bd.md",
+     "mysql/creation_table.md",
+     "mysql/convention.md",
+     "mysql/types_jointures.md",
+     "mysql/vues.md",
+     "mysql/insertion.md",
+     "mysql/declencheurs.md",
+     "mysql/fonctions.md",
+     "mysql/procedures.md",
+     "mysql/transactions.md",
+     "mysql/gestion_erreurs.md",
+     "mysql/curseurs.md"
+]},
+{"Exercices" = [
+     "exercices/ex01_enonce.md",
+     "exercices/ex02_enonce.md",
+     "exercices/ex03_enonce.md",
+     "exercices/ex04_enonce.md",
+     "exercices/ex05_enonce.md",
+     "exercices/ex06_enonce.md",
+     "exercices/ex07_enonce.md",
+     "exercices/ex08_enonce.md",
+     "exercices/ex09_enonce.md",
+     "exercices/ex10_enonce.md",
+     "exercices/ex11_enonce.md",
+     "exercices/ex12_enonce.md",
+     "exercices/ex13_enonce.md"
+]},
+{"Outils de travail" = [
+     "outils/dbeaver.md",
+     "outils/drawio.md"
+]},
+{"Évaluations" = [
+     "evaluations/resume.md",
+     "evaluations/evaluation_formative_formelle.md",
+     "evaluations/projet_long.md"
+]},
+{"Horaire" = "horaire.md" }, 
+{"À propos" = "apropos.md"},
+{"Déclaration sur l'utilisation de l'IA" = "declaration-ia.md"}
+    
+]
+
+[project.theme]
+variant = "classic"
+
