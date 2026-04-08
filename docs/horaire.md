@@ -1,4 +1,4 @@
-# Horaire du cours de bases de données 2
+# Horaire
 Semaine|Cours|Date|Sujet|Exercice
 --|--|--|--|--
 1|1|2024-08-21 13:15:00|Présentation du cours<br/> [DBeaver](outils/dbeaver.md)|[Exercice 1 - Revision MySQL](exercices/ex01_enonce.md)
