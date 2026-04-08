@@ -5,7 +5,7 @@
 # Bases de données 2 (420-3B4-VI) - Automne 2024
 
 ## Introduction
-Vous trouverez ici les notes et exercices du cours. J'ajouterai du nouveau contenu continuellement.
+Vous trouverez ici les notes et exercices du cours.
 
 **Préalable à ce cours** : 420-2B4-VI Bases de données 1
 
