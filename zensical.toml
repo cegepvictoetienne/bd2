@@ -4,8 +4,6 @@ site_url = "https://bd2.kerzo.ca/"
 docs_dir = "docs"
 site_dir = "site"
 use_directory_urls = true
-extra_css = ["css/extra.css"]
-extra_javascript = ["javascripts/alltarget.js"]
 language = "fr"
 
 nav = [
@@ -62,6 +60,48 @@ nav = [
     
 ]
 
-[project.theme]
-variant = "classic"
+extra_css = ["stylesheets/all.css", "stylesheets/extra.css"]
 
+[project.theme.icon]
+logo = "fontawesome/solid/database"
+
+[project.theme]
+name = "material"
+custom_dir = "overrides"
+favicon = "favicon.ico"
+language = "fr"
+features = [
+  "content.code.annotate",
+  "content.code.copy",
+  "content.code.select",
+  "content.footnote.tooltips",
+  "content.tabs.link",
+  "content.tooltips",
+  "navigation.footer",
+  "navigation.indexes",
+  "navigation.instant",
+  "navigation.instant.prefetch",
+  "navigation.path",
+  "navigation.sections",
+  "navigation.tabs",
+  "navigation.top",
+  "navigation.tracking",
+  "search.highlight",
+]
+
+[[project.theme.palette]]
+scheme = "default"
+primary = "teal"
+accent = "teal"
+toggle.icon = "lucide/sun"
+toggle.name = "Passer en mode sombre"
+
+[[project.theme.palette]]
+scheme = "slate"
+primary = "teal"
+accent = "teal"
+toggle.icon = "lucide/moon"
+toggle.name = "Passer en mode clair"
+
+[project.plugins]
+search = {}
