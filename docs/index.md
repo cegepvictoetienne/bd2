@@ -2,7 +2,7 @@
 
 # Cégep de Victoriaville
 
-# Bases de données 2 (420-3B4-VI) - Automne 2024
+# Bases de données 2 (420-3B4-VI) - Automne 2026
 
 ## Introduction
 Vous trouverez ici les notes et exercices du cours.
