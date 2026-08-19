@@ -1,3 +1,7 @@
+# Modélisation en classes  
+
+Débuter par le schéma conceptuel.  
+
 ## Schéma conceptuel  
 
 ![Schema conceptuel](../images/schema_conceptuel_exemple.svg)
