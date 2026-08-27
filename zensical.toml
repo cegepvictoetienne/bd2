@@ -30,6 +30,15 @@ nav = [
      "mysql/gestion_erreurs.md",
      "mysql/curseurs.md"
 ]},
+{"Python" = [
+     "python/installation.md",
+     "python/dotenv.md",
+     "python/flask.md",
+     "python/pip.md",
+     "python/mysql_connector.md",
+     "python/venv.md",
+     "python/documentation.md",
+]},
 {"Exercices" = [
      "exercices/ex01_enonce.md",
      "exercices/ex02_enonce.md",
