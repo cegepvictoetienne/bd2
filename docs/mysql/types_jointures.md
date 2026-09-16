@@ -20,7 +20,7 @@ COLLATE = 'utf8mb4_unicode_ci';
 
 USE bd2_exemple;  
 
-DROP TABLE IF EXISTS guilde;
+DROP TABLE IF EXISTS guildes;
 CREATE TABLE guildes (
 	id INT AUTO_INCREMENT,
 	nom VARCHAR(30),
@@ -29,9 +29,9 @@ CREATE TABLE guildes (
 
 
 INSERT INTO guildes (nom) 
-VALUES ('SqlIsGod'), 
-	('Error404'), 
-	('IsNobodyHere');
+VALUES ('SqlEstDieu'), 
+	('Erreur404'), 
+	('PersonneIci');
 
 DROP TABLE IF EXISTS joueurs;
 CREATE TABLE joueurs (
@@ -41,7 +41,7 @@ CREATE TABLE joueurs (
 	prenom VARCHAR(50),
 	PRIMARY KEY (id),
 	CONSTRAINT guilde_fk FOREIGN KEY (guilde_id) 
-		REFERENCES guilde (id) 
+		REFERENCES guildes (id) 
 		ON UPDATE RESTRICT ON DELETE CASCADE
 );
 
@@ -58,9 +58,9 @@ VALUES (1, 'Simms', 'Jonah'),
 
 | id  | nom           |
 |-----|---------------|
-| 1   | SqlIsGod      |
-| 2   | Error404      |
-| 3   | IsNobodyHere  |
+| 1   | SqlEstDieu      |
+| 2   | Erreur404      |
+| 3   | PersonneIci  |
 
 ## Table joueurs
 
@@ -87,9 +87,9 @@ FROM joueurs j
 
 | nom        | prenom     | guilde     |
 |------------|------------|------------|
-| Simms  | Jonah    | SqlIsGod   |
-| McNeill    | Garrett  | SqlIsGod   |
-| Sosa | Amy      | Error404   |
+| Simms  | Jonah    | SqlEstDieu   |
+| McNeill    | Garrett  | SqlEstDieu   |
+| Sosa | Amy      | Erreur404   |
 
 # LEFT JOIN
 
@@ -107,9 +107,9 @@ FROM joueurs j
 
 | nom        | prenom     | guilde     |
 |------------|------------|------------|
-| Simms  | Jonah    | SqlIsGod   |
-| McNeill    | Garrett  | SqlIsGod   |
-| Sosa | Amy      | Error404   |
+| Simms  | Jonah    | SqlEstDieu   |
+| McNeill    | Garrett  | SqlEstDieu   |
+| Sosa | Amy      | Erreur404   |
 | Fox      | Dina   | NULL       |
 
 # RIGHT JOIN
@@ -128,10 +128,10 @@ FROM joueurs j
 
 | nom        | prenom     | guilde     |
 |------------|------------|------------|
-| Simms  | Jonah    | SqlIsGod   |
-| McNeill    | Garrett  | SqlIsGod   |
-| Sosa | Amy      | Error404   |
-| NULL       | NULL       | IsNobodyHere |
+| Simms  | Jonah    | SqlEstDieu   |
+| McNeill    | Garrett  | SqlEstDieu   |
+| Sosa | Amy      | Erreur404   |
+| NULL       | NULL       | PersonneIci |
 
 	
 # UNION
@@ -182,8 +182,8 @@ FROM joueurs j
 
 | nom        | prenom     | guilde     |
 |------------|------------|------------|
-| Simms  | Jonah    | SqlIsGod   |
-| McNeill    | Garrett  | SqlIsGod   |
-| Sosa | Amy      | Error404   |
+| Simms  | Jonah    | SqlEstDieu   |
+| McNeill    | Garrett  | SqlEstDieu   |
+| Sosa | Amy      | Erreur404   |
 | Fox      | Dina   | NULL       |
-| NULL       | NULL       | IsNobodyHere |
+| NULL       | NULL       | PersonneIci |
