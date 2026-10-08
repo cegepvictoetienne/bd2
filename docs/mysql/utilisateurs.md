@@ -2,12 +2,6 @@
 
 Pour se connecter et interagir avec MySQL, chaque utilisateur doit disposer d'informations de connexion valides (nom d'utilisateur et mot de passe) ainsi que de privilèges déterminés pour accéder et manipuler la base de données. Ces informations sont stockées dans plusieurs tables système de MySQL.
 
-## Tables de privilèges
-- **user** : contient les informations de base sur les utilisateurs.
-- **db**, **tables_priv**, **columns_priv**, **proc_priv** : stockent les détails des privilèges sur les bases de données, tables, colonnes et procédures.
-
-Il est recommandé d'utiliser des commandes SQL spécifiques pour gérer ces privilèges plutôt que de modifier directement les tables.
-
 ## Création d'un utilisateur
 
 Utilisez la commande `CREATE USER` pour créer un nouveau compte utilisateur. Vous pouvez spécifier le nom de l'utilisateur, l'hôte depuis lequel ils peuvent se connecter, et leur mot de passe. L'hôte peut être spécifié pour restreindre d'où l'utilisateur peut se connecter. Utiliser `%` permet une connexion depuis n'importe quel hôte.
@@ -43,7 +37,7 @@ RENAME USER 'luc'@'localhost' TO 'lucie'@'localhost';
 Utilisez `DROP USER` pour supprimer un utilisateur :
 
 ```sql
-DROP USER 'luc'@'localhost';
+DROP USER 'lucie'@'localhost';
 ```
 
 ## Afficher la liste des utilisateurs
