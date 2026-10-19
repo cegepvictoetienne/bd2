@@ -60,6 +60,10 @@ PIP (Pip Installs Packages) est le gestionnaire de paquets officiel pour Python.
      requests==2.23.0
      numpy==1.18.5
      ```
+     Pour la création de `requirements.txt` à partir d'en environnement déjà créé :   
+     ```bash 
+     pip list --format freeze > requirements.txt
+     ```
 
 2. **Installer les dépendances avec `requirements.txt`** :
     - Pour installer toutes les dépendances listées dans le fichier :
