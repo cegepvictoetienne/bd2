@@ -89,7 +89,7 @@ Pydoc est un module intégré de Python qui génère de la documentation en lisa
 Pour afficher la documentation d'un module, d'une classe ou d'une fonction dans le terminal, utilisez la commande suivante :
 
 ```bash
-pydoc nom_du_module
+python -m pydoc nom_du_module
 ```
 
 #### Exemple
@@ -97,7 +97,7 @@ pydoc nom_du_module
 Si nous avons un fichier `voiture.py` contenant notre classe `Voiture`, nous pouvons afficher sa documentation avec :
 
 ```bash
-pydoc voiture
+python -m pydoc voiture
 ```
 
 #### Générer de la documentation HTML
@@ -105,7 +105,7 @@ pydoc voiture
 Pour générer de la documentation HTML pour un module, utilisez la commande suivante :
 
 ```bash
-pydoc -w nom_du_module
+python -m pydoc -w nom_du_module
 ```
 
 Cela créera un fichier `nom_du_module.html` contenant la documentation.
@@ -115,7 +115,7 @@ Cela créera un fichier `nom_du_module.html` contenant la documentation.
 Pour générer la documentation HTML pour le module `voiture.py`, utilisez :
 
 ```bash
-pydoc -w voiture
+python -m pydoc -w voiture
 ```
 
 ## 4. Conclusion
