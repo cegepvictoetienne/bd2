@@ -22,13 +22,7 @@ Vous êtes chargé de créer et de soumettre les documents suivants :
 2. **Diagramme de classes UML** :
     - Ce diagramme doit également être présenté en format image.
 
-3. **Script SQL de création de la base de données** :
-    - Le script doit inclure la création de la base de données nommée **ex04_recette**, des tables nécessaires, et des clés primaires et étrangères.
-    - La base de données doit utiliser la collation `utf8mb4_unicode_ci`.
-    - La table principale des recettes devra avoir une clé primaire dont la numérotation commence à 1000.
-    - Assurez-vous que le script SQL puisse être exécuté de manière idempotente, c'est-à-dire plusieurs fois sans erreurs, en utilisant les commandes `DROP TABLE IF EXISTS` appropriées.
-
-Les modèles et le script doivent respecter les trois premières formes normales et suivre les conventions de nommage spécifiées dans vos notes de cours.
+Les modèles doivent respecter les trois premières formes normales et suivre les conventions de nommage spécifiées dans vos notes de cours.
 
 ## Soumission
 

@@ -23,6 +23,7 @@ nav = [
      "mysql/types_jointures.md",
      "mysql/vues.md",
      "mysql/insertion.md",
+     "mysql/syntaxe_routine.md",
      "mysql/declencheurs.md",
      "mysql/fonctions.md",
      "mysql/procedures.md",

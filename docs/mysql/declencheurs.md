@@ -1,85 +1,136 @@
-# Déclencheurs (Triggers)
+# Déclencheurs
 
-Un déclencheur est une routine automatique associée à une table dans une base de données. Les instructions du déclencheur s'exécutent automatiquement lors d'une insertion, mise à jour, ou suppression dans la table liée, affectant chaque ligne modifiée. Le moment de l'exécution du déclencheur doit être spécifié : avant (BEFORE) ou après (AFTER) l'exécution de l'instruction SQL. Chaque table peut comporter jusqu'à six déclencheurs : avant ou après chacun des trois types d'opérations (INSERT, UPDATE, DELETE).
+Comment résoudre les situations suivantes :
 
-Les déclencheurs peuvent modifier ou insérer des données dans n'importe quelle table de la base de données, sauf dans celle utilisée par la requête déclencheuse. Pour les opérations sur la table liée au déclencheur, seule la ligne en cours de traitement peut être manipulée.
+- Si l’on essaie d’ajouter une note plus grande que la note maximale d’évaluation, alors on affecte la note maximale
+- Après la création d'une Evaluation, on crée un ligne de Evaluation_Etudiant pour chaque étudiant du groupe
 
-## Pourquoi utiliser des déclencheurs ?
+Un déclencheur (appelé communément *Trigger*) permet d’effectuer un traitement immédiatement avant ou après l'une de ces opérations :
 
-- **Validation des données** : Assurer l'intégrité des données avant leur insertion ou modification.
-- **Traitements complexes** : Gérer des opérations complexes affectant plusieurs tables, utiles notamment lors de la gestion de clés étrangères.
-- **Audit** : Suivre les modifications dans la base de données.
-- **Mise à jour automatique** : Actualiser les informations fréquemment consultées, comme le solde d'un compte client.
+- INSERT  
+- UPDATE  
+- DELETE  
 
-## Création d'un déclencheur
-
-La syntaxe pour créer un déclencheur est la suivante :
-
-```sql
-CREATE TRIGGER nomTrigger
-    momentDuDeclenchement operationSQL ON nomTable
-    FOR EACH ROW
-    corpsDuTrigger;
-```
-
-- **momentDuDeclenchement** : BEFORE ou AFTER.
-- **operationSQL** : INSERT, UPDATE, ou DELETE.
-- Le **corpsDuTrigger** peut contenir plusieurs requêtes, encapsulées entre BEGIN et END si nécessaire.
-
-## Utilisation des mots-clés NEW et OLD
-
-- **NEW** : Accède aux données telles qu'elles sont après la modification (disponible pour INSERT et UPDATE).
-- **OLD** : Accède aux données avant la modification (disponible pour UPDATE et DELETE).
-
-| Requête | OLD | NEW |
-|---------|-----|-----|
-| INSERT  |  -  | Oui |
-| UPDATE  | Oui | Oui |
-| DELETE  | Oui |  -  |
-
-## Gestion des erreurs dans les déclencheurs
-
-- Si un déclencheur BEFORE échoue, l'opération sur la ligne est annulée.
-- Les erreurs dans les déclencheurs AFTER annulent l'opération en cours.
-- Utilisation de `SIGNAL` pour renvoyer des erreurs personnalisées dans les déclencheurs.
-
-## Suppression d'un déclencheur
-
-Pour supprimer un déclencheur :
-
-```sql
-DROP TRIGGER IF EXISTS nomTrigger;
-```
-
-La suppression d'une table entraîne aussi la suppression de tous les déclencheurs qui lui sont associés.
-
-## Restrictions
-
-- Les transactions ne sont pas autorisées dans les déclencheurs (pas de START TRANSACTION, COMMIT, ou ROLLBACK).
-- Les procédures stockées utilisées dans les déclencheurs ne peuvent pas retourner de valeurs sauf via des paramètres OUT ou IN/OUT.
-
-## Exemple de déclencheur
-
-Voici un exemple où un changement de guilde par un joueur est enregistré :
+## Syntaxe des déclencheurs
 
 ```sql
 DELIMITER $$
+CREATE TRIGGER nom TEMPS EVENEMENT ON Table FOR EACH ROW
+BEGIN
+	traitement
+END; $$
+DELIMITER ;
 
-CREATE TRIGGER joueur_after_update
-    AFTER UPDATE
-    ON joueurs FOR EACH ROW
-    BEGIN
-        IF OLD.guilde_id <> NEW.guilde_id THEN 
-            INSERT INTO joueurs_guildes_log (joueur_id, old_guilde_id, new_guilde_id, mod_date)
-            VALUES (OLD.id, OLD.guilde_id, NEW.guilde_id, NOW());
-        END IF;
-    END $$
+TEMPS : BEFORE ou AFTER
+EVENEMENT : INSERT, UPDATE ou DELETE
+```
+
+## Choisir BEFORE ou AFTER
+
+**BEFORE** :
+Quand il faut changer une valeur à insérer ou à modifier.
+
+**AFTER** :
+Quand on veut s’assurer que la donnée soit bien insérée avant de faire le traitement (ex. n’a pas déclenché un check erroné). 
+
+## Accéder à l'enregistrement modifié
+
+On peut utiliser les références **OLD** et **NEW** pour accéder à l'enregistrement qui fait l'objet d'un déclencheur.
+
+|Type de requête|OLD|NEW|
+||||
+|INSERT|NULL|L'enregistrement inséré|
+|UPDATE|L'enregistrement avant la modification|L'enregistrement après la modification|
+|DELETE|L'enregistrement supprimé|NULL| 
+
+## Exemple
+
+Si l’on essaie d’ajouter une note plus grande que la note maximale d’évaluation, alors on affecte la note maximale
+
+```sql
+DELIMITER $$
+CREATE TRIGGER respect_note_maximale BEFORE INSERT ON Evaluation_etudiant FOR EACH ROW
+BEGIN
+  DECLARE _note_maximale INTEGER;
+  SET _note_maximale = (
+    SELECT ponderation FROM evaluations 
+      WHERE id_evaluation = NEW.id_evaluation
+  );
+
+  IF NEW.note > _note_maximale THEN
+    SET NEW.note = _note_maximale;
+  END IF;
+END $$
 
 DELIMITER ;
 ```
 
-## Documentation
+## Documenter un déclencheur
 
-- [https://www.mysqltutorial.org/mysql-triggers/](https://www.mysqltutorial.org/mysql-triggers/)
-- [https://www.javatpoint.com/mysql-trigger](https://www.javatpoint.com/mysql-trigger)  
-- [https://dev.mysql.com/doc/refman/8.0/en/trigger-syntax.html](https://dev.mysql.com/doc/refman/8.0/en/trigger-syntax.html)
+Pour documenter un déclencheur, on utilise un commentaire de style JavaDOC
+
+```
+/**
+ * Description du TRIGGER
+ *
+ * @dependencies Table_dependante, table_dependante...
+ */
+```
+
+## Démonstration
+
+Si la date de remise d'une nouvelle évaluation_etudiant est hors de la durée de la session, alors on lui affecte la valeur nulle.
+
+## :material-cog: --- Exercice 1 ---
+
+Ajoutez les déclencheurs permettant d'effectuer les traitements suivants
+
+A. Lorsqu'on supprime un enseignant, tous les programmes dont il est responsable sont modifiés pour que le responsable soit NULL (enlever la contrainte NOT NULL sur la colonne responsable) et tous les cours donnés par l'enseignant aient l'enseignant NULL.  
+
+B. Après la création d'une évaluation, on crée une ligne de evaluations_etudiants pour chaque étudiant du groupe avec la date de remise à NULL et le nom du document à NULL.
+
+
+## Conflits et limitations des déclencheurs et des fonctions
+
+Les cas de figure suivant sont interdits :
+
+- Une fonction ne peut pas s'appeler elle-même  
+- Un déclencheur ne peut pas être appelé sur une table en modification par un déclencheur  
+
+Un déclencheur peut appeler une fonction et l'exécution d'une fonction pourrait activer un déclencheur.  
+
+**Les appels implicits sont aussi interdits !**
+
+## Exemple de schémas d'exécution à problème
+
+![](images/5_fct_trigger.png)
+
+## Déclencheurs sur la même table
+
+Appeler un déclencheur BEFORE et un AFTER sur la même table.
+
+1. La table est verrouillée, le déclencheur BEFORE s'exécute, la table est libérée
+2. La requête s'exécute
+3. La table est verrouillée, le déclencheur AFTER s'exécute, la table est libérée
+
+Donc une table peut définir jusqu'à 6 déclencheurs.
+
+## Démonstration
+
+Si la date de remise d'une nouvelle évaluation_etudiant est hors de la durée de la session, alors on lui affecte la valeur nulle.
+
+Gérez cette validation pour l'insertion et la modification.
+
+## Empêcher un ajout via un déclencheur
+
+Pour empêcher un ajout, on peut utiliser la commande **SIGNAL SQLSTATE**.
+
+## Syntaxe
+
+```sql
+SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'Message erreur';
+```
+
+## :material-cog: --- Exercice 2 ---
+
+C. Si l'évaluation ajoutée cause la somme des pondérations du cours à excéder 100%, alors la pondération devient 0. Gérez cette validation lors de l'ajout et de la modification.
