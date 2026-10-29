@@ -81,18 +81,18 @@ Ouvrez votre navigateur et allez à `http://127.0.0.1:5000/`. Vous devriez voir 
 ## 1 - Créez un formulaire HTML dans votre fichier `index.html` pour ajouter un citoyen à la base de données :
 
 ``` html
-{!demo-flask/templates/index.html!}
+--8<-- "demo-flask/templates/index.html"
 ```
 ## 2 - Créer un fichier html pour saluer l'utilisateur
 
 ``` html
-{!demo-flask/templates/saluer.html!}
+--8<-- "demo-flask/templates/saluer.html"
 ```
 
 ## 3 - Créez une route dans votre fichier `app.py` pour traiter le formulaire :
 
 ``` python
-{!demo-flask/app.py!}
+--8<-- "demo-flask/app.py"
 ```
 
 # Routes dynamiques
@@ -100,17 +100,17 @@ Ouvrez votre navigateur et allez à `http://127.0.0.1:5000/`. Vous devriez voir 
 ## 1 - Créer la page d'accueil
 
 ``` html
-{!flask-dynamique/templates/index.html!}
+--8<-- "flask-dynamique/templates/index.html"
 ```
 
 ## 2 - Créez la page d'affichage d'un article
 
 ``` html
-{!flask-dynamique/templates/article.html!}
+--8<-- "flask-dynamique/templates/article.html"
 ```
 
 ## 3 - Créez une route dynamique pour afficher les détails d'un article :
 
 ``` python
-{!flask-dynamique/app.py!}
+--8<-- "flask-dynamique/app.py"
 ```
