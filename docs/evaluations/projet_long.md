@@ -37,7 +37,7 @@ Créez un dépôt GitHub pour le travail, à l'intérieur duquel vous aurez les 
 - Utilisez des transactions pour garantir que les données soient cohérentes et que les opérations sur la base de données soient sécurisées.
 - Gérez les exceptions pour s'assurer que l'application peut gérer les erreurs de saisie des utilisateurs et les problèmes de base de données de manière élégante.
 
-Cette évaluation vise à tester vos compétences en programmation Python, en conception de bases de données MySQL, et en développement d'applications interactives en console. Bonne chance!
+Cette évaluation vise à tester vos compétences en programmation Python, en conception de bases de données MySQL, et en développement d'applications interactives avec Flask. Bonne chance!
 
 
 
@@ -47,7 +47,7 @@ Cette évaluation vise à tester vos compétences en programmation Python, en co
 | :----------------------------------------------------------- | ------ | ------------ | -------------- | ------ |
 | Les scripts SQL de création de tables et d'insertion de données sont fonctionnels et couvrent l'ensemble de l'application. | 2      | 1            | 0              | /2     |
 | Le diagramme de classes respecte les points à couvrir de l'analyse de cas et les normes de nomenclature définies dans les notes de cours. | 3      | 2            | 0              | /3     |
-| La base de données comportent un déclencheur | 2      | 1            | 0              | /2     |
+| La base de données comportent un déclencheur fonctionnel et respectant les critères | 2      | 1            | 0              | /2     |
 | L'application Web permet de saisir adéquatement les informations du client. | 2      | 1            | 0              | /2     |
 | L'application Web permet de saisir adéquatement une commande client | 3      | 2            | 0              | /3     |
 | L'application Web permet d'afficher adéquatement le résumé d'une commande client | 3      | 2            | 0              | /3     |
