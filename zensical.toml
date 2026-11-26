@@ -54,6 +54,10 @@ nav = [
      "exercices/ex12_enonce.md",
      "exercices/ex13_enonce.md"
 ]},
+{"Révision" = [
+     "revision/revision_modelisation.md",
+     "revision/breches_securite.md"
+]},
 {"Outils de travail" = [
      "outils/dbeaver.md",
      "outils/drawio.md"

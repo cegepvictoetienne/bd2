@@ -11,7 +11,7 @@ Semaine|Cours|Date|Sujet|Exercice
 4|8|2026-09-17 15:15:00|Retour sur formatif <br/> [Fonctions](mysql/fonctions.md)<br/>Exercice 8<br/>[Types de jointures](mysql/types_jointures.md)|[Exercice 8 - Exercice sur les fonctions](exercices/ex08_enonce.md)
 5|9|2026-09-22 10:15:00|[Transactions](mysql/transactions.md)<br/>[Procédures stockées](mysql/procedures.md)<br/>[Gestion des erreurs](mysql/gestion_erreurs.md)<br/>[Curseurs](mysql/curseurs.md)<br/>Exercice 9|[Exercice 9 - Crédit social](exercices/ex09_enonce.md)
 5|10|2026-09-24 15:15:00|Finaliser Exercice 9|[Exercice 9 - Crédit social](exercices/ex09_enonce.md)
-6|11|2026-09-29 10:15:00|Révision|[Révision Modélisation](evaluations/revision_modelisation.md)
+6|11|2026-09-29 10:15:00|Révision|[Révision Modélisation](revision/revision_modelisation.md)
 6|12|2026-10-01 15:15:00|__Examen 1 (35%)__|
 7|13|2026-10-06 10:15:00|Retour sur l'examen 1<br/>Exercice 10|[Exercice 10 - Exercice sur les curseurs](exercices/ex10_enonce.md)
 7|14|2026-10-08 15:15:00|[Utilisateurs](mysql/utilisateurs.md)<br/>[Autorisations](mysql/autorisations.md)<br/>[Rôles](mysql/roles.md)<br/>Exercice 11|[Exercice 11 - Gestion des utilisateurs](exercices/ex11_enonce.md)
